@@ -125,13 +125,13 @@ The audit highlighted two main classes of disagreements between exact-index silv
 
 ---
 
-## 8. Actionable Recommendations for Dataset Enhancement
+## 8. Deployed Dataset Enhancements & Future Recommendations
 
-To clean and improve the SQuAD sentence salience dataset for future experiments, we recommend three protocols:
+We have successfully implemented the first cleaning recommendation and outline recommendations for future work:
 
-1. **Token-Level Intersection Filter**: Instead of any character overlap, require that the intersection contains at least one non-stopword token (nouns, verbs, adjectives). This removes boundary-overlap punctuation noise.
-2. **Semantic Entailment Cross-Encoder**: Evaluate sentence relevance to the answer using a cross-encoder (e.g., DeBERTa-v3-large). If a sentence has a high semantic entailment with the answer, label it as salient even if the exact string match is missing.
-3. **Coreference Resolution**: Run coreference resolution (e.g. using spaCy coref) to resolve pronouns. If a sentence contains a resolved pronoun pointing to an answer entity, it should be marked as salient context.
+1. **Token-Level Intersection Filter [DEPLOYED]**: Instead of any character overlap, we require that the intersection contains at least one non-stopword token (nouns, verbs, adjectives). This has been implemented in `src/data_processing.py` and run on the cached data, successfully removing boundary-overlap punctuation noise.
+2. **Semantic Entailment Cross-Encoder [FUTURE WORK]**: Evaluate sentence relevance to the answer using a cross-encoder (e.g., DeBERTa-v3-large). If a sentence has a high semantic entailment with the answer, label it as salient even if the exact string match is missing.
+3. **Coreference Resolution [FUTURE WORK]**: Run coreference resolution (e.g. using spaCy coref) to resolve pronouns. If a sentence contains a resolved pronoun pointing to an answer entity, it should be marked as salient context.
 
 ---
 
