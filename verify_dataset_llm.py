@@ -82,7 +82,7 @@ def main():
     print("="*60)
     
     if not os.path.exists(cache_path):
-        print(f"Error: Cache file '{cache_path}' not found. Please run run_stage1.py first.")
+        print(f"Error: Cache file '{cache_path}' not found. Please run run_feature_extraction.py first.")
         return
         
     with open(cache_path, "rb") as f:

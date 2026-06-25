@@ -15,12 +15,12 @@ This codebase evaluates **13 model configurations** across **5 dataset balancing
 ## 2. Documentation Index
 
 Detailed guides detailing each step of the data and modeling process are available:
-* **[Data Cleaning & Labeling Guide](data_cleaning_process.md)**: Explains the exact-index silver annotation mapping, LLM-as-a-judge verification results, and recommendations for removing boundary noise.
-* **[Data Balancing Guide](data_balancing_process.md)**: Outlines the mathematical formulations of the 5 training balancing methods (None, Pairwise, Cluster, RST-Neighborhood, DSNB).
-* **[Classifier Catalog](classifier_catalog.md)**: Describes the architecture and parameters of the 13 rule-based, linear, and hybrid transformer models.
-* **[Feature Subsets Guide](feature_subsets_guide.md)**: Directory of all 71 extracted features and their configuration mapping.
-* **[LLM Verification Report](llm_judge_verification.md)**: Updated results of the local Qwen-1.5B dataset audit.
-* **[Feature Importance Report](feature_importance.md)**: Standardized coefficient analysis of all Logistic Regression classifiers.
+* **[Data Cleaning & Labeling Guide](docs/data_cleaning_process.md)**: Explains the exact-index silver annotation mapping, LLM-as-a-judge verification results, and recommendations for removing boundary noise.
+* **[Data Balancing Guide](docs/data_balancing_process.md)**: Outlines the mathematical formulations of the 5 training balancing methods (None, Pairwise, Cluster, RST-Neighborhood, DSNB).
+* **[Classifier Catalog](docs/classifier_catalog.md)**: Describes the architecture and parameters of the 13 rule-based, linear, and hybrid transformer models.
+* **[Feature Subsets Guide](docs/feature_subsets_guide.md)**: Directory of all 71 extracted features and their configuration mapping.
+* **[LLM Verification Report](docs/llm_judge_verification.md)**: Updated results of the local Qwen-1.5B dataset audit.
+* **[Feature Importance Report](docs/feature_importance.md)**: Standardized coefficient analysis of all Logistic Regression classifiers.
 
 ---
 
@@ -89,8 +89,12 @@ python -m spacy download en_core_web_sm
 ```
 
 ### Running the Pipeline
-Run the full SQuAD feature extraction, model fitting, and evaluation pipeline:
+Run the SQuAD feature extraction (Stage 1) and model experiments (Stage 2):
 ```bash
-python run_pipeline.py
+# Optional: Extract features and build cache (Stage 1)
+python run_feature_extraction.py
+
+# Train all 13 configurations and evaluate (Stage 2)
+python run_experiments.py
 ```
 This script automatically runs all 13 model configurations across all 5 dataset balancing techniques and saves the output to `metrics.csv` and `metrics.md`.

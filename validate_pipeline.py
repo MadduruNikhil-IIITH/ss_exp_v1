@@ -20,7 +20,7 @@ def validate_environment():
 def validate_cache(cache_path="features_cache_deletion.pkl"):
     print("2. Checking Features Cache Validity...")
     if not os.path.exists(cache_path):
-        print(f"   - Error: Cache file '{cache_path}' not found. Run run_stage1.py first.")
+        print(f"   - Error: Cache file '{cache_path}' not found. Run run_feature_extraction.py first.")
         return None
         
     with open(cache_path, "rb") as f:

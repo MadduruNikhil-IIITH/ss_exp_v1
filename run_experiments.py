@@ -9,7 +9,7 @@ from src.data_processing import apply_pairwise_balancing, apply_cluster_balancin
 from src.classifiers.rule_based_rst import RuleBasedRSTClassifier
 from src.classifiers.logistic_reg import TabularClassifierWrapper
 from src.classifiers.hybrid_bert import HybridBERTClassifier
-from run_stage1 import run_stage1_pipeline
+from run_feature_extraction import run_stage1_pipeline
 
 def compute_classification_metrics(y_true, y_pred):
     """

@@ -43,7 +43,7 @@ This roadmap outlines the strategic steps, paper sections, and scaling actions r
 
 ### A. Scaling Up the Dataset
 - Our baseline run uses **60 train contexts** and **15 validation contexts** (total 3,478 pairs).
-- **For Publication**: Scale the pipeline to **500+ train contexts** and **100+ validation contexts** using `run_stage1.py`. This will increase training data to ~25,000+ pairs, providing highly stable, publishable neural results.
+- **For Publication**: Scale the pipeline to **500+ train contexts** and **100+ validation contexts** using [run_feature_extraction.py](file:///d:/Research/Sqaud-Salience/run_feature_extraction.py). This will increase training data to ~25,000+ pairs, providing highly stable, publishable neural results.
 
 ### B. Downstream Evaluation (The "Killer" Experiment)
 - To prove that sentence salience improves Question Generation:

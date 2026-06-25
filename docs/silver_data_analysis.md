@@ -163,6 +163,6 @@ Our LLM-as-a-Judge validation verified that exact boundary intersection labels h
 2. **Boundary Overlap Noise (False Positives)**: sentences containing only a trailing space or a single punctuation mark of the answer span are labeled as Class 1.
 
 ### Recommended Data Cleaning and Enhancement Protocol:
-* **Token-Level Intersection Filter**: Label a sentence as Class 1 only if the intersection contains at least one non-stopword token of the answer, preventing punctuation-only overlap.
-* **Coreference Resolution**: Run coreference resolution (e.g., using spaCy's coref resolver) to link pronouns (like *he*, *she*, *they*, *it*) in context sentences to the named entities in the question/answer, mapping salient contexts more accurately.
+* **Token-Level Intersection Filter [DEPLOYED]**: A sentence is labeled as Class 1 only if the intersection contains at least one non-stopword token of the answer, preventing punctuation-only boundary-spilling noise. This has been successfully integrated and run on the cache files.
+* **Coreference Resolution [FUTURE WORK]**: Run coreference resolution (e.g., using spaCy's coref resolver) to link pronouns (like *he*, *she*, *they*, *it*) in context sentences to the named entities in the question/answer, mapping salient contexts more accurately.
 * **Semantic Coverage Thresholding**: Use a cross-encoder to compute sentence-answer similarity, labeling a sentence as salient if it has a high entailment score with the answer context, even without exact word overlap.
