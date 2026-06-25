@@ -32,8 +32,8 @@ Evaluated on SQuAD contexts (2,156 training records and 1,322 validation records
 
 | Model Configuration | Balancing Method | Accuracy | F1-Score | NDCG |
 | :--- | :--- | :---: | :---: | :---: |
-| **Heuristic-Guided BERT (RST)** | None | **0.8283** | **0.6771** | **0.9535** |
-| **Heuristic-Guided BERT (RST)** | Pairwise | 0.8154 | 0.6563 | 0.9475 |
+| **Heuristic-Guided BERT (RST)** | None | **0.8404** | **0.6874** | **0.9587** |
+| **Heuristic-Guided BERT (RST)** | Pairwise | 0.7534 | 0.6386 | 0.9561 |
 | **Combined Logistic Regression** | None | 0.7867 | 0.6375 | 0.9496 |
 | **Combined Logistic Regression** | DSNB | 0.7224 | 0.5853 | 0.9195 |
 
