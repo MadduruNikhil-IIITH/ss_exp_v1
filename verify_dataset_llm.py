@@ -167,7 +167,7 @@ def main():
     
     # Save markdown report to artifacts and workspace
     report_path = os.path.join(artifact_dir, "llm_judge_verification.md")
-    report_workspace_path = "llm_judge_verification.md"
+    report_workspace_path = os.path.join("docs", "llm_judge_verification.md")
     print(f"Saving report to '{report_path}' and '{report_workspace_path}'...")
     
     # Extract examples of disagreements
