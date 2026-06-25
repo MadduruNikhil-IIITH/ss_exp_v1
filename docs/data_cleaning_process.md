@@ -46,16 +46,16 @@ The $18\%$ disagreement between silver labels and the LLM judge exposes two main
 
 ---
 
-## 4. Actionable Recommendations for Silver Data Cleaning
+## 4. Deployed Silver Data Cleaning & Future Enhancements
 
-To improve dataset quality for future experiments, we propose the following data cleaning and enhancement steps:
+We have successfully implemented the first cleaning recommendation based on our findings, and outline further steps for future development:
 
-1. **Token-Level Intersection Filter**:
-   * *Logic*: Rather than simple character intersection, require the overlapping span between the sentence and the answer to contain at least one non-stopword, alphanumeric token.
-   * *Impact*: Eliminates false positives caused by boundary-spilling whitespace or punctuation.
-2. **Coreference Resolution Pre-processing**:
+1. **Token-Level Intersection Filter [DEPLOYED]**:
+   * *Implementation*: In [data_processing.py](file:///d:/Research/Sqaud-Salience/src/data_processing.py), we implemented `has_token_overlap` using spaCy. A sentence is marked salient (Class 1) only if the intersection of the sentence boundary and the answer text contains at least one non-stopword, alphanumeric token.
+   * *Impact*: Successfully ran this filter over all 3,478 cached records, eliminating boundary-spilling character/punctuation noise (the primary source of False Positives).
+2. **Coreference Resolution Pre-processing [FUTURE WORK]**:
    * *Logic*: Integrate a coreference resolution pipeline (e.g., using `fastcoref` or spaCy's coref resolver) before boundary checks. Replace pronouns with their resolved entities to map answer connections.
    * *Impact*: Eliminates false negatives caused by pronominal references.
-3. **Cross-Encoder Semantic Alignment**:
+3. **Cross-Encoder Semantic Alignment [FUTURE WORK]**:
    * *Logic*: Use a cross-encoder model (e.g., `cross-encoder/ms-marco-MiniLM-L-6-v2`) to score the entailment/salience of each sentence against the question and the answer text. Relabel sentences with entailment scores $>0.7$ as Class 1.
    * *Impact*: Automatically captures paraphrases and semantic equivalents missed by exact span checks.
