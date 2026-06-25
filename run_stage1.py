@@ -8,7 +8,7 @@ from src.surprisal_features import SurprisalCalculator
 from src.rst_features import DiscourseParserWrapper, RSTFeatureExtractor
 from src.alignment_features import AlignmentFeatureExtractor
 
-def run_stage1_pipeline(num_train_contexts=100, num_val_contexts=30, cache_path="features_cache.pkl"):
+def run_stage1_pipeline(num_train_contexts=60, num_val_contexts=15, cache_path="features_cache_deletion.pkl"):
     """
     Orchestrates the Stage 1 pipeline: SQuAD loading, feature extraction, and caching.
     """
@@ -167,6 +167,6 @@ def run_stage1_pipeline(num_train_contexts=100, num_val_contexts=30, cache_path=
     print("="*60)
 
 if __name__ == "__main__":
-    # Run pipeline on a small sample first to verify correctness
-    # Using 10 training contexts and 3 validation contexts for verification
-    run_stage1_pipeline(num_train_contexts=10, num_val_contexts=3, cache_path="features_cache.pkl")
+    # Run the full pipeline for the scaled experiments
+    # Using 60 training contexts and 15 validation contexts
+    run_stage1_pipeline(num_train_contexts=60, num_val_contexts=15, cache_path="features_cache_deletion.pkl")

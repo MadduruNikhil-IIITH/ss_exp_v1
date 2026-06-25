@@ -10,6 +10,7 @@ This document compiles the statistical characteristics of the SQuAD silver datas
 * **Class Imbalance**: High class imbalance exists, with salient (answer-bearing) sentences comprising only **15.72%** of the training split and **25.42%** of the validation split.
 * **Extreme Positional Bias**: Over **75%** of all salient sentences reside at Sentence Index 0, 1, or 2. This creates a dangerous heuristic shortcut that models can easily exploit unless neutralized by balancing methods.
 * **Core Correlation Drivers**: Semantic vector similarity (`align_sem_sim` at `+0.4925`) and lemma overlap (`align_jaccard` at `+0.4706`) are the strongest linear indicators of salience, whereas discourse (RST) and surprisal features act as non-linear context-aware regularizers.
+* **Rigorous Significance Findings**: Welch's t-tests prove that salient sentences have significantly higher syntactic complexity (deeper parse trees, p < 0.0001) and produce a significantly larger surprisal deletion drop (p < 0.05). In contrast, basic text readability metrics are not statistically significant discriminators.
 * **Verification Agreement**: Local LLM auditing using `Qwen2.5-1.5B-Instruct` shows an **82.00% agreement rate** (Cohen's Kappa of **0.6400**, representing substantial agreement) with exact-index silver annotations, validating the dataset's quality while identifying specific noise categories.
 
 ---
@@ -83,6 +84,11 @@ Pearson correlation coefficient ($r$) between salient labels (`binary_label`) an
 | `surp_mean` | +0.0117 | Surprisal (GPT-2) | Weak Positive correlation |
 | `rst_mean_depth` | -0.0674 | Discourse (RST) | Weak Negative correlation |
 
+### Feature Co-linearity Heatmap
+To analyze feature overlaps and correlations, we generated a Pearson correlation matrix heatmap (`docs/images/correlation_heatmap.png`):
+* **High Semantic Collinearity**: The semantic alignment features (SBERT similarity, Jaccard overlap, and ROUGE-L LCS recall) exhibit extremely high mutual correlation ($r > 0.85$), showing they capture redundant semantic matching signals.
+* **Discourse & Information Autonomy**: The RST nucleus ratio (`rel_rst_n_ratio`) and GPT-2 surprisal drop (`surp_deletion_drop`) show very low correlation with semantic features ($r < 0.10$), indicating they introduce independent structural and information-theoretic information.
+
 ---
 
 ## 6. LLM-as-a-Judge Audit & Agreement Metrics
@@ -126,3 +132,28 @@ To clean and improve the SQuAD sentence salience dataset for future experiments,
 1. **Token-Level Intersection Filter**: Instead of any character overlap, require that the intersection contains at least one non-stopword token (nouns, verbs, adjectives). This removes boundary-overlap punctuation noise.
 2. **Semantic Entailment Cross-Encoder**: Evaluate sentence relevance to the answer using a cross-encoder (e.g., DeBERTa-v3-large). If a sentence has a high semantic entailment with the answer, label it as salient even if the exact string match is missing.
 3. **Coreference Resolution**: Run coreference resolution (e.g. using spaCy coref) to resolve pronouns. If a sentence contains a resolved pronoun pointing to an answer entity, it should be marked as salient context.
+
+---
+
+## 9. Rigorous Statistical Analysis & Significance Testing
+
+To establish the statistical validity of our feature set, we conducted Welch's t-tests (two-sample independent t-tests with unequal variances) comparing Salient (Class 1) and Non-Salient (Class 0) sentences.
+
+The full details and tables are documented in [docs/silver_data_analysis.md](file:///d:/Research/Sqaud-Salience/docs/silver_data_analysis.md). The key takeaways and their corresponding graphical interpretations include:
+
+### A. Syntactic Complexity Differences
+* **Metric**: Salient sentences exhibit significantly deeper dependency parse trees (mean **6.57** vs. **6.16**, p < 0.0001) and larger token dependency distances (mean **3.32** vs. **3.06**, p < 0.0001).
+* **Plot**: This is visualized in `docs/images/syntactic_complexity.png`.
+
+### B. Information Theoretic (Surprisal) Distributions
+* **Metric**: While mean surprisal is slightly lower for salient sentences (due to semantic priming of question words), the **surprisal deletion coherence drop** is significantly larger when salient sentences are removed from the context paragraph (p < 0.05).
+* **Plot**: Visually analyzed via probability density curves in `docs/images/surprisal_distribution.png`.
+
+### C. Text Readability Index comparison
+* **Metric**: Readability metrics (Flesch Reading Ease and Gunning Fog index) show no statistically significant differences between the two classes.
+* **Plot**: Shown using overlapping boxplot distributions in `docs/images/readability_comparison.png`, proving basic readability is not a useful feature for salience prediction.
+
+### D. Soft Label Target Separability
+* **Metric**: The hybrid soft target (`soft_label_hybrid`), which combines spatial decay with TF-IDF alignment, provides a much clearer separation of classes compared to pure spatial decay.
+* **Plot**: Boxplot comparison shown in `docs/images/soft_labels_comparison.png`.
+
