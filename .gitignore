@@ -1,0 +1,32 @@
+# Python cache directories
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local project cache (SQuAD feature pickles)
+*.pkl
+
+# Local agent run logs and system-generated files
+.system_generated/
+.tempmediaStorage/
+task.md
+walkthrough.md
+implementation_plan.md
+academic_publication_roadmap.md
+class_imbalance.md
+llm_judge_verification.md
+silver_data_analysis.md
+feature_importance.md
+metrics_summary.md
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+
+# IDE files
+.vscode/
+.idea/
+.agents/
+.ipynb_checkpoints/

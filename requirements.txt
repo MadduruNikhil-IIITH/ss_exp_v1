@@ -1,0 +1,11 @@
+datasets
+transformers
+torch
+spacy
+textstat
+scikit-learn
+pandas
+numpy
+tqdm
+sentence-transformers
+anytree
