@@ -56,6 +56,23 @@ def compute_tfidf_similarity(question, sentences):
         # Fallback if TF-IDF fails (e.g. empty vocabulary)
         return [0.0] * len(sentences)
 
+def has_token_overlap(ans_text, sent_text):
+    """
+    Checks if there is at least one non-stopword, alphanumeric token overlap 
+    between the answer text and the sentence to filter out boundary-spilling noise.
+    """
+    ans_doc = nlp(ans_text.lower())
+    sent_doc = nlp(sent_text.lower())
+    
+    ans_tokens = {t.text for t in ans_doc if not t.is_stop and t.is_alpha}
+    sent_tokens = {t.text for t in sent_doc if not t.is_stop and t.is_alpha}
+    
+    # If the answer is purely stopwords or non-alphanumeric, fallback to exact string matching
+    if not ans_tokens:
+        return ans_text.lower() in sent_text.lower()
+        
+    return bool(ans_tokens.intersection(sent_tokens))
+
 def build_silver_squad_dataset(num_contexts=100, split="train"):
     """
     Downloads SQuAD v1.1, processes contexts, matches answer spans to sentence boundaries,
@@ -89,14 +106,16 @@ def build_silver_squad_dataset(num_contexts=100, split="train"):
             question = qa["question"]
             answers = qa["answers"]
             
-            # 1. Exact-Index Binary Labels (checking all answers)
+            # 1. Exact-Index Binary Labels with Token-Level Intersection Filter
             salient_indices = set()
             for ans_text, ans_start in zip(answers["text"], answers["answer_start"]):
                 ans_end = ans_start + len(ans_text)
                 for sent in sentences:
-                    # Check for non-empty intersection
+                    # Check for non-empty character boundary intersection
                     if max(sent["start_char"], ans_start) < min(sent["end_char"], ans_end):
-                        salient_indices.add(sent["sentence_idx"])
+                        # Filter out punctuation and boundary noise via token overlap check
+                        if has_token_overlap(ans_text, sent["text"]):
+                            salient_indices.add(sent["sentence_idx"])
             
             # Primary answer sentence (first annotated answer)
             primary_ans_idx = 0

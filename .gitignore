@@ -12,12 +12,6 @@ __pycache__/
 task.md
 walkthrough.md
 implementation_plan.md
-academic_publication_roadmap.md
-class_imbalance.md
-llm_judge_verification.md
-silver_data_analysis.md
-feature_importance.md
-metrics_summary.md
 
 # Virtual environments
 venv/
