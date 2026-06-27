@@ -104,11 +104,11 @@ def create_report(output_pdf_path, metrics_csv_path):
         name='Heading1_Custom',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=18,
-        leading=22,
+        fontSize=16,
+        leading=20,
         textColor=c_primary,
-        spaceBefore=15,
-        spaceAfter=10,
+        spaceBefore=12,
+        spaceAfter=8,
         keepWithNext=True
     )
 
@@ -116,11 +116,11 @@ def create_report(output_pdf_path, metrics_csv_path):
         name='Heading2_Custom',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=12,
-        leading=16,
+        fontSize=11,
+        leading=15,
         textColor=c_secondary,
-        spaceBefore=10,
-        spaceAfter=6,
+        spaceBefore=8,
+        spaceAfter=4,
         keepWithNext=True
     )
     
@@ -128,18 +128,18 @@ def create_report(output_pdf_path, metrics_csv_path):
         name='Body_Custom',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=10,
-        leading=14,
+        fontSize=9.5,
+        leading=13.5,
         textColor=c_dark,
-        spaceAfter=8
+        spaceAfter=6
     )
 
     style_abstract = ParagraphStyle(
         name='Abstract_Custom',
         parent=styles['Normal'],
         fontName='Helvetica-Oblique',
-        fontSize=10,
-        leading=14,
+        fontSize=9.5,
+        leading=13.5,
         textColor=c_dark
     )
     
@@ -147,12 +147,12 @@ def create_report(output_pdf_path, metrics_csv_path):
         name='Bullet_Custom',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=10,
-        leading=14,
+        fontSize=9.5,
+        leading=13.5,
         textColor=c_dark,
         leftIndent=15,
         firstLineIndent=-10,
-        spaceAfter=4
+        spaceAfter=3
     )
     
     story = []
@@ -162,7 +162,7 @@ def create_report(output_pdf_path, metrics_csv_path):
     # =========================================================================
     story.append(Spacer(1, 40))
     story.append(Paragraph("SQuAD Sentence Salience Inference System", style_cover_title))
-    story.append(Paragraph("A Comparative Evaluation of Discourse Priors and Class Balancing Techniques", style_cover_subtitle))
+    story.append(Paragraph("An Experimental Evaluation of Discourse Priors and Class Balancing Techniques", style_cover_subtitle))
     
     # Metadata Block
     meta_text = (
@@ -178,7 +178,7 @@ def create_report(output_pdf_path, metrics_csv_path):
         "<b>Executive Summary:</b> Predicting which sentences in a long context passage are salient (contain answers to specific questions) "
         "is a crucial preprocessing step for long-context reading comprehension, context pruning, and Question Generation (QG) pipelines. "
         "However, sentence-level datasets are naturally highly imbalanced (~80% non-salient), causing selectors to overfit or yield high recall with poor precision. "
-        "In this work, we systematically evaluate 13 model configurations (linear models and hybrid transformers) across 5 dataset balancing techniques. "
+        "This project systematically evaluates 13 model configurations (linear models and hybrid transformers) across 5 dataset balancing techniques. "
         "Additionally, we introduce a novel Token-Level Intersection Filter to clean boundary annotation noise, and evaluate our proposed "
         "Discourse-Semantic Neighborhood Balancing (DSNB) method. Our findings show that incorporating Rhetorical Structure Theory (RST) "
         "as a direct heuristic prior in transformer heads yields state-of-the-art results, achieving an NDCG of <b>0.9587</b> and F1-Score of <b>0.6874</b>."
@@ -242,9 +242,32 @@ def create_report(output_pdf_path, metrics_csv_path):
     story.append(PageBreak())
     
     # =========================================================================
-    # PAGE 3: BALANCING METHODS & ARCHITECTURES
+    # PAGE 3: FEATURE SPACE & BALANCING METHODS
     # =========================================================================
-    story.append(Paragraph("3. Dataset Balancing Formulations", style_h1))
+    story.append(Paragraph("3. Feature Space & Subsystems", style_h1))
+    story.append(Paragraph(
+        "We extracted a total of **71 multi-modal features** per sentence, categorized into 4 core subsystems:",
+        style_body
+    ))
+    story.append(Paragraph(
+        "• <b>Semantic Alignment (6 features)</b>: SBERT cosine similarity, lemma Jaccard overlap, and ROUGE-L LCS recall against the question text.",
+        style_bullet
+    ))
+    story.append(Paragraph(
+        "• <b>Rhetorical Structure [RST] (18 features)</b>: Nuclei ratio,卫星 (satellite) counts, average tree depth, and specific relation frequencies (e.g., Elaboration, Attribution).",
+        style_bullet
+    ))
+    story.append(Paragraph(
+        "• <b>Context-Aware Surprisal (12 features)</b>: Mean, min, max, and std of word-level GPT-2 surprisals, and the unsupervised sentence deletion drop.",
+        style_bullet
+    ))
+    story.append(Paragraph(
+        "• <b>Linguistic & Syntactic (35 features)</b>: Sentence length, capitalization ratio, max parse depth, average token distance, and readability indices.",
+        style_bullet
+    ))
+    
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("4. Dataset Balancing Formulations", style_h1))
     story.append(Paragraph(
         "Due to SQuAD's inherent imbalance (~1:5.4 positive-to-negative ratio), models trained raw default to the majority class or exploit positional shortcuts. "
         "We formulated and evaluated 5 training balancing methods:",
@@ -272,8 +295,12 @@ def create_report(output_pdf_path, metrics_csv_path):
         style_bullet
     ))
     
-    story.append(Spacer(1, 10))
-    story.append(Paragraph("4. Model Architecture Catalog", style_h1))
+    story.append(PageBreak())
+    
+    # =========================================================================
+    # PAGE 4: ARCHITECTURES & COEFFICIENT ANALYSIS
+    # =========================================================================
+    story.append(Paragraph("5. Model Architecture Catalog", style_h1))
     story.append(Paragraph(
         "We compared traditional linear models with hybrid deep learning architectures that integrate textual representation and tabular features:",
         style_body
@@ -296,12 +323,50 @@ def create_report(output_pdf_path, metrics_csv_path):
         style_bullet
     ))
     
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("6. Standardized Coefficient Analysis", style_h1))
+    story.append(Paragraph(
+        "To interpret which features drive the salience classification decision, the table below lists the standardized coefficients for the top positive and negative features under our DSNB balanced model:",
+        style_body
+    ))
+    
+    # Coefficient table
+    coef_data = [
+        ["Subsystem", "Feature Name", "Coefficient", "Influence & Interpretation"],
+        ["Linguistic / Syntactic", "word_count", "+1.1044", "Positive: Longer sentences contain detailed answer spans."],
+        ["Semantic Alignment", "align_sem_sim", "+0.8544", "Positive: Strong semantic overlap with the question."],
+        ["Discourse (RST)", "rel_rst_n_ratio", "+0.7203", "Positive: Sentences with primary rhetorical (nucleus) roles."],
+        ["Linguistic / Syntactic", "comma_count", "+0.5594", "Positive: Indicates clause complexity and detail insertion."],
+        ["Semantic Alignment", "align_rouge_l", "+0.5387", "Positive: Syntactic recall overlap of longest common subsequence."],
+        ["Linguistic / Syntactic", "char_count", "-0.8539", "Negative: Prefers shorter character length given word count (density)."],
+        ["Surprisal (GPT-2)", "rel_surp_ratio", "-0.6146", "Negative: Low relative surprisal indicates high context priming."],
+        ["Discourse (RST)", "rel_rst_depth", "-0.4538", "Negative: Deeply nested tree locations have lower salience."],
+        ["Linguistic / Syntactic", "question_count", "-0.4523", "Negative: Sentences containing question marks are rarely answer context."]
+    ]
+    
+    t_coef = Table(coef_data, colWidths=[100, 94, 54, 256])
+    t_coef.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,0), c_secondary),
+        ('TEXTCOLOR', (0,0), (-1,0), colors.white),
+        ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0,0), (-1,0), 8),
+        ('BOTTOMPADDING', (0,0), (-1,0), 5),
+        ('ALIGN', (0,0), (2,-1), 'CENTER'),
+        ('ALIGN', (0,0), (1,-1), 'LEFT'),
+        ('ALIGN', (3,0), (3,-1), 'LEFT'),
+        ('FONTNAME', (0,1), (-1,-1), 'Helvetica'),
+        ('FONTSIZE', (0,1), (-1,-1), 8),
+        ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#D3D3D3")),
+        ('ROWBACKGROUNDS', (0,1), (-1,-1), [colors.white, c_light]),
+    ]))
+    story.append(t_coef)
+    
     story.append(PageBreak())
     
     # =========================================================================
-    # PAGE 4: RESULTS TABLE & ROADMAP
+    # PAGE 5: COMPARATIVE RESULTS & ROADMAP
     # =========================================================================
-    story.append(Paragraph("5. Comparative Experimental Results", style_h1))
+    story.append(Paragraph("7. Comparative Experimental Results", style_h1))
     story.append(Paragraph(
         "The table below details a representative summary of performance metrics on the natural, unbalanced validation set. "
         "It compares the baseline rule-based heuristic, the combined linear classifier, and the proposed Heuristic-Guided BERT across all balancing techniques:",
@@ -309,7 +374,6 @@ def create_report(output_pdf_path, metrics_csv_path):
     ))
     
     # Construct results table
-    # Select representative configurations
     selected_configs = [
         ("1. RST Rule-Based", "None"),
         ("5. LR (Combined)", "None"),
@@ -335,11 +399,9 @@ def create_report(output_pdf_path, metrics_csv_path):
             mrr = f"{row_df['MRR'].values[0]:.4f}"
             mapp = f"{row_df['MAP'].values[0]:.4f}"
             
-            # Shorten names for table aesthetics
             c_name = config.replace("11. Heuristic-Guided BERT (RST)", "Heur-BERT (RST)").replace("5. LR (Combined)", "Combined LR")
             table_data.append([c_name, bal, acc, f1, ndcg, mrr, mapp])
             
-    # Draw table
     t = Table(table_data, colWidths=[140, 94, 54, 54, 54, 54, 54])
     t.setStyle(TableStyle([
         ('BACKGROUND', (0,0), (-1,0), c_primary),
@@ -348,10 +410,9 @@ def create_report(output_pdf_path, metrics_csv_path):
         ('FONTSIZE', (0,0), (-1,0), 8),
         ('BOTTOMPADDING', (0,0), (-1,0), 6),
         ('ALIGN', (0,0), (-1,-1), 'CENTER'),
-        ('ALIGN', (0,0), (0,-1), 'LEFT'),  # Left align names
+        ('ALIGN', (0,0), (0,-1), 'LEFT'),
         ('FONTNAME', (0,1), (-1,-1), 'Helvetica'),
         ('FONTSIZE', (0,1), (-1,-1), 8),
-        ('BACKGROUND', (0,1), (-1,-1), colors.white),
         ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#D3D3D3")),
         ('ROWBACKGROUNDS', (0,1), (-1,-1), [colors.white, c_light]),
     ]))
@@ -366,7 +427,26 @@ def create_report(output_pdf_path, metrics_csv_path):
     ))
     
     story.append(Spacer(1, 10))
-    story.append(Paragraph("6. Recommendations & Next Steps", style_h1))
+    story.append(Paragraph("8. Index of Graphic Figures", style_h1))
+    story.append(Paragraph(
+        "For the final presentation, we generated **9 graphical visualizations** analyzing dataset dynamics and statistical tests:",
+        style_body
+    ))
+    story.append(Paragraph(
+        "• <b>positional_bias.png</b> & <b>length_comparison.png</b>: Shows linear index distributions and sentence lengths.",
+        style_bullet
+    ))
+    story.append(Paragraph(
+        "• <b>correlation_heatmap.png</b> & <b>feature_correlations.png</b>: Displays feature correlations and co-linearities.",
+        style_bullet
+    ))
+    story.append(Paragraph(
+        "• <b>syntactic_complexity.png</b>, <b>surprisal_distribution.png</b>, & <b>readability_comparison.png</b>: Visualizes significance test results.",
+        style_bullet
+    ))
+    
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("9. Recommendations & Next Steps", style_h1))
     story.append(Paragraph(
         "To further improve and evaluate the sentence salience inference system, we recommend the following next steps:",
         style_body
