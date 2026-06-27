@@ -391,6 +391,8 @@ def create_report(output_pdf_path, metrics_csv_path):
 
 if __name__ == "__main__":
     import sys
+    from datetime import datetime
     metrics_path = "metrics.csv"
-    output_path = os.path.join("docs", "pdf_reports", "SQuAD_Salience_Experiments_Report.pdf")
+    current_date = datetime.now().strftime("%Y_%m_%d")
+    output_path = os.path.join("docs", "pdf_reports", f"SQuAD_Salience_Experiments_Report_{current_date}.pdf")
     create_report(output_path, metrics_path)
