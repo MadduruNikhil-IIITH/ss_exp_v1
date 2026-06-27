@@ -177,14 +177,34 @@ def create_report(output_pdf_path, metrics_csv_path):
     
     story.append(Paragraph("4. Class Balancing Formulations", style_h1))
     story.append(Paragraph(
-        "To mitigate SQuAD's inherent positional bias (66.37% of answers lie in sentences 0-2), we evaluated 5 balancing methods: "
-        "<b>(1) None</b> (raw unbalanced), "
-        "<b>(2) Pairwise</b> (BCE loss on logit differences of context pairs), "
-        "<b>(3) Cluster</b> (K-Means undersampling of negatives), "
-        "<b>(4) RST-Neighborhood</b> (mining negatives close in the discourse tree), and "
-        "<b>(5) DSNB</b> (Discourse-Semantic Neighborhood Balancing - mining negatives using position, SBERT similarity, and RST depth).",
+        "To mitigate SQuAD's inherent positional bias (66.37% of answers lie in sentences 0-2), we evaluated 5 training-only balancing methods:",
         style_body
     ))
+    
+    # Balancing table
+    bal_table_data = [
+        ["Balancing Method", "Training Sizing & Class Split", "Formulation & Rationale"],
+        ["None (Baseline)", "2,156 records (339 Pos, 1,817 Neg)", "Natural SQuAD unbalanced distribution (prior class probability P(Y=1) = 15.72%)."],
+        ["Pairwise (RankNet)", "1,831 pairs (3,662 inputs)", "Trains on difference vectors of context-matched salient/non-salient pairs."],
+        ["Cluster", "678 records (339 Pos, 339 Neg)", "Clusters negatives (K=339) and selects representative cluster centroids."],
+        ["RST-Neighborhood", "678 records (339 Pos, 339 Neg)", "Mines hard negatives positionally and structurally close in the RST tree."],
+        ["DSNB", "678 records (339 Pos, 339 Neg)", "Mines hard negatives combining position, SBERT similarity, and RST tree depth."]
+    ]
+    
+    t_bal = Table(bal_table_data, colWidths=[105, 160, 239])
+    t_bal.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,0), c_secondary),
+        ('TEXTCOLOR', (0,0), (-1,0), colors.white),
+        ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0,0), (-1,0), 7.5),
+        ('BOTTOMPADDING', (0,0), (-1,0), 4),
+        ('ALIGN', (0,0), (-1,-1), 'LEFT'),
+        ('FONTNAME', (0,1), (-1,-1), 'Helvetica'),
+        ('FONTSIZE', (0,1), (-1,-1), 7.5),
+        ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#D3D3D3")),
+        ('ROWBACKGROUNDS', (0,1), (-1,-1), [colors.white, c_light]),
+    ]))
+    story.append(t_bal)
     
     story.append(PageBreak())
     
