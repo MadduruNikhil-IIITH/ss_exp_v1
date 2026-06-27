@@ -216,7 +216,7 @@ def create_report(output_pdf_path, metrics_csv_path):
         style_bullet
     ))
     story.append(Paragraph(
-        "• <b>Dataset Sizing</b>: The cleaned dataset contains <b>3,478 sentence-question records</b> split into 2,156 training records (15.7% salient) and 1,322 validation records (25.4% salient).",
+        "• <b>Dataset Specs & Sizing</b>: The dataset contains <b>75 unique contexts</b> (60 train, 15 validation), <b>640 question-answer pairs</b> (337 train, 303 validation), and a total of <b>3,478 sentence-question records</b>. The records are split into 2,156 training records (15.72% salient, 1,817 non-salient) and 1,322 validation records (25.42% salient, 986 non-salient).",
         style_bullet
     ))
     
@@ -251,7 +251,7 @@ def create_report(output_pdf_path, metrics_csv_path):
         style_body
     ))
     story.append(Paragraph(
-        "1. <b>None</b>: Natural unbalanced distribution (prior class probability P(Y=1) = 0.157).",
+        "1. <b>None</b>: Natural unbalanced distribution (prior class probability P(Y=1) = 0.1572).",
         style_bullet
     ))
     story.append(Paragraph(
