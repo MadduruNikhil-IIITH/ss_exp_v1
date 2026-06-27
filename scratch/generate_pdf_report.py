@@ -169,14 +169,13 @@ def create_report(output_pdf_path, metrics_csv_path):
         "<b>Prepared by:</b> Madduru Nikhil (IIITH) & Antigravity (AI Partner)<br/>"
         "<b>Workspace:</b> ss_exp_v1<br/>"
         "<b>Date:</b> June 27, 2026<br/>"
-        "<b>Target Venue:</b> Academic Publication (ACL / EMNLP / NAACL / COLING)<br/>"
     )
     story.append(Paragraph(meta_text, style_body))
     story.append(Spacer(1, 30))
     
-    # Abstract in a callout box
+    # Executive Summary in a callout box
     abstract_html = (
-        "<b>Abstract:</b> Predicting which sentences in a long context passage are salient (contain answers to specific questions) "
+        "<b>Executive Summary:</b> Predicting which sentences in a long context passage are salient (contain answers to specific questions) "
         "is a crucial preprocessing step for long-context reading comprehension, context pruning, and Question Generation (QG) pipelines. "
         "However, sentence-level datasets are naturally highly imbalanced (~80% non-salient), causing selectors to overfit or yield high recall with poor precision. "
         "In this work, we systematically evaluate 13 model configurations (linear models and hybrid transformers) across 5 dataset balancing techniques. "
@@ -369,7 +368,7 @@ def create_report(output_pdf_path, metrics_csv_path):
     story.append(Spacer(1, 10))
     story.append(Paragraph("6. Recommendations & Next Steps", style_h1))
     story.append(Paragraph(
-        "To finalize this research for submission to ACL/EMNLP, we recommend the following next steps:",
+        "To further improve and evaluate the sentence salience inference system, we recommend the following next steps:",
         style_body
     ))
     story.append(Paragraph(
