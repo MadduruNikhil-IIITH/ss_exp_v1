@@ -142,14 +142,14 @@ def create_report(output_pdf_path, metrics_csv_path):
     
     story.append(Paragraph("1. Summary of Objectives", style_h1))
     story.append(Paragraph(
-        "This project evaluates sentence salience detection (identifying answer-bearing sentences in SQuAD passages) "
-        "to optimize long-context pruning and Question Generation. We compare 13 pointwise configurations across 5 balancing methods.",
+        "This project evaluated sentence salience detection (identifying answer-bearing sentences in SQuAD passages) "
+        "to optimize long-context pruning and Question Generation. We evaluated 13 pointwise configurations across 5 balancing methods.",
         style_body
     ))
     
     story.append(Paragraph("2. Silver Label Cleaning & Quality Audit", style_h1))
     story.append(Paragraph(
-        "• <b>Token-Level Intersection Filter</b>: To eliminate False Positives caused by trailing spaces or punctuation spilling over boundaries, we require that the character intersection of the sentence and the SQuAD answer text contains at least one non-stopword, alphanumeric token.",
+        "• <b>Token-Level Intersection Filter</b>: To eliminate False Positives caused by trailing spaces or punctuation spilling over boundaries, we required that the character intersection of the sentence and the SQuAD answer text contains at least one non-stopword, alphanumeric token.",
         style_bullet
     ))
     story.append(Paragraph(
@@ -177,7 +177,7 @@ def create_report(output_pdf_path, metrics_csv_path):
     
     story.append(Paragraph("4. Class Balancing Formulations", style_h1))
     story.append(Paragraph(
-        "To mitigate SQuAD's inherent positional bias (66.37% of answers lie in sentences 0-2), we evaluate 5 balancing methods: "
+        "To mitigate SQuAD's inherent positional bias (66.37% of answers lie in sentences 0-2), we evaluated 5 balancing methods: "
         "<b>(1) None</b> (raw unbalanced), "
         "<b>(2) Pairwise</b> (BCE loss on logit differences of context pairs), "
         "<b>(3) Cluster</b> (K-Means undersampling of negatives), "
@@ -286,15 +286,15 @@ def create_report(output_pdf_path, metrics_csv_path):
     story.append(Spacer(1, 3))
     story.append(Paragraph("7. Ongoing Work & Next Steps", style_h1))
     story.append(Paragraph(
-        "• <b>Dataset Scaling</b>: Run feature extraction on 500+ contexts to increase pairs to ~25,000+ for stable transformer gradients.",
+        "• <b>Dataset Scaling</b>: Scaling the feature extraction pipeline to 500+ contexts to increase pairs to ~25,000+ to evaluate transformer behavior on a larger pool.",
         style_bullet
     ))
     story.append(Paragraph(
-        "• <b>Threshold Calibration</b>: Optimize decision thresholds on validation splits to improve F1 scores of balanced models.",
+        "• <b>Threshold Calibration</b>: Optimizing the prediction decision thresholds on validation splits to improve pointwise F1 scores of balanced models.",
         style_bullet
     ))
     story.append(Paragraph(
-        "• <b>Downstream Task Integration</b>: Feed selected salient sentences to a Question Generation model (T5) and evaluate BLEU/ROUGE improvements.",
+        "• <b>Downstream Task Integration</b>: Integrating the trained salience models into a Question Generation pipeline (e.g., T5) and evaluating BLEU/ROUGE improvements.",
         style_bullet
     ))
     
