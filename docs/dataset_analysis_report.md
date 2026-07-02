@@ -6,9 +6,9 @@ This document compiles the statistical characteristics of the SQuAD silver datas
 
 ## 1. Executive Summary
 
-* **Dataset Structure**: The dataset contains **3,478 sentence-question records** derived from SQuAD v1.1. It is split into 2,156 training records and 1,322 validation records.
-* **Class Imbalance**: High class imbalance exists, with salient (answer-bearing) sentences comprising only **15.72%** of the training split and **25.42%** of the validation split.
-* **Extreme Positional Bias**: Over **75%** of all salient sentences reside at Sentence Index 0, 1, or 2. This creates a dangerous heuristic shortcut that models can easily exploit unless neutralized by balancing methods.
+* **Dataset Structure**: The dataset contains **2,530 sentence-question records** derived from SQuAD v1.1. It is split into 2,301 training records and 229 validation records.
+* **Class Imbalance**: High class imbalance exists, with salient (answer-bearing) sentences comprising **19.64%** of the training split and **17.90%** of the validation split.
+* **Extreme Positional Bias**: Over **76%** of all salient sentences reside at Sentence Index 0, 1, or 2. This creates a dangerous heuristic shortcut that models can easily exploit unless neutralized by balancing methods.
 * **Core Correlation Drivers**: Semantic vector similarity (`align_sem_sim` at `+0.4925`) and lemma overlap (`align_jaccard` at `+0.4706`) are the strongest linear indicators of salience, whereas discourse (RST) and surprisal features act as non-linear context-aware regularizers.
 * **Rigorous Significance Findings**: Welch's t-tests prove that salient sentences have significantly higher syntactic complexity (deeper parse trees, p < 0.0001) and produce a significantly larger surprisal deletion drop (p < 0.05). In contrast, basic text readability metrics are not statistically significant discriminators.
 * **Verification Agreement**: Local LLM auditing using `Qwen2.5-1.5B-Instruct` shows an **82.00% agreement rate** (Cohen's Kappa of **0.6400**, representing substantial agreement) with exact-index silver annotations, validating the dataset's quality while identifying specific noise categories.
@@ -19,9 +19,9 @@ This document compiles the statistical characteristics of the SQuAD silver datas
 
 | Metric | Training Set | Validation Set | Total |
 | :--- | :---: | :---: | :---: |
-| **Unique Contexts** | 60 | 15 | 75 |
-| **QA Pairs (Questions)** | 337 | 303 | 640 |
-| **Sentence-Question Records** | 2,156 | 1,322 | 3,478 |
+| **Unique Contexts** | 90 | 10 | 100 |
+| **QA Pairs (Questions)** | 452 | 39 | 491 |
+| **Sentence-Question Records** | 2,301 | 229 | 2,530 |
 | **Average Sentences per Context** | 6.40 (Min: 3, Max: 13) | - | - |
 
 ---
@@ -31,13 +31,13 @@ This document compiles the statistical characteristics of the SQuAD silver datas
 Because each question has exactly one main answer span (which typically falls into a single sentence), the majority of sentences in a context passage are non-salient.
 
 * **Training Set Distribution**:
-  * **Salient (Class 1)**: 339 (15.72%)
-  * **Non-Salient (Class 0)**: 1,817 (84.28%)
-  * **Imbalance Ratio**: **~1 : 5.4**
+  * **Salient (Class 1)**: 452 (19.64%)
+  * **Non-Salient (Class 0)**: 1,849 (80.36%)
+  * **Imbalance Ratio**: **~1 : 4.1**
 * **Validation Set Distribution**:
-  * **Salient (Class 1)**: 336 (25.42%)
-  * **Non-Salient (Class 0)**: 986 (74.58%)
-  * **Imbalance Ratio**: **~1 : 2.9**
+  * **Salient (Class 1)**: 41 (17.90%)
+  * **Non-Salient (Class 0)**: 188 (82.10%)
+  * **Imbalance Ratio**: **~1 : 4.6**
 
 > [!NOTE]
 > This profile explains the need for training set balancing techniques (None, Pairwise, Cluster, RST-Neighborhood, DSNB) to prevent classifiers from simply predicting the majority class.

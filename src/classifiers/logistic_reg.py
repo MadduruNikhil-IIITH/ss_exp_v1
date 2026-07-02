@@ -153,3 +153,31 @@ class TabularClassifierWrapper:
         """
         probas = self.predict_proba(test_records)
         return (probas >= threshold).astype(int)
+
+    def save(self, filepath):
+        """
+        Saves model and scaler to a file.
+        """
+        import joblib
+        joblib.dump({
+            "model": self.model,
+            "scaler": self.scaler,
+            "selected_cols": self.selected_cols,
+            "feature_mode": self.feature_mode,
+            "use_soft_targets": self.use_soft_targets
+        }, filepath)
+        print(f"Saved tabular model checkpoint to '{filepath}'")
+
+    def load(self, filepath):
+        """
+        Loads model and scaler from a file.
+        """
+        import joblib
+        data = joblib.load(filepath)
+        self.model = data["model"]
+        self.scaler = data["scaler"]
+        self.selected_cols = data["selected_cols"]
+        self.feature_mode = data["feature_mode"]
+        self.use_soft_targets = data["use_soft_targets"]
+        print(f"Loaded tabular model checkpoint from '{filepath}'")
+

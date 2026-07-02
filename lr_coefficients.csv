@@ -1,1451 +1,781 @@
-Balancing,Mode,Feature,Coefficient
-None,rst,intercept,-0.10851078872309991
-None,rst,rst_edu_count,0.12356231363814134
-None,rst,rst_n_count,0.12086972713977501
-None,rst,rst_s_count,0.07650312143112273
-None,rst,rst_n_ratio,-0.11220993975974672
-None,rst,rst_mean_depth,-0.3644594726421464
-None,rst,rst_is_root,-0.11982857130569034
-None,rst,psg_rst_max_depth,0.11836497976540249
-None,rst,psg_rst_n_count,-0.22608976538876374
-None,rst,psg_rst_s_count,-0.09531123194353423
-None,rst,rel_rst_depth_ratio,-0.0014780229917499682
-None,rst,rel_rst_n_ratio,0.173534387661941
-None,rst,rst_rel_elaboration_count,-0.005929720338567802
-None,rst,rst_rel_attribution_count,-0.15520084120491984
-None,rst,rst_rel_background_count,0.0
-None,rst,rst_rel_cause_count,0.0
-None,rst,rst_rel_result_count,0.0
-None,rst,rst_rel_contrast_count,0.0
-None,rst,rst_rel_joint_count,0.11611074617028334
-None,linguistic,intercept,-0.14703250213094946
-None,linguistic,word_count,0.708481845959329
-None,linguistic,char_count,-0.7037914971053758
-None,linguistic,avg_word_length,-0.059159627006381534
-None,linguistic,ttr,0.08391128214805911
-None,linguistic,stopword_ratio,-0.0010809669321537442
-None,linguistic,comma_count,0.0018763948061582623
-None,linguistic,period_count,0.16252583388397074
-None,linguistic,exclamation_count,0.06967895436982799
-None,linguistic,question_count,-0.2050515625849951
-None,linguistic,semicolon_count,-0.021988650061817203
-None,linguistic,colon_count,-0.01793665783994947
-None,linguistic,parenthesis_count,-0.006786370978655507
-None,linguistic,cap_ratio,-0.21884583961103327
-None,linguistic,title_ratio,0.45082422675542505
-None,linguistic,flesch_reading_ease,0.24798252313675315
-None,linguistic,flesch_kincaid_grade,0.564716640889689
-None,linguistic,gunning_fog,-0.11219921585602706
-None,linguistic,pron_1st_ratio,0.06201153207952778
-None,linguistic,pron_2nd_ratio,-0.23178579415155448
-None,linguistic,pron_3rd_ratio,0.09969650991755759
-None,linguistic,past_tense_ratio,0.2298874271045909
-None,linguistic,present_tense_ratio,0.1299497871356135
-None,linguistic,number_ratio,0.28522694896383516
-None,linguistic,discourse_causal_count,-0.016953337546920983
-None,linguistic,discourse_contrast_count,-0.05671720339282
-None,linguistic,discourse_addition_count,0.11993313196269606
-None,linguistic,avg_dep_distance,0.11873602360267034
-None,linguistic,max_parse_depth,0.07251380404953711
-None,linguistic,noun_ratio,0.05201486463210038
-None,linguistic,verb_ratio,-0.047966108826115524
-None,linguistic,adj_ratio,-0.045550864198265525
-None,linguistic,adv_ratio,-0.05424820029793668
-None,linguistic,pron_ratio,-0.21991687211951932
-None,linguistic,prep_ratio,0.10097088222512009
-None,linguistic,conj_ratio,-0.08930761843691837
-None,surprisal,intercept,-0.1017330595863609
-None,surprisal,surp_mean,0.5503492123942348
-None,surprisal,surp_max,-0.1433281385386875
-None,surprisal,surp_min,0.043594882171368525
-None,surprisal,surp_sum,0.14374141008900093
-None,surprisal,surp_std,0.23412186485473221
-None,surprisal,psg_surp_mean,-0.27773259404281153
-None,surprisal,psg_surp_sum,-0.23403190915768946
-None,surprisal,psg_surp_max,0.010323577404365913
-None,surprisal,psg_surp_min,0.0
-None,surprisal,psg_surp_std,0.035702603300314384
-None,surprisal,rel_surp_diff,0.7455977303870065
-None,surprisal,rel_surp_ratio,-1.4305052287849291
-None,surprisal,rel_surp_sum_ratio,0.29441960299942255
-None,surprisal,surp_deletion_drop,0.12722736406712312
-None,combined,intercept,-1.505672683638083
-None,combined,word_count,1.519877643018492
-None,combined,char_count,-1.6139086317202207
-None,combined,avg_word_length,0.290472842928277
-None,combined,ttr,-0.03554125631111837
-None,combined,stopword_ratio,0.25684763453710935
-None,combined,comma_count,0.4873918788578938
-None,combined,period_count,0.04624906684619064
-None,combined,exclamation_count,0.07903157630694593
-None,combined,question_count,-0.30023359467414434
-None,combined,semicolon_count,0.04374083866321564
-None,combined,colon_count,-0.1778291469068497
-None,combined,parenthesis_count,0.20034814726484673
-None,combined,cap_ratio,-0.13453312899690542
-None,combined,title_ratio,0.5384090874627737
-None,combined,flesch_reading_ease,-0.17865235231010013
-None,combined,flesch_kincaid_grade,-0.13300507946428605
-None,combined,gunning_fog,-0.11765348951332556
-None,combined,pron_1st_ratio,-0.03668572475511712
-None,combined,pron_2nd_ratio,-0.11529086994141512
-None,combined,pron_3rd_ratio,-0.062319366727411576
-None,combined,past_tense_ratio,0.12764918372558884
-None,combined,present_tense_ratio,-0.12742672052866896
-None,combined,number_ratio,0.0749543856617462
-None,combined,discourse_causal_count,0.04437351356076365
-None,combined,discourse_contrast_count,0.11743885053861161
-None,combined,discourse_addition_count,0.3319188537886268
-None,combined,avg_dep_distance,-0.026349104271482005
-None,combined,max_parse_depth,-0.06708781679000145
-None,combined,noun_ratio,-0.5225599305043842
-None,combined,verb_ratio,0.3878079239988014
-None,combined,adj_ratio,-0.06559942429636043
-None,combined,adv_ratio,-0.36438549439689183
-None,combined,pron_ratio,-0.32547383843048877
-None,combined,prep_ratio,0.08239523480619886
-None,combined,conj_ratio,-0.13482096785172618
-None,combined,surp_mean,0.515062888606269
-None,combined,surp_max,-0.6098757587836724
-None,combined,surp_min,0.2916978710163906
-None,combined,surp_sum,0.16858802522204894
-None,combined,surp_std,0.5490064002308521
-None,combined,psg_surp_mean,-0.18128661763615717
-None,combined,psg_surp_sum,-0.11433361070823854
-None,combined,psg_surp_max,-0.08020584375895712
-None,combined,psg_surp_min,0.0
-None,combined,psg_surp_std,0.31163644788337597
-None,combined,rel_surp_diff,0.6586369882834467
-None,combined,rel_surp_ratio,-0.9989294050276447
-None,combined,rel_surp_sum_ratio,-0.2651562024632386
-None,combined,rst_edu_count,-0.11794963592295986
-None,combined,rst_n_count,-0.20342526372519748
-None,combined,rst_s_count,0.04791440261258228
-None,combined,rst_n_ratio,-0.4411881252980031
-None,combined,rst_mean_depth,0.0010492360464810085
-None,combined,rst_is_root,-0.022272362419353875
-None,combined,psg_rst_max_depth,0.11241629335654747
-None,combined,psg_rst_n_count,0.020016742577487805
-None,combined,psg_rst_s_count,-0.32132819291093323
-None,combined,rel_rst_depth_ratio,0.0269529636646423
-None,combined,rel_rst_n_ratio,0.473998585282693
-None,combined,rst_rel_elaboration_count,-0.18545429987067824
-None,combined,rst_rel_attribution_count,-0.19849877858501172
-None,combined,rst_rel_background_count,0.0
-None,combined,rst_rel_cause_count,0.0
-None,combined,rst_rel_result_count,0.0
-None,combined,rst_rel_contrast_count,0.0
-None,combined,rst_rel_joint_count,0.24677453086996773
-None,combined,align_jaccard,0.18762511498343573
-None,combined,align_match_count,0.2887091388627464
-None,combined,align_rouge_l_recall,0.5274759190158218
-None,combined,align_ne_match,0.11544191688039863
-None,combined,align_sem_sim,1.689626847627342
-None,combined,surp_deletion_drop,-0.04920824220359958
-None,combined_heuristic,intercept,-1.5048048327607468
-None,combined_heuristic,word_count,1.5108878632348546
-None,combined_heuristic,char_count,-1.6149868097542426
-None,combined_heuristic,avg_word_length,0.2907634551791078
-None,combined_heuristic,ttr,-0.03607103982324835
-None,combined_heuristic,stopword_ratio,0.2516419680961069
-None,combined_heuristic,comma_count,0.48238744275583034
-None,combined_heuristic,period_count,0.04905389212370193
-None,combined_heuristic,exclamation_count,0.07994283569518323
-None,combined_heuristic,question_count,-0.29648406772548547
-None,combined_heuristic,semicolon_count,0.043645317698898956
-None,combined_heuristic,colon_count,-0.17763951097441735
-None,combined_heuristic,parenthesis_count,0.19957836974074142
-None,combined_heuristic,cap_ratio,-0.1346980135297236
-None,combined_heuristic,title_ratio,0.5378156690150058
-None,combined_heuristic,flesch_reading_ease,-0.1690103185291427
-None,combined_heuristic,flesch_kincaid_grade,-0.1271446605566951
-None,combined_heuristic,gunning_fog,-0.11057684723037622
-None,combined_heuristic,pron_1st_ratio,-0.03774236558069764
-None,combined_heuristic,pron_2nd_ratio,-0.1121943829817701
-None,combined_heuristic,pron_3rd_ratio,-0.06283003591482414
-None,combined_heuristic,past_tense_ratio,0.12880122572531802
-None,combined_heuristic,present_tense_ratio,-0.12580783288480113
-None,combined_heuristic,number_ratio,0.07249285160615142
-None,combined_heuristic,discourse_causal_count,0.04536539680608436
-None,combined_heuristic,discourse_contrast_count,0.11609256794843148
-None,combined_heuristic,discourse_addition_count,0.33171432679754426
-None,combined_heuristic,avg_dep_distance,-0.027483824579058316
-None,combined_heuristic,max_parse_depth,-0.06521638140339348
-None,combined_heuristic,noun_ratio,-0.5263816199587072
-None,combined_heuristic,verb_ratio,0.3814765055776191
-None,combined_heuristic,adj_ratio,-0.06958816709521284
-None,combined_heuristic,adv_ratio,-0.36456029453695926
-None,combined_heuristic,pron_ratio,-0.3247761163216738
-None,combined_heuristic,prep_ratio,0.08180937773122922
-None,combined_heuristic,conj_ratio,-0.13235701439868475
-None,combined_heuristic,surp_mean,0.5160561634748384
-None,combined_heuristic,surp_max,-0.6081210706692151
-None,combined_heuristic,surp_min,0.28948028821116656
-None,combined_heuristic,surp_sum,0.17265437304964484
-None,combined_heuristic,surp_std,0.5435104955065191
-None,combined_heuristic,psg_surp_mean,-0.18240177086659373
-None,combined_heuristic,psg_surp_sum,-0.11108855208294517
-None,combined_heuristic,psg_surp_max,-0.08090023881764312
-None,combined_heuristic,psg_surp_min,0.0
-None,combined_heuristic,psg_surp_std,0.31206792305312125
-None,combined_heuristic,rel_surp_diff,0.6602883218263383
-None,combined_heuristic,rel_surp_ratio,-0.9989630459825966
-None,combined_heuristic,rel_surp_sum_ratio,-0.26389581377291305
-None,combined_heuristic,rst_edu_count,-0.1154564495334665
-None,combined_heuristic,rst_n_count,-0.19992498044478635
-None,combined_heuristic,rst_s_count,0.04800004209275915
-None,combined_heuristic,rst_n_ratio,-0.40323100220921015
-None,combined_heuristic,rst_mean_depth,-0.0033562228442699134
-None,combined_heuristic,rst_is_root,0.0038399302066330202
-None,combined_heuristic,psg_rst_max_depth,0.11549304784929317
-None,combined_heuristic,psg_rst_n_count,0.013331814233895673
-None,combined_heuristic,psg_rst_s_count,-0.3213081031394946
-None,combined_heuristic,rel_rst_depth_ratio,0.01875505815138318
-None,combined_heuristic,rel_rst_n_ratio,0.46965416003492344
-None,combined_heuristic,rst_rel_elaboration_count,-0.1863264188063712
-None,combined_heuristic,rst_rel_attribution_count,-0.19963253541544113
-None,combined_heuristic,rst_rel_background_count,0.0
-None,combined_heuristic,rst_rel_cause_count,0.0
-None,combined_heuristic,rst_rel_result_count,0.0
-None,combined_heuristic,rst_rel_contrast_count,0.0
-None,combined_heuristic,rst_rel_joint_count,0.2494152889610258
-None,combined_heuristic,align_jaccard,0.1892022276122401
-None,combined_heuristic,align_match_count,0.28861940584406176
-None,combined_heuristic,align_rouge_l_recall,0.5270453760420983
-None,combined_heuristic,align_ne_match,0.11469884430308223
-None,combined_heuristic,align_sem_sim,1.6877070320695418
-None,combined_heuristic,surp_deletion_drop,-0.04832777494283079
-None,combined_heuristic,rst_rule_based_score,-0.05244906006800406
-None,combined_deletion,intercept,-1.505672683638083
-None,combined_deletion,word_count,1.519877643018492
-None,combined_deletion,char_count,-1.6139086317202207
-None,combined_deletion,avg_word_length,0.290472842928277
-None,combined_deletion,ttr,-0.03554125631111837
-None,combined_deletion,stopword_ratio,0.25684763453710935
-None,combined_deletion,comma_count,0.4873918788578938
-None,combined_deletion,period_count,0.04624906684619064
-None,combined_deletion,exclamation_count,0.07903157630694593
-None,combined_deletion,question_count,-0.30023359467414434
-None,combined_deletion,semicolon_count,0.04374083866321564
-None,combined_deletion,colon_count,-0.1778291469068497
-None,combined_deletion,parenthesis_count,0.20034814726484673
-None,combined_deletion,cap_ratio,-0.13453312899690542
-None,combined_deletion,title_ratio,0.5384090874627737
-None,combined_deletion,flesch_reading_ease,-0.17865235231010013
-None,combined_deletion,flesch_kincaid_grade,-0.13300507946428605
-None,combined_deletion,gunning_fog,-0.11765348951332556
-None,combined_deletion,pron_1st_ratio,-0.03668572475511712
-None,combined_deletion,pron_2nd_ratio,-0.11529086994141512
-None,combined_deletion,pron_3rd_ratio,-0.062319366727411576
-None,combined_deletion,past_tense_ratio,0.12764918372558884
-None,combined_deletion,present_tense_ratio,-0.12742672052866896
-None,combined_deletion,number_ratio,0.0749543856617462
-None,combined_deletion,discourse_causal_count,0.04437351356076365
-None,combined_deletion,discourse_contrast_count,0.11743885053861161
-None,combined_deletion,discourse_addition_count,0.3319188537886268
-None,combined_deletion,avg_dep_distance,-0.026349104271482005
-None,combined_deletion,max_parse_depth,-0.06708781679000145
-None,combined_deletion,noun_ratio,-0.5225599305043842
-None,combined_deletion,verb_ratio,0.3878079239988014
-None,combined_deletion,adj_ratio,-0.06559942429636043
-None,combined_deletion,adv_ratio,-0.36438549439689183
-None,combined_deletion,pron_ratio,-0.32547383843048877
-None,combined_deletion,prep_ratio,0.08239523480619886
-None,combined_deletion,conj_ratio,-0.13482096785172618
-None,combined_deletion,surp_mean,0.515062888606269
-None,combined_deletion,surp_max,-0.6098757587836724
-None,combined_deletion,surp_min,0.2916978710163906
-None,combined_deletion,surp_sum,0.16858802522204894
-None,combined_deletion,surp_std,0.5490064002308521
-None,combined_deletion,psg_surp_mean,-0.18128661763615717
-None,combined_deletion,psg_surp_sum,-0.11433361070823854
-None,combined_deletion,psg_surp_max,-0.08020584375895712
-None,combined_deletion,psg_surp_min,0.0
-None,combined_deletion,psg_surp_std,0.31163644788337597
-None,combined_deletion,rel_surp_diff,0.6586369882834467
-None,combined_deletion,rel_surp_ratio,-0.9989294050276447
-None,combined_deletion,rel_surp_sum_ratio,-0.2651562024632386
-None,combined_deletion,rst_edu_count,-0.11794963592295986
-None,combined_deletion,rst_n_count,-0.20342526372519748
-None,combined_deletion,rst_s_count,0.04791440261258228
-None,combined_deletion,rst_n_ratio,-0.4411881252980031
-None,combined_deletion,rst_mean_depth,0.0010492360464810085
-None,combined_deletion,rst_is_root,-0.022272362419353875
-None,combined_deletion,psg_rst_max_depth,0.11241629335654747
-None,combined_deletion,psg_rst_n_count,0.020016742577487805
-None,combined_deletion,psg_rst_s_count,-0.32132819291093323
-None,combined_deletion,rel_rst_depth_ratio,0.0269529636646423
-None,combined_deletion,rel_rst_n_ratio,0.473998585282693
-None,combined_deletion,rst_rel_elaboration_count,-0.18545429987067824
-None,combined_deletion,rst_rel_attribution_count,-0.19849877858501172
-None,combined_deletion,rst_rel_background_count,0.0
-None,combined_deletion,rst_rel_cause_count,0.0
-None,combined_deletion,rst_rel_result_count,0.0
-None,combined_deletion,rst_rel_contrast_count,0.0
-None,combined_deletion,rst_rel_joint_count,0.24677453086996773
-None,combined_deletion,align_jaccard,0.18762511498343573
-None,combined_deletion,align_match_count,0.2887091388627464
-None,combined_deletion,align_rouge_l_recall,0.5274759190158218
-None,combined_deletion,align_ne_match,0.11544191688039863
-None,combined_deletion,align_sem_sim,1.689626847627342
-None,combined_deletion,surp_deletion_drop,-0.04920824220359958
-Pairwise,rst,intercept,-0.0018565310554746139
-Pairwise,rst,rst_edu_count,0.1442330466655222
-Pairwise,rst,rst_n_count,0.20671622026942707
-Pairwise,rst,rst_s_count,-0.02029540877635282
-Pairwise,rst,rst_n_ratio,-0.1614535711063982
-Pairwise,rst,rst_mean_depth,-0.49126888399901736
-Pairwise,rst,rst_is_root,-0.19816388821950168
-Pairwise,rst,psg_rst_max_depth,0.0
-Pairwise,rst,psg_rst_n_count,0.0
-Pairwise,rst,psg_rst_s_count,0.0
-Pairwise,rst,rel_rst_depth_ratio,0.05893999312416542
-Pairwise,rst,rel_rst_n_ratio,0.13814459685581276
-Pairwise,rst,rst_rel_elaboration_count,0.039595885934534225
-Pairwise,rst,rst_rel_attribution_count,-0.15704464923856906
-Pairwise,rst,rst_rel_background_count,0.0
-Pairwise,rst,rst_rel_cause_count,0.0
-Pairwise,rst,rst_rel_result_count,0.0
-Pairwise,rst,rst_rel_contrast_count,0.0
-Pairwise,rst,rst_rel_joint_count,0.10541066172876606
-Pairwise,linguistic,intercept,-0.008196045019719043
-Pairwise,linguistic,word_count,0.8848414690540984
-Pairwise,linguistic,char_count,-0.9157735112472797
-Pairwise,linguistic,avg_word_length,0.03789686002162818
-Pairwise,linguistic,ttr,0.2078037310676616
-Pairwise,linguistic,stopword_ratio,-0.020790864313589837
-Pairwise,linguistic,comma_count,0.023339456288543805
-Pairwise,linguistic,period_count,0.20009282023648878
-Pairwise,linguistic,exclamation_count,0.11576844864328745
-Pairwise,linguistic,question_count,-0.21528631989587607
-Pairwise,linguistic,semicolon_count,-0.04221844634825946
-Pairwise,linguistic,colon_count,0.045083532559922555
-Pairwise,linguistic,parenthesis_count,-0.04749492614138083
-Pairwise,linguistic,cap_ratio,-0.23592210779120193
-Pairwise,linguistic,title_ratio,0.5727313801947514
-Pairwise,linguistic,flesch_reading_ease,0.7403606108324479
-Pairwise,linguistic,flesch_kincaid_grade,0.7577908574545482
-Pairwise,linguistic,gunning_fog,0.1872680773796781
-Pairwise,linguistic,pron_1st_ratio,0.06669649155685838
-Pairwise,linguistic,pron_2nd_ratio,-0.2828142495660405
-Pairwise,linguistic,pron_3rd_ratio,-0.02563258432541719
-Pairwise,linguistic,past_tense_ratio,0.14691874455472248
-Pairwise,linguistic,present_tense_ratio,0.1353673044422293
-Pairwise,linguistic,number_ratio,0.48364706046483763
-Pairwise,linguistic,discourse_causal_count,-0.011226871107114586
-Pairwise,linguistic,discourse_contrast_count,-0.03223483670470574
-Pairwise,linguistic,discourse_addition_count,0.21002421799836732
-Pairwise,linguistic,avg_dep_distance,0.08672669563359414
-Pairwise,linguistic,max_parse_depth,0.09171527554690971
-Pairwise,linguistic,noun_ratio,0.03061712042994772
-Pairwise,linguistic,verb_ratio,0.012325707640116144
-Pairwise,linguistic,adj_ratio,-0.042793667824471096
-Pairwise,linguistic,adv_ratio,-0.025863062763532
-Pairwise,linguistic,pron_ratio,-0.11080703414026034
-Pairwise,linguistic,prep_ratio,0.08305130346936469
-Pairwise,linguistic,conj_ratio,-0.15684272677513128
-Pairwise,surprisal,intercept,-0.0017661255636378058
-Pairwise,surprisal,surp_mean,0.7126160632011449
-Pairwise,surprisal,surp_max,-0.12435461038427077
-Pairwise,surprisal,surp_min,0.04817273690037322
-Pairwise,surprisal,surp_sum,0.37861331833038825
-Pairwise,surprisal,surp_std,0.2318528338066678
-Pairwise,surprisal,psg_surp_mean,0.0
-Pairwise,surprisal,psg_surp_sum,0.0
-Pairwise,surprisal,psg_surp_max,0.0
-Pairwise,surprisal,psg_surp_min,0.0
-Pairwise,surprisal,psg_surp_std,0.0
-Pairwise,surprisal,rel_surp_diff,0.7126160632011449
-Pairwise,surprisal,rel_surp_ratio,-1.5879108328766482
-Pairwise,surprisal,rel_surp_sum_ratio,0.013950295861042449
-Pairwise,surprisal,surp_deletion_drop,0.15731570296057604
-Pairwise,combined,intercept,-0.13594261768849938
-Pairwise,combined,word_count,0.9711691313391261
-Pairwise,combined,char_count,-1.3631571109193392
-Pairwise,combined,avg_word_length,0.1857927145682539
-Pairwise,combined,ttr,-0.34636227680368414
-Pairwise,combined,stopword_ratio,0.4053496754593503
-Pairwise,combined,comma_count,0.6443147019109468
-Pairwise,combined,period_count,0.13816070341857675
-Pairwise,combined,exclamation_count,0.3204337781125754
-Pairwise,combined,question_count,-0.19412449615890165
-Pairwise,combined,semicolon_count,0.024152081692764893
-Pairwise,combined,colon_count,-0.3179162644824256
-Pairwise,combined,parenthesis_count,0.0661130998522517
-Pairwise,combined,cap_ratio,-0.4951676928028026
-Pairwise,combined,title_ratio,1.0489060188390922
-Pairwise,combined,flesch_reading_ease,-0.2722932055930613
-Pairwise,combined,flesch_kincaid_grade,-0.11679696415500988
-Pairwise,combined,gunning_fog,-0.2949520235963671
-Pairwise,combined,pron_1st_ratio,-0.16723259228092874
-Pairwise,combined,pron_2nd_ratio,-0.06574951235974612
-Pairwise,combined,pron_3rd_ratio,0.026015803590559265
-Pairwise,combined,past_tense_ratio,-0.01503972429628433
-Pairwise,combined,present_tense_ratio,-0.1506666232717167
-Pairwise,combined,number_ratio,0.43094455671809423
-Pairwise,combined,discourse_causal_count,0.07794947092003232
-Pairwise,combined,discourse_contrast_count,0.1329368122071378
-Pairwise,combined,discourse_addition_count,0.4348419944032198
-Pairwise,combined,avg_dep_distance,0.003224692448542521
-Pairwise,combined,max_parse_depth,-0.3492297679205063
-Pairwise,combined,noun_ratio,-0.2934620475948474
-Pairwise,combined,verb_ratio,0.7731002231961239
-Pairwise,combined,adj_ratio,0.08173032238868454
-Pairwise,combined,adv_ratio,-0.43187604342557157
-Pairwise,combined,pron_ratio,-0.4035145158398833
-Pairwise,combined,prep_ratio,0.027225775355751245
-Pairwise,combined,conj_ratio,-0.23188834381587572
-Pairwise,combined,surp_mean,0.28914283560733933
-Pairwise,combined,surp_max,-0.5206910597150609
-Pairwise,combined,surp_min,0.3263957178048137
-Pairwise,combined,surp_sum,0.25870926278704603
-Pairwise,combined,surp_std,0.5026003671928023
-Pairwise,combined,psg_surp_mean,0.0
-Pairwise,combined,psg_surp_sum,0.0
-Pairwise,combined,psg_surp_max,0.0
-Pairwise,combined,psg_surp_min,0.0
-Pairwise,combined,psg_surp_std,0.0
-Pairwise,combined,rel_surp_diff,0.28914283560733933
-Pairwise,combined,rel_surp_ratio,-0.5595850390839527
-Pairwise,combined,rel_surp_sum_ratio,-0.25925824458360824
-Pairwise,combined,rst_edu_count,-0.01700126952076574
-Pairwise,combined,rst_n_count,-0.09848641208411116
-Pairwise,combined,rst_s_count,0.11535565679529683
-Pairwise,combined,rst_n_ratio,-0.8208415445203282
-Pairwise,combined,rst_mean_depth,0.05276054848685537
-Pairwise,combined,rst_is_root,-0.06272592334416845
-Pairwise,combined,psg_rst_max_depth,0.0
-Pairwise,combined,psg_rst_n_count,0.0
-Pairwise,combined,psg_rst_s_count,0.0
-Pairwise,combined,rel_rst_depth_ratio,0.11883237785989675
-Pairwise,combined,rel_rst_n_ratio,0.4275534923313569
-Pairwise,combined,rst_rel_elaboration_count,-0.45962980952198584
-Pairwise,combined,rst_rel_attribution_count,-0.14002284918401736
-Pairwise,combined,rst_rel_background_count,0.0
-Pairwise,combined,rst_rel_cause_count,0.0
-Pairwise,combined,rst_rel_result_count,0.0
-Pairwise,combined,rst_rel_contrast_count,0.0
-Pairwise,combined,rst_rel_joint_count,0.37990091775339235
-Pairwise,combined,align_jaccard,0.07733381243544517
-Pairwise,combined,align_match_count,0.8687647976458607
-Pairwise,combined,align_rouge_l_recall,0.8481629668355918
-Pairwise,combined,align_ne_match,0.7862905254783235
-Pairwise,combined,align_sem_sim,2.822106568519502
-Pairwise,combined,surp_deletion_drop,-0.10345191536094689
-Pairwise,combined_heuristic,intercept,-0.136542326707617
-Pairwise,combined_heuristic,word_count,0.9512245291417261
-Pairwise,combined_heuristic,char_count,-1.3529214111141057
-Pairwise,combined_heuristic,avg_word_length,0.18894744180262205
-Pairwise,combined_heuristic,ttr,-0.3450531277384786
-Pairwise,combined_heuristic,stopword_ratio,0.40371646022402163
-Pairwise,combined_heuristic,comma_count,0.6445904376275448
-Pairwise,combined_heuristic,period_count,0.13899226867481365
-Pairwise,combined_heuristic,exclamation_count,0.3200159419033626
-Pairwise,combined_heuristic,question_count,-0.19394307289870358
-Pairwise,combined_heuristic,semicolon_count,0.029528875888568798
-Pairwise,combined_heuristic,colon_count,-0.32017096422235236
-Pairwise,combined_heuristic,parenthesis_count,0.06242342495773847
-Pairwise,combined_heuristic,cap_ratio,-0.4893931310349437
-Pairwise,combined_heuristic,title_ratio,1.0423962912541338
-Pairwise,combined_heuristic,flesch_reading_ease,-0.2724727424144243
-Pairwise,combined_heuristic,flesch_kincaid_grade,-0.12136594391606251
-Pairwise,combined_heuristic,gunning_fog,-0.2952530198665833
-Pairwise,combined_heuristic,pron_1st_ratio,-0.16744346371770993
-Pairwise,combined_heuristic,pron_2nd_ratio,-0.06664440733373907
-Pairwise,combined_heuristic,pron_3rd_ratio,0.019960210329512396
-Pairwise,combined_heuristic,past_tense_ratio,-0.01046288245991047
-Pairwise,combined_heuristic,present_tense_ratio,-0.14521287084185872
-Pairwise,combined_heuristic,number_ratio,0.42578284433148567
-Pairwise,combined_heuristic,discourse_causal_count,0.07735419947779923
-Pairwise,combined_heuristic,discourse_contrast_count,0.1329617137896424
-Pairwise,combined_heuristic,discourse_addition_count,0.43720059991790144
-Pairwise,combined_heuristic,avg_dep_distance,0.011333063275809066
-Pairwise,combined_heuristic,max_parse_depth,-0.3456476860381375
-Pairwise,combined_heuristic,noun_ratio,-0.2960565922743986
-Pairwise,combined_heuristic,verb_ratio,0.7634421362316134
-Pairwise,combined_heuristic,adj_ratio,0.08051590777650411
-Pairwise,combined_heuristic,adv_ratio,-0.43472733085201826
-Pairwise,combined_heuristic,pron_ratio,-0.3981369477930583
-Pairwise,combined_heuristic,prep_ratio,0.030484083422976403
-Pairwise,combined_heuristic,conj_ratio,-0.23314917797151247
-Pairwise,combined_heuristic,surp_mean,0.28507363922611384
-Pairwise,combined_heuristic,surp_max,-0.5194285239460361
-Pairwise,combined_heuristic,surp_min,0.3263586659220639
-Pairwise,combined_heuristic,surp_sum,0.2618386481828014
-Pairwise,combined_heuristic,surp_std,0.5014468212390683
-Pairwise,combined_heuristic,psg_surp_mean,0.0
-Pairwise,combined_heuristic,psg_surp_sum,0.0
-Pairwise,combined_heuristic,psg_surp_max,0.0
-Pairwise,combined_heuristic,psg_surp_min,0.0
-Pairwise,combined_heuristic,psg_surp_std,0.0
-Pairwise,combined_heuristic,rel_surp_diff,0.28507363922611384
-Pairwise,combined_heuristic,rel_surp_ratio,-0.5505778691449665
-Pairwise,combined_heuristic,rel_surp_sum_ratio,-0.2633596101092502
-Pairwise,combined_heuristic,rst_edu_count,-0.013270435465450968
-Pairwise,combined_heuristic,rst_n_count,-0.08922713427263741
-Pairwise,combined_heuristic,rst_s_count,0.10886823908857042
-Pairwise,combined_heuristic,rst_n_ratio,-0.7734183792575517
-Pairwise,combined_heuristic,rst_mean_depth,0.05367243024395803
-Pairwise,combined_heuristic,rst_is_root,-0.022434765808825242
-Pairwise,combined_heuristic,psg_rst_max_depth,0.0
-Pairwise,combined_heuristic,psg_rst_n_count,0.0
-Pairwise,combined_heuristic,psg_rst_s_count,0.0
-Pairwise,combined_heuristic,rel_rst_depth_ratio,0.10103198688779498
-Pairwise,combined_heuristic,rel_rst_n_ratio,0.42540867969521534
-Pairwise,combined_heuristic,rst_rel_elaboration_count,-0.4632248040046982
-Pairwise,combined_heuristic,rst_rel_attribution_count,-0.140485527967944
-Pairwise,combined_heuristic,rst_rel_background_count,0.0
-Pairwise,combined_heuristic,rst_rel_cause_count,0.0
-Pairwise,combined_heuristic,rst_rel_result_count,0.0
-Pairwise,combined_heuristic,rst_rel_contrast_count,0.0
-Pairwise,combined_heuristic,rst_rel_joint_count,0.37943699160105376
-Pairwise,combined_heuristic,align_jaccard,0.06877389972363183
-Pairwise,combined_heuristic,align_match_count,0.8785891438803862
-Pairwise,combined_heuristic,align_rouge_l_recall,0.8503774860268206
-Pairwise,combined_heuristic,align_ne_match,0.7863073438801842
-Pairwise,combined_heuristic,align_sem_sim,2.8223603121279934
-Pairwise,combined_heuristic,surp_deletion_drop,-0.1045396210551366
-Pairwise,combined_heuristic,rst_rule_based_score,-0.07341486656839746
-Pairwise,combined_deletion,intercept,-0.13594261768849938
-Pairwise,combined_deletion,word_count,0.9711691313391261
-Pairwise,combined_deletion,char_count,-1.3631571109193392
-Pairwise,combined_deletion,avg_word_length,0.1857927145682539
-Pairwise,combined_deletion,ttr,-0.34636227680368414
-Pairwise,combined_deletion,stopword_ratio,0.4053496754593503
-Pairwise,combined_deletion,comma_count,0.6443147019109468
-Pairwise,combined_deletion,period_count,0.13816070341857675
-Pairwise,combined_deletion,exclamation_count,0.3204337781125754
-Pairwise,combined_deletion,question_count,-0.19412449615890165
-Pairwise,combined_deletion,semicolon_count,0.024152081692764893
-Pairwise,combined_deletion,colon_count,-0.3179162644824256
-Pairwise,combined_deletion,parenthesis_count,0.0661130998522517
-Pairwise,combined_deletion,cap_ratio,-0.4951676928028026
-Pairwise,combined_deletion,title_ratio,1.0489060188390922
-Pairwise,combined_deletion,flesch_reading_ease,-0.2722932055930613
-Pairwise,combined_deletion,flesch_kincaid_grade,-0.11679696415500988
-Pairwise,combined_deletion,gunning_fog,-0.2949520235963671
-Pairwise,combined_deletion,pron_1st_ratio,-0.16723259228092874
-Pairwise,combined_deletion,pron_2nd_ratio,-0.06574951235974612
-Pairwise,combined_deletion,pron_3rd_ratio,0.026015803590559265
-Pairwise,combined_deletion,past_tense_ratio,-0.01503972429628433
-Pairwise,combined_deletion,present_tense_ratio,-0.1506666232717167
-Pairwise,combined_deletion,number_ratio,0.43094455671809423
-Pairwise,combined_deletion,discourse_causal_count,0.07794947092003232
-Pairwise,combined_deletion,discourse_contrast_count,0.1329368122071378
-Pairwise,combined_deletion,discourse_addition_count,0.4348419944032198
-Pairwise,combined_deletion,avg_dep_distance,0.003224692448542521
-Pairwise,combined_deletion,max_parse_depth,-0.3492297679205063
-Pairwise,combined_deletion,noun_ratio,-0.2934620475948474
-Pairwise,combined_deletion,verb_ratio,0.7731002231961239
-Pairwise,combined_deletion,adj_ratio,0.08173032238868454
-Pairwise,combined_deletion,adv_ratio,-0.43187604342557157
-Pairwise,combined_deletion,pron_ratio,-0.4035145158398833
-Pairwise,combined_deletion,prep_ratio,0.027225775355751245
-Pairwise,combined_deletion,conj_ratio,-0.23188834381587572
-Pairwise,combined_deletion,surp_mean,0.28914283560733933
-Pairwise,combined_deletion,surp_max,-0.5206910597150609
-Pairwise,combined_deletion,surp_min,0.3263957178048137
-Pairwise,combined_deletion,surp_sum,0.25870926278704603
-Pairwise,combined_deletion,surp_std,0.5026003671928023
-Pairwise,combined_deletion,psg_surp_mean,0.0
-Pairwise,combined_deletion,psg_surp_sum,0.0
-Pairwise,combined_deletion,psg_surp_max,0.0
-Pairwise,combined_deletion,psg_surp_min,0.0
-Pairwise,combined_deletion,psg_surp_std,0.0
-Pairwise,combined_deletion,rel_surp_diff,0.28914283560733933
-Pairwise,combined_deletion,rel_surp_ratio,-0.5595850390839527
-Pairwise,combined_deletion,rel_surp_sum_ratio,-0.25925824458360824
-Pairwise,combined_deletion,rst_edu_count,-0.01700126952076574
-Pairwise,combined_deletion,rst_n_count,-0.09848641208411116
-Pairwise,combined_deletion,rst_s_count,0.11535565679529683
-Pairwise,combined_deletion,rst_n_ratio,-0.8208415445203282
-Pairwise,combined_deletion,rst_mean_depth,0.05276054848685537
-Pairwise,combined_deletion,rst_is_root,-0.06272592334416845
-Pairwise,combined_deletion,psg_rst_max_depth,0.0
-Pairwise,combined_deletion,psg_rst_n_count,0.0
-Pairwise,combined_deletion,psg_rst_s_count,0.0
-Pairwise,combined_deletion,rel_rst_depth_ratio,0.11883237785989675
-Pairwise,combined_deletion,rel_rst_n_ratio,0.4275534923313569
-Pairwise,combined_deletion,rst_rel_elaboration_count,-0.45962980952198584
-Pairwise,combined_deletion,rst_rel_attribution_count,-0.14002284918401736
-Pairwise,combined_deletion,rst_rel_background_count,0.0
-Pairwise,combined_deletion,rst_rel_cause_count,0.0
-Pairwise,combined_deletion,rst_rel_result_count,0.0
-Pairwise,combined_deletion,rst_rel_contrast_count,0.0
-Pairwise,combined_deletion,rst_rel_joint_count,0.37990091775339235
-Pairwise,combined_deletion,align_jaccard,0.07733381243544517
-Pairwise,combined_deletion,align_match_count,0.8687647976458607
-Pairwise,combined_deletion,align_rouge_l_recall,0.8481629668355918
-Pairwise,combined_deletion,align_ne_match,0.7862905254783235
-Pairwise,combined_deletion,align_sem_sim,2.822106568519502
-Pairwise,combined_deletion,surp_deletion_drop,-0.10345191536094689
-Cluster,rst,intercept,0.006166644216608223
-Cluster,rst,rst_edu_count,0.11702888186609521
-Cluster,rst,rst_n_count,0.1745203390851941
-Cluster,rst,rst_s_count,-0.015179605756515637
-Cluster,rst,rst_n_ratio,-0.079485500393453
-Cluster,rst,rst_mean_depth,-0.29162389017401097
-Cluster,rst,rst_is_root,0.1676761655068445
-Cluster,rst,psg_rst_max_depth,0.13365083374967196
-Cluster,rst,psg_rst_n_count,0.11349220867110965
-Cluster,rst,psg_rst_s_count,-0.06906864002995418
-Cluster,rst,rel_rst_depth_ratio,0.07957091606236022
-Cluster,rst,rel_rst_n_ratio,0.15898590795814413
-Cluster,rst,rst_rel_elaboration_count,-0.02732170330734066
-Cluster,rst,rst_rel_attribution_count,-0.07536846068074866
-Cluster,rst,rst_rel_background_count,0.0
-Cluster,rst,rst_rel_cause_count,0.0
-Cluster,rst,rst_rel_result_count,0.0
-Cluster,rst,rst_rel_contrast_count,0.0
-Cluster,rst,rst_rel_joint_count,-0.10124750152881157
-Cluster,linguistic,intercept,0.011098579219981655
-Cluster,linguistic,word_count,-0.23252222724269137
-Cluster,linguistic,char_count,0.610043504054501
-Cluster,linguistic,avg_word_length,-0.015949742608055005
-Cluster,linguistic,ttr,0.2546207482715566
-Cluster,linguistic,stopword_ratio,0.23384783796988753
-Cluster,linguistic,comma_count,-0.054407704296721864
-Cluster,linguistic,period_count,0.06374728467159867
-Cluster,linguistic,exclamation_count,0.3076315487587644
-Cluster,linguistic,question_count,0.0
-Cluster,linguistic,semicolon_count,0.06936096904467594
-Cluster,linguistic,colon_count,0.19373272256163682
-Cluster,linguistic,parenthesis_count,0.010951742838823612
-Cluster,linguistic,cap_ratio,0.22657677198891377
-Cluster,linguistic,title_ratio,0.09280078191449599
-Cluster,linguistic,flesch_reading_ease,-0.006269499621943967
-Cluster,linguistic,flesch_kincaid_grade,-0.02910485116456355
-Cluster,linguistic,gunning_fog,-0.23148707629014256
-Cluster,linguistic,pron_1st_ratio,0.05455232554425335
-Cluster,linguistic,pron_2nd_ratio,0.0
-Cluster,linguistic,pron_3rd_ratio,-0.0009610515539433388
-Cluster,linguistic,past_tense_ratio,0.17157439534472246
-Cluster,linguistic,present_tense_ratio,0.14230493331979835
-Cluster,linguistic,number_ratio,0.40672005570935604
-Cluster,linguistic,discourse_causal_count,-0.0845575697187631
-Cluster,linguistic,discourse_contrast_count,0.15783669453277877
-Cluster,linguistic,discourse_addition_count,0.36125623881691676
-Cluster,linguistic,avg_dep_distance,0.18790521136145844
-Cluster,linguistic,max_parse_depth,0.029863651123348076
-Cluster,linguistic,noun_ratio,0.2179848399144731
-Cluster,linguistic,verb_ratio,0.14226934684995798
-Cluster,linguistic,adj_ratio,0.0226568035679036
-Cluster,linguistic,adv_ratio,-0.06275626142127272
-Cluster,linguistic,pron_ratio,-0.07155363740060493
-Cluster,linguistic,prep_ratio,0.11903498955974838
-Cluster,linguistic,conj_ratio,-0.24466991687601652
-Cluster,surprisal,intercept,0.005848248237425553
-Cluster,surprisal,surp_mean,0.4048277114971653
-Cluster,surprisal,surp_max,-0.3100457499221132
-Cluster,surprisal,surp_min,0.21258689196045466
-Cluster,surprisal,surp_sum,0.4811988429072145
-Cluster,surprisal,surp_std,0.33101648469553696
-Cluster,surprisal,psg_surp_mean,-0.2409043491214687
-Cluster,surprisal,psg_surp_sum,0.01658512829648493
-Cluster,surprisal,psg_surp_max,0.03632831080484797
-Cluster,surprisal,psg_surp_min,0.0
-Cluster,surprisal,psg_surp_std,-0.1278469892179248
-Cluster,surprisal,rel_surp_diff,0.6589133646760464
-Cluster,surprisal,rel_surp_ratio,-1.1430233862972345
-Cluster,surprisal,rel_surp_sum_ratio,0.037349650924531914
-Cluster,surprisal,surp_deletion_drop,0.06596118265901023
-Cluster,combined,intercept,0.1683169061396226
-Cluster,combined,word_count,0.2952105653448063
-Cluster,combined,char_count,-0.07777107900806575
-Cluster,combined,avg_word_length,0.036493874951537796
-Cluster,combined,ttr,-0.3018785898045853
-Cluster,combined,stopword_ratio,0.2318976115482152
-Cluster,combined,comma_count,0.34672491298145586
-Cluster,combined,period_count,-0.20473433087925264
-Cluster,combined,exclamation_count,0.23234257898122065
-Cluster,combined,question_count,0.0
-Cluster,combined,semicolon_count,0.33806498096119136
-Cluster,combined,colon_count,0.009210353157893914
-Cluster,combined,parenthesis_count,0.29228859593667034
-Cluster,combined,cap_ratio,-0.20792136734963676
-Cluster,combined,title_ratio,0.5305127820341672
-Cluster,combined,flesch_reading_ease,-0.7023183123493407
-Cluster,combined,flesch_kincaid_grade,-0.818933967236948
-Cluster,combined,gunning_fog,-0.3106583039234575
-Cluster,combined,pron_1st_ratio,-0.17275110127349683
-Cluster,combined,pron_2nd_ratio,0.0
-Cluster,combined,pron_3rd_ratio,-0.08732841662611131
-Cluster,combined,past_tense_ratio,0.5291363246456373
-Cluster,combined,present_tense_ratio,0.20050168272618743
-Cluster,combined,number_ratio,0.2101530636467294
-Cluster,combined,discourse_causal_count,0.014758855729310006
-Cluster,combined,discourse_contrast_count,0.36297422866294415
-Cluster,combined,discourse_addition_count,0.7881151995858551
-Cluster,combined,avg_dep_distance,0.17608819052979874
-Cluster,combined,max_parse_depth,-0.1548978939376872
-Cluster,combined,noun_ratio,-0.38476445328099956
-Cluster,combined,verb_ratio,0.31145927335930007
-Cluster,combined,adj_ratio,-0.10026154022981837
-Cluster,combined,adv_ratio,-0.6394876998063856
-Cluster,combined,pron_ratio,-0.01999245725828027
-Cluster,combined,prep_ratio,0.06495372042697316
-Cluster,combined,conj_ratio,-0.5251253001053341
-Cluster,combined,surp_mean,0.3820308243834489
-Cluster,combined,surp_max,-0.7133850082110923
-Cluster,combined,surp_min,0.2864251294350921
-Cluster,combined,surp_sum,0.940507379735042
-Cluster,combined,surp_std,0.7010387548036713
-Cluster,combined,psg_surp_mean,0.07813386144379274
-Cluster,combined,psg_surp_sum,0.22422996934637338
-Cluster,combined,psg_surp_max,0.0187455411052913
-Cluster,combined,psg_surp_min,0.0
-Cluster,combined,psg_surp_std,-0.04597398913652151
-Cluster,combined,rel_surp_diff,0.4135272264051628
-Cluster,combined,rel_surp_ratio,-0.8534544364046659
-Cluster,combined,rel_surp_sum_ratio,-1.067212622176926
-Cluster,combined,rst_edu_count,0.07999877191124631
-Cluster,combined,rst_n_count,0.1338052126036625
-Cluster,combined,rst_s_count,-0.031446383745842875
-Cluster,combined,rst_n_ratio,-0.5060698504139035
-Cluster,combined,rst_mean_depth,0.04777049669581951
-Cluster,combined,rst_is_root,0.3503231439246467
-Cluster,combined,psg_rst_max_depth,-0.036763854658470756
-Cluster,combined,psg_rst_n_count,0.17000029739280384
-Cluster,combined,psg_rst_s_count,-1.0058849992218009
-Cluster,combined,rel_rst_depth_ratio,-0.07875802440638795
-Cluster,combined,rel_rst_n_ratio,0.20574314723937379
-Cluster,combined,rst_rel_elaboration_count,-0.22191420722239028
-Cluster,combined,rst_rel_attribution_count,-0.20419354895123198
-Cluster,combined,rst_rel_background_count,0.0
-Cluster,combined,rst_rel_cause_count,0.0
-Cluster,combined,rst_rel_result_count,0.0
-Cluster,combined,rst_rel_contrast_count,0.0
-Cluster,combined,rst_rel_joint_count,-0.09131555169295363
-Cluster,combined,align_jaccard,1.6873722618261402
-Cluster,combined,align_match_count,-0.6128672229505021
-Cluster,combined,align_rouge_l_recall,0.5490990245331002
-Cluster,combined,align_ne_match,0.03482630800866612
-Cluster,combined,align_sem_sim,1.6485281150546338
-Cluster,combined,surp_deletion_drop,-0.2965001692302042
-Cluster,combined_heuristic,intercept,0.16847706384495373
-Cluster,combined_heuristic,word_count,0.2818946881277674
-Cluster,combined_heuristic,char_count,-0.09953535739737576
-Cluster,combined_heuristic,avg_word_length,0.03507957250244746
-Cluster,combined_heuristic,ttr,-0.3152992647298133
-Cluster,combined_heuristic,stopword_ratio,0.21559384654451158
-Cluster,combined_heuristic,comma_count,0.33555225983663856
-Cluster,combined_heuristic,period_count,-0.18672923800707578
-Cluster,combined_heuristic,exclamation_count,0.2355948974341673
-Cluster,combined_heuristic,question_count,0.0
-Cluster,combined_heuristic,semicolon_count,0.3356390470340919
-Cluster,combined_heuristic,colon_count,0.00877528094215702
-Cluster,combined_heuristic,parenthesis_count,0.28147812837540687
-Cluster,combined_heuristic,cap_ratio,-0.20882002067242622
-Cluster,combined_heuristic,title_ratio,0.5449368671162026
-Cluster,combined_heuristic,flesch_reading_ease,-0.6933715659605505
-Cluster,combined_heuristic,flesch_kincaid_grade,-0.7916305411725768
-Cluster,combined_heuristic,gunning_fog,-0.3109244774899569
-Cluster,combined_heuristic,pron_1st_ratio,-0.1753550755594926
-Cluster,combined_heuristic,pron_2nd_ratio,0.0
-Cluster,combined_heuristic,pron_3rd_ratio,-0.08879727746133434
-Cluster,combined_heuristic,past_tense_ratio,0.5382979929602872
-Cluster,combined_heuristic,present_tense_ratio,0.21279166622054074
-Cluster,combined_heuristic,number_ratio,0.21083704520283764
-Cluster,combined_heuristic,discourse_causal_count,0.016894052635570544
-Cluster,combined_heuristic,discourse_contrast_count,0.3625821736997089
-Cluster,combined_heuristic,discourse_addition_count,0.8053612443919291
-Cluster,combined_heuristic,avg_dep_distance,0.173416417404697
-Cluster,combined_heuristic,max_parse_depth,-0.1482644409115619
-Cluster,combined_heuristic,noun_ratio,-0.394542569641191
-Cluster,combined_heuristic,verb_ratio,0.2980453368143683
-Cluster,combined_heuristic,adj_ratio,-0.11305580213946391
-Cluster,combined_heuristic,adv_ratio,-0.6331767328897533
-Cluster,combined_heuristic,pron_ratio,-0.005377865608635973
-Cluster,combined_heuristic,prep_ratio,0.06449044698175313
-Cluster,combined_heuristic,conj_ratio,-0.530934243116547
-Cluster,combined_heuristic,surp_mean,0.3862536487006416
-Cluster,combined_heuristic,surp_max,-0.7122081128807926
-Cluster,combined_heuristic,surp_min,0.28383133169585284
-Cluster,combined_heuristic,surp_sum,0.9643693697443967
-Cluster,combined_heuristic,surp_std,0.707730612802707
-Cluster,combined_heuristic,psg_surp_mean,0.07713423721213808
-Cluster,combined_heuristic,psg_surp_sum,0.2189995090855532
-Cluster,combined_heuristic,psg_surp_max,0.020804762845410066
-Cluster,combined_heuristic,psg_surp_min,0.0
-Cluster,combined_heuristic,psg_surp_std,-0.05592778523637912
-Cluster,combined_heuristic,rel_surp_diff,0.4193686499730606
-Cluster,combined_heuristic,rel_surp_ratio,-0.8724572004300645
-Cluster,combined_heuristic,rel_surp_sum_ratio,-1.091078623520531
-Cluster,combined_heuristic,rst_edu_count,0.08166441253017948
-Cluster,combined_heuristic,rst_n_count,0.1542662959765635
-Cluster,combined_heuristic,rst_s_count,-0.05777356618005682
-Cluster,combined_heuristic,rst_n_ratio,-0.24944567079333954
-Cluster,combined_heuristic,rst_mean_depth,0.019960498233929914
-Cluster,combined_heuristic,rst_is_root,0.5464373921161887
-Cluster,combined_heuristic,psg_rst_max_depth,-0.01088220154739707
-Cluster,combined_heuristic,psg_rst_n_count,0.1721658858997577
-Cluster,combined_heuristic,psg_rst_s_count,-1.0102794666827593
-Cluster,combined_heuristic,rel_rst_depth_ratio,-0.1385052795021138
-Cluster,combined_heuristic,rel_rst_n_ratio,0.22277801152615168
-Cluster,combined_heuristic,rst_rel_elaboration_count,-0.23379186598960378
-Cluster,combined_heuristic,rst_rel_attribution_count,-0.21272046497776304
-Cluster,combined_heuristic,rst_rel_background_count,0.0
-Cluster,combined_heuristic,rst_rel_cause_count,0.0
-Cluster,combined_heuristic,rst_rel_result_count,0.0
-Cluster,combined_heuristic,rst_rel_contrast_count,0.0
-Cluster,combined_heuristic,rst_rel_joint_count,-0.09611553380422504
-Cluster,combined_heuristic,align_jaccard,1.6845945219689162
-Cluster,combined_heuristic,align_match_count,-0.614191205031924
-Cluster,combined_heuristic,align_rouge_l_recall,0.5520751999493374
-Cluster,combined_heuristic,align_ne_match,0.032087410446452726
-Cluster,combined_heuristic,align_sem_sim,1.6588071286866417
-Cluster,combined_heuristic,surp_deletion_drop,-0.28964383859337506
-Cluster,combined_heuristic,rst_rule_based_score,-0.3830020823940131
-Cluster,combined_deletion,intercept,0.1683169061396226
-Cluster,combined_deletion,word_count,0.2952105653448063
-Cluster,combined_deletion,char_count,-0.07777107900806575
-Cluster,combined_deletion,avg_word_length,0.036493874951537796
-Cluster,combined_deletion,ttr,-0.3018785898045853
-Cluster,combined_deletion,stopword_ratio,0.2318976115482152
-Cluster,combined_deletion,comma_count,0.34672491298145586
-Cluster,combined_deletion,period_count,-0.20473433087925264
-Cluster,combined_deletion,exclamation_count,0.23234257898122065
-Cluster,combined_deletion,question_count,0.0
-Cluster,combined_deletion,semicolon_count,0.33806498096119136
-Cluster,combined_deletion,colon_count,0.009210353157893914
-Cluster,combined_deletion,parenthesis_count,0.29228859593667034
-Cluster,combined_deletion,cap_ratio,-0.20792136734963676
-Cluster,combined_deletion,title_ratio,0.5305127820341672
-Cluster,combined_deletion,flesch_reading_ease,-0.7023183123493407
-Cluster,combined_deletion,flesch_kincaid_grade,-0.818933967236948
-Cluster,combined_deletion,gunning_fog,-0.3106583039234575
-Cluster,combined_deletion,pron_1st_ratio,-0.17275110127349683
-Cluster,combined_deletion,pron_2nd_ratio,0.0
-Cluster,combined_deletion,pron_3rd_ratio,-0.08732841662611131
-Cluster,combined_deletion,past_tense_ratio,0.5291363246456373
-Cluster,combined_deletion,present_tense_ratio,0.20050168272618743
-Cluster,combined_deletion,number_ratio,0.2101530636467294
-Cluster,combined_deletion,discourse_causal_count,0.014758855729310006
-Cluster,combined_deletion,discourse_contrast_count,0.36297422866294415
-Cluster,combined_deletion,discourse_addition_count,0.7881151995858551
-Cluster,combined_deletion,avg_dep_distance,0.17608819052979874
-Cluster,combined_deletion,max_parse_depth,-0.1548978939376872
-Cluster,combined_deletion,noun_ratio,-0.38476445328099956
-Cluster,combined_deletion,verb_ratio,0.31145927335930007
-Cluster,combined_deletion,adj_ratio,-0.10026154022981837
-Cluster,combined_deletion,adv_ratio,-0.6394876998063856
-Cluster,combined_deletion,pron_ratio,-0.01999245725828027
-Cluster,combined_deletion,prep_ratio,0.06495372042697316
-Cluster,combined_deletion,conj_ratio,-0.5251253001053341
-Cluster,combined_deletion,surp_mean,0.3820308243834489
-Cluster,combined_deletion,surp_max,-0.7133850082110923
-Cluster,combined_deletion,surp_min,0.2864251294350921
-Cluster,combined_deletion,surp_sum,0.940507379735042
-Cluster,combined_deletion,surp_std,0.7010387548036713
-Cluster,combined_deletion,psg_surp_mean,0.07813386144379274
-Cluster,combined_deletion,psg_surp_sum,0.22422996934637338
-Cluster,combined_deletion,psg_surp_max,0.0187455411052913
-Cluster,combined_deletion,psg_surp_min,0.0
-Cluster,combined_deletion,psg_surp_std,-0.04597398913652151
-Cluster,combined_deletion,rel_surp_diff,0.4135272264051628
-Cluster,combined_deletion,rel_surp_ratio,-0.8534544364046659
-Cluster,combined_deletion,rel_surp_sum_ratio,-1.067212622176926
-Cluster,combined_deletion,rst_edu_count,0.07999877191124631
-Cluster,combined_deletion,rst_n_count,0.1338052126036625
-Cluster,combined_deletion,rst_s_count,-0.031446383745842875
-Cluster,combined_deletion,rst_n_ratio,-0.5060698504139035
-Cluster,combined_deletion,rst_mean_depth,0.04777049669581951
-Cluster,combined_deletion,rst_is_root,0.3503231439246467
-Cluster,combined_deletion,psg_rst_max_depth,-0.036763854658470756
-Cluster,combined_deletion,psg_rst_n_count,0.17000029739280384
-Cluster,combined_deletion,psg_rst_s_count,-1.0058849992218009
-Cluster,combined_deletion,rel_rst_depth_ratio,-0.07875802440638795
-Cluster,combined_deletion,rel_rst_n_ratio,0.20574314723937379
-Cluster,combined_deletion,rst_rel_elaboration_count,-0.22191420722239028
-Cluster,combined_deletion,rst_rel_attribution_count,-0.20419354895123198
-Cluster,combined_deletion,rst_rel_background_count,0.0
-Cluster,combined_deletion,rst_rel_cause_count,0.0
-Cluster,combined_deletion,rst_rel_result_count,0.0
-Cluster,combined_deletion,rst_rel_contrast_count,0.0
-Cluster,combined_deletion,rst_rel_joint_count,-0.09131555169295363
-Cluster,combined_deletion,align_jaccard,1.6873722618261402
-Cluster,combined_deletion,align_match_count,-0.6128672229505021
-Cluster,combined_deletion,align_rouge_l_recall,0.5490990245331002
-Cluster,combined_deletion,align_ne_match,0.03482630800866612
-Cluster,combined_deletion,align_sem_sim,1.6485281150546338
-Cluster,combined_deletion,surp_deletion_drop,-0.2965001692302042
-RST-Neighborhood,rst,intercept,0.0034982199475798144
-RST-Neighborhood,rst,rst_edu_count,-0.06828195446407946
-RST-Neighborhood,rst,rst_n_count,-0.42555582943632375
-RST-Neighborhood,rst,rst_s_count,0.4796084880463131
-RST-Neighborhood,rst,rst_n_ratio,0.05524056461890857
-RST-Neighborhood,rst,rst_mean_depth,0.05855222302222537
-RST-Neighborhood,rst,rst_is_root,-0.06610037564691558
-RST-Neighborhood,rst,psg_rst_max_depth,-0.05922765572895703
-RST-Neighborhood,rst,psg_rst_n_count,0.2242846652718792
-RST-Neighborhood,rst,psg_rst_s_count,-0.08797222194072506
-RST-Neighborhood,rst,rel_rst_depth_ratio,-0.32034020391774004
-RST-Neighborhood,rst,rel_rst_n_ratio,0.5351259097721729
-RST-Neighborhood,rst,rst_rel_elaboration_count,0.00383330076080496
-RST-Neighborhood,rst,rst_rel_attribution_count,-0.12395075937667759
-RST-Neighborhood,rst,rst_rel_background_count,0.0
-RST-Neighborhood,rst,rst_rel_cause_count,0.0
-RST-Neighborhood,rst,rst_rel_result_count,0.0
-RST-Neighborhood,rst,rst_rel_contrast_count,0.0
-RST-Neighborhood,rst,rst_rel_joint_count,0.3103896601566824
-RST-Neighborhood,linguistic,intercept,-0.0018591909638240823
-RST-Neighborhood,linguistic,word_count,0.6382706671726412
-RST-Neighborhood,linguistic,char_count,-0.8353390815139826
-RST-Neighborhood,linguistic,avg_word_length,0.030865925499544176
-RST-Neighborhood,linguistic,ttr,0.22706012130649758
-RST-Neighborhood,linguistic,stopword_ratio,0.05830667556761166
-RST-Neighborhood,linguistic,comma_count,0.072708183652645
-RST-Neighborhood,linguistic,period_count,0.3194464449937249
-RST-Neighborhood,linguistic,exclamation_count,0.07205300622070103
-RST-Neighborhood,linguistic,question_count,0.0
-RST-Neighborhood,linguistic,semicolon_count,-0.05242983237150702
-RST-Neighborhood,linguistic,colon_count,0.21148599601667872
-RST-Neighborhood,linguistic,parenthesis_count,-0.11642117992411921
-RST-Neighborhood,linguistic,cap_ratio,-0.30174076369295333
-RST-Neighborhood,linguistic,title_ratio,0.4995507744916236
-RST-Neighborhood,linguistic,flesch_reading_ease,1.0912114258716548
-RST-Neighborhood,linguistic,flesch_kincaid_grade,1.1204447423206954
-RST-Neighborhood,linguistic,gunning_fog,0.36982942573277083
-RST-Neighborhood,linguistic,pron_1st_ratio,-0.1259415330175045
-RST-Neighborhood,linguistic,pron_2nd_ratio,0.0
-RST-Neighborhood,linguistic,pron_3rd_ratio,-0.02384492925084997
-RST-Neighborhood,linguistic,past_tense_ratio,0.12681744469900524
-RST-Neighborhood,linguistic,present_tense_ratio,0.11038087225209932
-RST-Neighborhood,linguistic,number_ratio,0.19311236788816824
-RST-Neighborhood,linguistic,discourse_causal_count,0.0929386325975049
-RST-Neighborhood,linguistic,discourse_contrast_count,-0.04177360030393026
-RST-Neighborhood,linguistic,discourse_addition_count,-0.031135375017043325
-RST-Neighborhood,linguistic,avg_dep_distance,0.131654262947427
-RST-Neighborhood,linguistic,max_parse_depth,-0.02435498149678571
-RST-Neighborhood,linguistic,noun_ratio,0.1324108375891017
-RST-Neighborhood,linguistic,verb_ratio,-0.021388398823137405
-RST-Neighborhood,linguistic,adj_ratio,-0.025012269584994334
-RST-Neighborhood,linguistic,adv_ratio,-0.0017099960186715449
-RST-Neighborhood,linguistic,pron_ratio,-0.06554622181667244
-RST-Neighborhood,linguistic,prep_ratio,0.11980200786152499
-RST-Neighborhood,linguistic,conj_ratio,0.057151135186133135
-RST-Neighborhood,surprisal,intercept,0.005132713994760711
-RST-Neighborhood,surprisal,surp_mean,0.19317062081562175
-RST-Neighborhood,surprisal,surp_max,-0.18919768215984697
-RST-Neighborhood,surprisal,surp_min,-0.020817622511607008
-RST-Neighborhood,surprisal,surp_sum,0.30202905948029896
-RST-Neighborhood,surprisal,surp_std,0.47524309608846194
-RST-Neighborhood,surprisal,psg_surp_mean,-0.017460473505720754
-RST-Neighborhood,surprisal,psg_surp_sum,0.041903705609797455
-RST-Neighborhood,surprisal,psg_surp_max,0.04053278960610559
-RST-Neighborhood,surprisal,psg_surp_min,0.0
-RST-Neighborhood,surprisal,psg_surp_std,-0.23896623942635287
-RST-Neighborhood,surprisal,rel_surp_diff,0.23058209645645744
-RST-Neighborhood,surprisal,rel_surp_ratio,-0.7124697033538321
-RST-Neighborhood,surprisal,rel_surp_sum_ratio,0.10846537159463648
-RST-Neighborhood,surprisal,surp_deletion_drop,-0.24880682583096592
-RST-Neighborhood,combined,intercept,-0.018838948282437283
-RST-Neighborhood,combined,word_count,1.2752123757777356
-RST-Neighborhood,combined,char_count,-1.0715536263532655
-RST-Neighborhood,combined,avg_word_length,0.2783490081927461
-RST-Neighborhood,combined,ttr,-0.04049444109489731
-RST-Neighborhood,combined,stopword_ratio,0.23545407919950898
-RST-Neighborhood,combined,comma_count,0.6077789244231931
-RST-Neighborhood,combined,period_count,0.01759484823572292
-RST-Neighborhood,combined,exclamation_count,0.011577095224336541
-RST-Neighborhood,combined,question_count,0.0
-RST-Neighborhood,combined,semicolon_count,0.09226958421135457
-RST-Neighborhood,combined,colon_count,0.09942747950392387
-RST-Neighborhood,combined,parenthesis_count,-0.02787491747395979
-RST-Neighborhood,combined,cap_ratio,-0.09750825738249795
-RST-Neighborhood,combined,title_ratio,0.5958101214633649
-RST-Neighborhood,combined,flesch_reading_ease,0.3707492876159502
-RST-Neighborhood,combined,flesch_kincaid_grade,-0.1474438094301029
-RST-Neighborhood,combined,gunning_fog,0.01075575567157913
-RST-Neighborhood,combined,pron_1st_ratio,-0.2289873434307376
-RST-Neighborhood,combined,pron_2nd_ratio,0.0
-RST-Neighborhood,combined,pron_3rd_ratio,0.05637870006239388
-RST-Neighborhood,combined,past_tense_ratio,0.07559752193485549
-RST-Neighborhood,combined,present_tense_ratio,-0.04738311318804438
-RST-Neighborhood,combined,number_ratio,-0.05708168899738878
-RST-Neighborhood,combined,discourse_causal_count,0.20400764194716417
-RST-Neighborhood,combined,discourse_contrast_count,0.20416956221956276
-RST-Neighborhood,combined,discourse_addition_count,0.15317626013909197
-RST-Neighborhood,combined,avg_dep_distance,0.0041547663674466615
-RST-Neighborhood,combined,max_parse_depth,-0.19981066565308864
-RST-Neighborhood,combined,noun_ratio,-0.4317278018973277
-RST-Neighborhood,combined,verb_ratio,0.13108938408588672
-RST-Neighborhood,combined,adj_ratio,-0.018812712643912637
-RST-Neighborhood,combined,adv_ratio,-0.33722977514496266
-RST-Neighborhood,combined,pron_ratio,-0.275724752274855
-RST-Neighborhood,combined,prep_ratio,0.026340364897568753
-RST-Neighborhood,combined,conj_ratio,0.04856401724624432
-RST-Neighborhood,combined,surp_mean,0.26119064926844704
-RST-Neighborhood,combined,surp_max,-0.48491589315306327
-RST-Neighborhood,combined,surp_min,0.20115345368454998
-RST-Neighborhood,combined,surp_sum,0.06695903120132422
-RST-Neighborhood,combined,surp_std,0.8346851273649645
-RST-Neighborhood,combined,psg_surp_mean,-0.03603530225357914
-RST-Neighborhood,combined,psg_surp_sum,0.18994274775784206
-RST-Neighborhood,combined,psg_surp_max,-0.050625888793742684
-RST-Neighborhood,combined,psg_surp_min,0.0
-RST-Neighborhood,combined,psg_surp_std,-0.2075103406283799
-RST-Neighborhood,combined,rel_surp_diff,0.31840131505179625
-RST-Neighborhood,combined,rel_surp_ratio,-0.6103983859389921
-RST-Neighborhood,combined,rel_surp_sum_ratio,-0.5111051110403854
-RST-Neighborhood,combined,rst_edu_count,0.047786767725890085
-RST-Neighborhood,combined,rst_n_count,-0.19810569717647675
-RST-Neighborhood,combined,rst_s_count,0.38672833245909216
-RST-Neighborhood,combined,rst_n_ratio,-0.3301027050973235
-RST-Neighborhood,combined,rst_mean_depth,0.42027030323721726
-RST-Neighborhood,combined,rst_is_root,0.04996696760868311
-RST-Neighborhood,combined,psg_rst_max_depth,-0.34007738564424717
-RST-Neighborhood,combined,psg_rst_n_count,0.04039541220765139
-RST-Neighborhood,combined,psg_rst_s_count,-0.42930682443661755
-RST-Neighborhood,combined,rel_rst_depth_ratio,-0.4901844993708565
-RST-Neighborhood,combined,rel_rst_n_ratio,0.504337350690794
-RST-Neighborhood,combined,rst_rel_elaboration_count,-0.18054182009328992
-RST-Neighborhood,combined,rst_rel_attribution_count,-0.24670890048574345
-RST-Neighborhood,combined,rst_rel_background_count,0.0
-RST-Neighborhood,combined,rst_rel_cause_count,0.0
-RST-Neighborhood,combined,rst_rel_result_count,0.0
-RST-Neighborhood,combined,rst_rel_contrast_count,0.0
-RST-Neighborhood,combined,rst_rel_joint_count,0.33186312297296194
-RST-Neighborhood,combined,align_jaccard,0.01360490406982026
-RST-Neighborhood,combined,align_match_count,0.506205419029716
-RST-Neighborhood,combined,align_rouge_l_recall,0.6018087568690389
-RST-Neighborhood,combined,align_ne_match,0.08293396749204371
-RST-Neighborhood,combined,align_sem_sim,1.3099113449755253
-RST-Neighborhood,combined,surp_deletion_drop,-0.35720179234854305
-RST-Neighborhood,combined_heuristic,intercept,-0.01861352747837233
-RST-Neighborhood,combined_heuristic,word_count,1.26136219906811
-RST-Neighborhood,combined_heuristic,char_count,-1.068048245466478
-RST-Neighborhood,combined_heuristic,avg_word_length,0.27889397097175006
-RST-Neighborhood,combined_heuristic,ttr,-0.04096424733303648
-RST-Neighborhood,combined_heuristic,stopword_ratio,0.23375179018239578
-RST-Neighborhood,combined_heuristic,comma_count,0.6023770219591935
-RST-Neighborhood,combined_heuristic,period_count,0.02176727367188201
-RST-Neighborhood,combined_heuristic,exclamation_count,0.012317222582078752
-RST-Neighborhood,combined_heuristic,question_count,0.0
-RST-Neighborhood,combined_heuristic,semicolon_count,0.09389852771581383
-RST-Neighborhood,combined_heuristic,colon_count,0.09918378252940778
-RST-Neighborhood,combined_heuristic,parenthesis_count,-0.029598791419463543
-RST-Neighborhood,combined_heuristic,cap_ratio,-0.09620703724710886
-RST-Neighborhood,combined_heuristic,title_ratio,0.5921548909536204
-RST-Neighborhood,combined_heuristic,flesch_reading_ease,0.3688932700313656
-RST-Neighborhood,combined_heuristic,flesch_kincaid_grade,-0.14568202528401708
-RST-Neighborhood,combined_heuristic,gunning_fog,0.009374910508283717
-RST-Neighborhood,combined_heuristic,pron_1st_ratio,-0.22847145744522035
-RST-Neighborhood,combined_heuristic,pron_2nd_ratio,0.0
-RST-Neighborhood,combined_heuristic,pron_3rd_ratio,0.05491593900489827
-RST-Neighborhood,combined_heuristic,past_tense_ratio,0.08044908403986105
-RST-Neighborhood,combined_heuristic,present_tense_ratio,-0.04371410786957473
-RST-Neighborhood,combined_heuristic,number_ratio,-0.05665476394187914
-RST-Neighborhood,combined_heuristic,discourse_causal_count,0.20582211139606982
-RST-Neighborhood,combined_heuristic,discourse_contrast_count,0.2030802308769017
-RST-Neighborhood,combined_heuristic,discourse_addition_count,0.15304364637132484
-RST-Neighborhood,combined_heuristic,avg_dep_distance,0.006369949490574208
-RST-Neighborhood,combined_heuristic,max_parse_depth,-0.19621401531167731
-RST-Neighborhood,combined_heuristic,noun_ratio,-0.4316037333136264
-RST-Neighborhood,combined_heuristic,verb_ratio,0.12534295503423126
-RST-Neighborhood,combined_heuristic,adj_ratio,-0.021895385361942375
-RST-Neighborhood,combined_heuristic,adv_ratio,-0.336771283166094
-RST-Neighborhood,combined_heuristic,pron_ratio,-0.2730469723699992
-RST-Neighborhood,combined_heuristic,prep_ratio,0.024889801534372407
-RST-Neighborhood,combined_heuristic,conj_ratio,0.051103018006509744
-RST-Neighborhood,combined_heuristic,surp_mean,0.2588095072148536
-RST-Neighborhood,combined_heuristic,surp_max,-0.482281959297742
-RST-Neighborhood,combined_heuristic,surp_min,0.2021914873562103
-RST-Neighborhood,combined_heuristic,surp_sum,0.07625375058282573
-RST-Neighborhood,combined_heuristic,surp_std,0.8320357732915656
-RST-Neighborhood,combined_heuristic,psg_surp_mean,-0.03609386482707701
-RST-Neighborhood,combined_heuristic,psg_surp_sum,0.18692852801398877
-RST-Neighborhood,combined_heuristic,psg_surp_max,-0.050469817536979766
-RST-Neighborhood,combined_heuristic,psg_surp_min,0.0
-RST-Neighborhood,combined_heuristic,psg_surp_std,-0.2052231224313909
-RST-Neighborhood,combined_heuristic,rel_surp_diff,0.31570499812330927
-RST-Neighborhood,combined_heuristic,rel_surp_ratio,-0.6074911764594382
-RST-Neighborhood,combined_heuristic,rel_surp_sum_ratio,-0.5105409382010336
-RST-Neighborhood,combined_heuristic,rst_edu_count,0.04668717224670089
-RST-Neighborhood,combined_heuristic,rst_n_count,-0.19701470706077343
-RST-Neighborhood,combined_heuristic,rst_s_count,0.38288038558309484
-RST-Neighborhood,combined_heuristic,rst_n_ratio,-0.2631388266010408
-RST-Neighborhood,combined_heuristic,rst_mean_depth,0.4217628534189972
-RST-Neighborhood,combined_heuristic,rst_is_root,0.10092265499822976
-RST-Neighborhood,combined_heuristic,psg_rst_max_depth,-0.33716029170778805
-RST-Neighborhood,combined_heuristic,psg_rst_n_count,0.04171828732428778
-RST-Neighborhood,combined_heuristic,psg_rst_s_count,-0.4280237480071217
-RST-Neighborhood,combined_heuristic,rel_rst_depth_ratio,-0.5072133293522741
-RST-Neighborhood,combined_heuristic,rel_rst_n_ratio,0.5064798608237643
-RST-Neighborhood,combined_heuristic,rst_rel_elaboration_count,-0.18284411417038052
-RST-Neighborhood,combined_heuristic,rst_rel_attribution_count,-0.24811943518572713
-RST-Neighborhood,combined_heuristic,rst_rel_background_count,0.0
-RST-Neighborhood,combined_heuristic,rst_rel_cause_count,0.0
-RST-Neighborhood,combined_heuristic,rst_rel_result_count,0.0
-RST-Neighborhood,combined_heuristic,rst_rel_contrast_count,0.0
-RST-Neighborhood,combined_heuristic,rst_rel_joint_count,0.3327731779770973
-RST-Neighborhood,combined_heuristic,align_jaccard,0.01659236010223296
-RST-Neighborhood,combined_heuristic,align_match_count,0.5059447948437537
-RST-Neighborhood,combined_heuristic,align_rouge_l_recall,0.6002930398299258
-RST-Neighborhood,combined_heuristic,align_ne_match,0.08271428676509815
-RST-Neighborhood,combined_heuristic,align_sem_sim,1.3092525348289812
-RST-Neighborhood,combined_heuristic,surp_deletion_drop,-0.35713251663923345
-RST-Neighborhood,combined_heuristic,rst_rule_based_score,-0.0966046799227728
-RST-Neighborhood,combined_deletion,intercept,-0.018838948282437283
-RST-Neighborhood,combined_deletion,word_count,1.2752123757777356
-RST-Neighborhood,combined_deletion,char_count,-1.0715536263532655
-RST-Neighborhood,combined_deletion,avg_word_length,0.2783490081927461
-RST-Neighborhood,combined_deletion,ttr,-0.04049444109489731
-RST-Neighborhood,combined_deletion,stopword_ratio,0.23545407919950898
-RST-Neighborhood,combined_deletion,comma_count,0.6077789244231931
-RST-Neighborhood,combined_deletion,period_count,0.01759484823572292
-RST-Neighborhood,combined_deletion,exclamation_count,0.011577095224336541
-RST-Neighborhood,combined_deletion,question_count,0.0
-RST-Neighborhood,combined_deletion,semicolon_count,0.09226958421135457
-RST-Neighborhood,combined_deletion,colon_count,0.09942747950392387
-RST-Neighborhood,combined_deletion,parenthesis_count,-0.02787491747395979
-RST-Neighborhood,combined_deletion,cap_ratio,-0.09750825738249795
-RST-Neighborhood,combined_deletion,title_ratio,0.5958101214633649
-RST-Neighborhood,combined_deletion,flesch_reading_ease,0.3707492876159502
-RST-Neighborhood,combined_deletion,flesch_kincaid_grade,-0.1474438094301029
-RST-Neighborhood,combined_deletion,gunning_fog,0.01075575567157913
-RST-Neighborhood,combined_deletion,pron_1st_ratio,-0.2289873434307376
-RST-Neighborhood,combined_deletion,pron_2nd_ratio,0.0
-RST-Neighborhood,combined_deletion,pron_3rd_ratio,0.05637870006239388
-RST-Neighborhood,combined_deletion,past_tense_ratio,0.07559752193485549
-RST-Neighborhood,combined_deletion,present_tense_ratio,-0.04738311318804438
-RST-Neighborhood,combined_deletion,number_ratio,-0.05708168899738878
-RST-Neighborhood,combined_deletion,discourse_causal_count,0.20400764194716417
-RST-Neighborhood,combined_deletion,discourse_contrast_count,0.20416956221956276
-RST-Neighborhood,combined_deletion,discourse_addition_count,0.15317626013909197
-RST-Neighborhood,combined_deletion,avg_dep_distance,0.0041547663674466615
-RST-Neighborhood,combined_deletion,max_parse_depth,-0.19981066565308864
-RST-Neighborhood,combined_deletion,noun_ratio,-0.4317278018973277
-RST-Neighborhood,combined_deletion,verb_ratio,0.13108938408588672
-RST-Neighborhood,combined_deletion,adj_ratio,-0.018812712643912637
-RST-Neighborhood,combined_deletion,adv_ratio,-0.33722977514496266
-RST-Neighborhood,combined_deletion,pron_ratio,-0.275724752274855
-RST-Neighborhood,combined_deletion,prep_ratio,0.026340364897568753
-RST-Neighborhood,combined_deletion,conj_ratio,0.04856401724624432
-RST-Neighborhood,combined_deletion,surp_mean,0.26119064926844704
-RST-Neighborhood,combined_deletion,surp_max,-0.48491589315306327
-RST-Neighborhood,combined_deletion,surp_min,0.20115345368454998
-RST-Neighborhood,combined_deletion,surp_sum,0.06695903120132422
-RST-Neighborhood,combined_deletion,surp_std,0.8346851273649645
-RST-Neighborhood,combined_deletion,psg_surp_mean,-0.03603530225357914
-RST-Neighborhood,combined_deletion,psg_surp_sum,0.18994274775784206
-RST-Neighborhood,combined_deletion,psg_surp_max,-0.050625888793742684
-RST-Neighborhood,combined_deletion,psg_surp_min,0.0
-RST-Neighborhood,combined_deletion,psg_surp_std,-0.2075103406283799
-RST-Neighborhood,combined_deletion,rel_surp_diff,0.31840131505179625
-RST-Neighborhood,combined_deletion,rel_surp_ratio,-0.6103983859389921
-RST-Neighborhood,combined_deletion,rel_surp_sum_ratio,-0.5111051110403854
-RST-Neighborhood,combined_deletion,rst_edu_count,0.047786767725890085
-RST-Neighborhood,combined_deletion,rst_n_count,-0.19810569717647675
-RST-Neighborhood,combined_deletion,rst_s_count,0.38672833245909216
-RST-Neighborhood,combined_deletion,rst_n_ratio,-0.3301027050973235
-RST-Neighborhood,combined_deletion,rst_mean_depth,0.42027030323721726
-RST-Neighborhood,combined_deletion,rst_is_root,0.04996696760868311
-RST-Neighborhood,combined_deletion,psg_rst_max_depth,-0.34007738564424717
-RST-Neighborhood,combined_deletion,psg_rst_n_count,0.04039541220765139
-RST-Neighborhood,combined_deletion,psg_rst_s_count,-0.42930682443661755
-RST-Neighborhood,combined_deletion,rel_rst_depth_ratio,-0.4901844993708565
-RST-Neighborhood,combined_deletion,rel_rst_n_ratio,0.504337350690794
-RST-Neighborhood,combined_deletion,rst_rel_elaboration_count,-0.18054182009328992
-RST-Neighborhood,combined_deletion,rst_rel_attribution_count,-0.24670890048574345
-RST-Neighborhood,combined_deletion,rst_rel_background_count,0.0
-RST-Neighborhood,combined_deletion,rst_rel_cause_count,0.0
-RST-Neighborhood,combined_deletion,rst_rel_result_count,0.0
-RST-Neighborhood,combined_deletion,rst_rel_contrast_count,0.0
-RST-Neighborhood,combined_deletion,rst_rel_joint_count,0.33186312297296194
-RST-Neighborhood,combined_deletion,align_jaccard,0.01360490406982026
-RST-Neighborhood,combined_deletion,align_match_count,0.506205419029716
-RST-Neighborhood,combined_deletion,align_rouge_l_recall,0.6018087568690389
-RST-Neighborhood,combined_deletion,align_ne_match,0.08293396749204371
-RST-Neighborhood,combined_deletion,align_sem_sim,1.3099113449755253
-RST-Neighborhood,combined_deletion,surp_deletion_drop,-0.35720179234854305
-DSNB,rst,intercept,0.001543106730537446
-DSNB,rst,rst_edu_count,-0.1773196020127643
-DSNB,rst,rst_n_count,-0.4676491214903057
-DSNB,rst,rst_s_count,0.307902601154737
-DSNB,rst,rst_n_ratio,-0.028346167061709934
-DSNB,rst,rst_mean_depth,0.21910651174194148
-DSNB,rst,rst_is_root,-0.006534273129176474
-DSNB,rst,psg_rst_max_depth,-0.17391510850054043
-DSNB,rst,psg_rst_n_count,0.23727457892635123
-DSNB,rst,psg_rst_s_count,0.058646777701774074
-DSNB,rst,rel_rst_depth_ratio,-0.4520841735242885
-DSNB,rst,rel_rst_n_ratio,0.6401922185743247
-DSNB,rst,rst_rel_elaboration_count,-0.0676005379548334
-DSNB,rst,rst_rel_attribution_count,-0.13152805654581126
-DSNB,rst,rst_rel_background_count,0.0
-DSNB,rst,rst_rel_cause_count,0.0
-DSNB,rst,rst_rel_result_count,0.0
-DSNB,rst,rst_rel_contrast_count,0.0
-DSNB,rst,rst_rel_joint_count,0.3247196444791237
-DSNB,linguistic,intercept,-0.016436908422686535
-DSNB,linguistic,word_count,0.5460835274668221
-DSNB,linguistic,char_count,-0.5245727911795509
-DSNB,linguistic,avg_word_length,-0.09823855505271395
-DSNB,linguistic,ttr,0.18020249514630654
-DSNB,linguistic,stopword_ratio,-0.0019189597342191287
-DSNB,linguistic,comma_count,0.2127036547155
-DSNB,linguistic,period_count,0.07072478512033349
-DSNB,linguistic,exclamation_count,0.02068283593714358
-DSNB,linguistic,question_count,-0.269629832750392
-DSNB,linguistic,semicolon_count,0.008742688540519574
-DSNB,linguistic,colon_count,0.06162094325360498
-DSNB,linguistic,parenthesis_count,-0.1265041159478981
-DSNB,linguistic,cap_ratio,-0.23859463424069707
-DSNB,linguistic,title_ratio,0.530239752037508
-DSNB,linguistic,flesch_reading_ease,0.44486862689766504
-DSNB,linguistic,flesch_kincaid_grade,0.32824135495304896
-DSNB,linguistic,gunning_fog,0.24373766344268138
-DSNB,linguistic,pron_1st_ratio,-0.012140582177630789
-DSNB,linguistic,pron_2nd_ratio,0.0
-DSNB,linguistic,pron_3rd_ratio,-0.024804293840419846
-DSNB,linguistic,past_tense_ratio,0.1781178863024901
-DSNB,linguistic,present_tense_ratio,0.092854614817394
-DSNB,linguistic,number_ratio,0.2496394660390835
-DSNB,linguistic,discourse_causal_count,0.0025299400532289096
-DSNB,linguistic,discourse_contrast_count,0.03740166036032356
-DSNB,linguistic,discourse_addition_count,0.12205054012761384
-DSNB,linguistic,avg_dep_distance,0.04299899567578656
-DSNB,linguistic,max_parse_depth,-0.14126012393048376
-DSNB,linguistic,noun_ratio,0.06167516065351981
-DSNB,linguistic,verb_ratio,-0.016150761342102665
-DSNB,linguistic,adj_ratio,0.04497866843558507
-DSNB,linguistic,adv_ratio,0.08676199014892194
-DSNB,linguistic,pron_ratio,-0.021633188834040678
-DSNB,linguistic,prep_ratio,0.23464137194541348
-DSNB,linguistic,conj_ratio,0.06164856788427528
-DSNB,surprisal,intercept,0.006971527989366974
-DSNB,surprisal,surp_mean,0.3799551311377929
-DSNB,surprisal,surp_max,-0.10338862629556707
-DSNB,surprisal,surp_min,0.027839059663129113
-DSNB,surprisal,surp_sum,0.0038706221750978423
-DSNB,surprisal,surp_std,0.2846168561453108
-DSNB,surprisal,psg_surp_mean,-0.1712953213383193
-DSNB,surprisal,psg_surp_sum,0.1347155255420049
-DSNB,surprisal,psg_surp_max,0.02244353152910353
-DSNB,surprisal,psg_surp_min,0.0
-DSNB,surprisal,psg_surp_std,-0.11781455288748492
-DSNB,surprisal,rel_surp_diff,0.5425603417742162
-DSNB,surprisal,rel_surp_ratio,-1.0137005867262865
-DSNB,surprisal,rel_surp_sum_ratio,0.286081042489512
-DSNB,surprisal,surp_deletion_drop,-0.3194638084617712
-DSNB,combined,intercept,0.0025035356841909416
-DSNB,combined,word_count,1.1043597170391386
-DSNB,combined,char_count,-0.8539054894893965
-DSNB,combined,avg_word_length,0.16712789221195695
-DSNB,combined,ttr,-0.05707868055150754
-DSNB,combined,stopword_ratio,0.31280699556942987
-DSNB,combined,comma_count,0.5593622544587493
-DSNB,combined,period_count,-0.07282548745720752
-DSNB,combined,exclamation_count,0.005248540868757071
-DSNB,combined,question_count,-0.45234837484897444
-DSNB,combined,semicolon_count,0.07432915974863773
-DSNB,combined,colon_count,-0.10842453470489603
-DSNB,combined,parenthesis_count,-0.006008933478666699
-DSNB,combined,cap_ratio,-0.06592141912284512
-DSNB,combined,title_ratio,0.5057788765180153
-DSNB,combined,flesch_reading_ease,0.05925130070843711
-DSNB,combined,flesch_kincaid_grade,-0.3361824891592391
-DSNB,combined,gunning_fog,-0.07262695153715842
-DSNB,combined,pron_1st_ratio,-0.036045309244656515
-DSNB,combined,pron_2nd_ratio,0.0
-DSNB,combined,pron_3rd_ratio,0.13837970585962978
-DSNB,combined,past_tense_ratio,0.045946700323372384
-DSNB,combined,present_tense_ratio,-0.17576531049064742
-DSNB,combined,number_ratio,0.029257044774743543
-DSNB,combined,discourse_causal_count,0.08773226043793114
-DSNB,combined,discourse_contrast_count,0.1777246923761097
-DSNB,combined,discourse_addition_count,0.21385950590027514
-DSNB,combined,avg_dep_distance,0.017590594090493357
-DSNB,combined,max_parse_depth,-0.24870934759864938
-DSNB,combined,noun_ratio,-0.4179823285168872
-DSNB,combined,verb_ratio,0.1285238142427279
-DSNB,combined,adj_ratio,0.012073790571863382
-DSNB,combined,adv_ratio,-0.17394895564223445
-DSNB,combined,pron_ratio,-0.39891925509769405
-DSNB,combined,prep_ratio,0.06785277843562286
-DSNB,combined,conj_ratio,0.03908873619045769
-DSNB,combined,surp_mean,0.365288399814837
-DSNB,combined,surp_max,-0.3651589719944431
-DSNB,combined,surp_min,0.19375174262281875
-DSNB,combined,surp_sum,0.07004872751260863
-DSNB,combined,surp_std,0.5288754698416367
-DSNB,combined,psg_surp_mean,-0.14168753377679918
-DSNB,combined,psg_surp_sum,0.1363612801607427
-DSNB,combined,psg_surp_max,-0.15269710237098147
-DSNB,combined,psg_surp_min,0.0
-DSNB,combined,psg_surp_std,0.015161518738732793
-DSNB,combined,rel_surp_diff,0.5082474281248526
-DSNB,combined,rel_surp_ratio,-0.6145530552590002
-DSNB,combined,rel_surp_sum_ratio,-0.4311179215865618
-DSNB,combined,rst_edu_count,-0.08412281591438944
-DSNB,combined,rst_n_count,-0.3490715700454312
-DSNB,combined,rst_s_count,0.3280174108646989
-DSNB,combined,rst_n_ratio,-0.3790701754851483
-DSNB,combined,rst_mean_depth,0.44116926486324093
-DSNB,combined,rst_is_root,0.13034377346393194
-DSNB,combined,psg_rst_max_depth,-0.25492133052996635
-DSNB,combined,psg_rst_n_count,0.11938267294194758
-DSNB,combined,psg_rst_s_count,-0.25738377307186017
-DSNB,combined,rel_rst_depth_ratio,-0.4537653103609197
-DSNB,combined,rel_rst_n_ratio,0.7203385893195317
-DSNB,combined,rst_rel_elaboration_count,-0.23973117757681925
-DSNB,combined,rst_rel_attribution_count,-0.21956989025434717
-DSNB,combined,rst_rel_background_count,0.0
-DSNB,combined,rst_rel_cause_count,0.0
-DSNB,combined,rst_rel_result_count,0.0
-DSNB,combined,rst_rel_contrast_count,0.0
-DSNB,combined,rst_rel_joint_count,0.3213351024624535
-DSNB,combined,align_jaccard,0.19315194729276475
-DSNB,combined,align_match_count,0.346224021933707
-DSNB,combined,align_rouge_l_recall,0.5387279545367141
-DSNB,combined,align_ne_match,0.059777149836264594
-DSNB,combined,align_sem_sim,0.8544169397882885
-DSNB,combined,surp_deletion_drop,-0.4014947213271745
-DSNB,combined_heuristic,intercept,0.002461268704035991
-DSNB,combined_heuristic,word_count,1.0930483574809888
-DSNB,combined_heuristic,char_count,-0.8543748002108131
-DSNB,combined_heuristic,avg_word_length,0.16877455092939306
-DSNB,combined_heuristic,ttr,-0.05815482937437836
-DSNB,combined_heuristic,stopword_ratio,0.3111730688175495
-DSNB,combined_heuristic,comma_count,0.5519003907277741
-DSNB,combined_heuristic,period_count,-0.06669461752214302
-DSNB,combined_heuristic,exclamation_count,0.006846002742435013
-DSNB,combined_heuristic,question_count,-0.4526005384411252
-DSNB,combined_heuristic,semicolon_count,0.0763336438835816
-DSNB,combined_heuristic,colon_count,-0.1086754243640155
-DSNB,combined_heuristic,parenthesis_count,-0.007815383521127546
-DSNB,combined_heuristic,cap_ratio,-0.06633954258578441
-DSNB,combined_heuristic,title_ratio,0.5051423425944735
-DSNB,combined_heuristic,flesch_reading_ease,0.061504814340076555
-DSNB,combined_heuristic,flesch_kincaid_grade,-0.3251681048105619
-DSNB,combined_heuristic,gunning_fog,-0.07932335674012411
-DSNB,combined_heuristic,pron_1st_ratio,-0.03548338080872706
-DSNB,combined_heuristic,pron_2nd_ratio,0.0
-DSNB,combined_heuristic,pron_3rd_ratio,0.13608186094743474
-DSNB,combined_heuristic,past_tense_ratio,0.050742202934335144
-DSNB,combined_heuristic,present_tense_ratio,-0.17294462132815724
-DSNB,combined_heuristic,number_ratio,0.02959157031882117
-DSNB,combined_heuristic,discourse_causal_count,0.08979603694515492
-DSNB,combined_heuristic,discourse_contrast_count,0.17727316840037685
-DSNB,combined_heuristic,discourse_addition_count,0.21687690154975114
-DSNB,combined_heuristic,avg_dep_distance,0.021848100890521555
-DSNB,combined_heuristic,max_parse_depth,-0.24211537065550517
-DSNB,combined_heuristic,noun_ratio,-0.4196282952951523
-DSNB,combined_heuristic,verb_ratio,0.12150232195750212
-DSNB,combined_heuristic,adj_ratio,0.006895926742711993
-DSNB,combined_heuristic,adv_ratio,-0.174709544947101
-DSNB,combined_heuristic,pron_ratio,-0.39456270851702036
-DSNB,combined_heuristic,prep_ratio,0.0644807681566165
-DSNB,combined_heuristic,conj_ratio,0.03973378821602477
-DSNB,combined_heuristic,surp_mean,0.36420589783301544
-DSNB,combined_heuristic,surp_max,-0.3657220200737831
-DSNB,combined_heuristic,surp_min,0.19445953099083232
-DSNB,combined_heuristic,surp_sum,0.0798703869670964
-DSNB,combined_heuristic,surp_std,0.5306516992424436
-DSNB,combined_heuristic,psg_surp_mean,-0.1410292762028965
-DSNB,combined_heuristic,psg_surp_sum,0.13705544243920265
-DSNB,combined_heuristic,psg_surp_max,-0.1518678220804327
-DSNB,combined_heuristic,psg_surp_min,0.0
-DSNB,combined_heuristic,psg_surp_std,0.01339762526615738
-DSNB,combined_heuristic,rel_surp_diff,0.5066026878918056
-DSNB,combined_heuristic,rel_surp_ratio,-0.6143906520224062
-DSNB,combined_heuristic,rel_surp_sum_ratio,-0.43531532783614457
-DSNB,combined_heuristic,rst_edu_count,-0.08495462589670655
-DSNB,combined_heuristic,rst_n_count,-0.34871498299758175
-DSNB,combined_heuristic,rst_s_count,0.3258141949097811
-DSNB,combined_heuristic,rst_n_ratio,-0.27758083505569947
-DSNB,combined_heuristic,rst_mean_depth,0.44450775567445455
-DSNB,combined_heuristic,rst_is_root,0.20881323656075257
-DSNB,combined_heuristic,psg_rst_max_depth,-0.2535738401830636
-DSNB,combined_heuristic,psg_rst_n_count,0.11871469786357193
-DSNB,combined_heuristic,psg_rst_s_count,-0.2606698992233809
-DSNB,combined_heuristic,rel_rst_depth_ratio,-0.484026128063547
-DSNB,combined_heuristic,rel_rst_n_ratio,0.7240891002018393
-DSNB,combined_heuristic,rst_rel_elaboration_count,-0.24373087197217932
-DSNB,combined_heuristic,rst_rel_attribution_count,-0.22213829671544097
-DSNB,combined_heuristic,rst_rel_background_count,0.0
-DSNB,combined_heuristic,rst_rel_cause_count,0.0
-DSNB,combined_heuristic,rst_rel_result_count,0.0
-DSNB,combined_heuristic,rst_rel_contrast_count,0.0
-DSNB,combined_heuristic,rst_rel_joint_count,0.32165923387666523
-DSNB,combined_heuristic,align_jaccard,0.19074794201465098
-DSNB,combined_heuristic,align_match_count,0.349420059880888
-DSNB,combined_heuristic,align_rouge_l_recall,0.5379975425642091
-DSNB,combined_heuristic,align_ne_match,0.059794974680627486
-DSNB,combined_heuristic,align_sem_sim,0.8554411331819943
-DSNB,combined_heuristic,surp_deletion_drop,-0.40227870870469784
-DSNB,combined_heuristic,rst_rule_based_score,-0.14430484433469104
-DSNB,combined_deletion,intercept,0.0025035356841909416
-DSNB,combined_deletion,word_count,1.1043597170391386
-DSNB,combined_deletion,char_count,-0.8539054894893965
-DSNB,combined_deletion,avg_word_length,0.16712789221195695
-DSNB,combined_deletion,ttr,-0.05707868055150754
-DSNB,combined_deletion,stopword_ratio,0.31280699556942987
-DSNB,combined_deletion,comma_count,0.5593622544587493
-DSNB,combined_deletion,period_count,-0.07282548745720752
-DSNB,combined_deletion,exclamation_count,0.005248540868757071
-DSNB,combined_deletion,question_count,-0.45234837484897444
-DSNB,combined_deletion,semicolon_count,0.07432915974863773
-DSNB,combined_deletion,colon_count,-0.10842453470489603
-DSNB,combined_deletion,parenthesis_count,-0.006008933478666699
-DSNB,combined_deletion,cap_ratio,-0.06592141912284512
-DSNB,combined_deletion,title_ratio,0.5057788765180153
-DSNB,combined_deletion,flesch_reading_ease,0.05925130070843711
-DSNB,combined_deletion,flesch_kincaid_grade,-0.3361824891592391
-DSNB,combined_deletion,gunning_fog,-0.07262695153715842
-DSNB,combined_deletion,pron_1st_ratio,-0.036045309244656515
-DSNB,combined_deletion,pron_2nd_ratio,0.0
-DSNB,combined_deletion,pron_3rd_ratio,0.13837970585962978
-DSNB,combined_deletion,past_tense_ratio,0.045946700323372384
-DSNB,combined_deletion,present_tense_ratio,-0.17576531049064742
-DSNB,combined_deletion,number_ratio,0.029257044774743543
-DSNB,combined_deletion,discourse_causal_count,0.08773226043793114
-DSNB,combined_deletion,discourse_contrast_count,0.1777246923761097
-DSNB,combined_deletion,discourse_addition_count,0.21385950590027514
-DSNB,combined_deletion,avg_dep_distance,0.017590594090493357
-DSNB,combined_deletion,max_parse_depth,-0.24870934759864938
-DSNB,combined_deletion,noun_ratio,-0.4179823285168872
-DSNB,combined_deletion,verb_ratio,0.1285238142427279
-DSNB,combined_deletion,adj_ratio,0.012073790571863382
-DSNB,combined_deletion,adv_ratio,-0.17394895564223445
-DSNB,combined_deletion,pron_ratio,-0.39891925509769405
-DSNB,combined_deletion,prep_ratio,0.06785277843562286
-DSNB,combined_deletion,conj_ratio,0.03908873619045769
-DSNB,combined_deletion,surp_mean,0.365288399814837
-DSNB,combined_deletion,surp_max,-0.3651589719944431
-DSNB,combined_deletion,surp_min,0.19375174262281875
-DSNB,combined_deletion,surp_sum,0.07004872751260863
-DSNB,combined_deletion,surp_std,0.5288754698416367
-DSNB,combined_deletion,psg_surp_mean,-0.14168753377679918
-DSNB,combined_deletion,psg_surp_sum,0.1363612801607427
-DSNB,combined_deletion,psg_surp_max,-0.15269710237098147
-DSNB,combined_deletion,psg_surp_min,0.0
-DSNB,combined_deletion,psg_surp_std,0.015161518738732793
-DSNB,combined_deletion,rel_surp_diff,0.5082474281248526
-DSNB,combined_deletion,rel_surp_ratio,-0.6145530552590002
-DSNB,combined_deletion,rel_surp_sum_ratio,-0.4311179215865618
-DSNB,combined_deletion,rst_edu_count,-0.08412281591438944
-DSNB,combined_deletion,rst_n_count,-0.3490715700454312
-DSNB,combined_deletion,rst_s_count,0.3280174108646989
-DSNB,combined_deletion,rst_n_ratio,-0.3790701754851483
-DSNB,combined_deletion,rst_mean_depth,0.44116926486324093
-DSNB,combined_deletion,rst_is_root,0.13034377346393194
-DSNB,combined_deletion,psg_rst_max_depth,-0.25492133052996635
-DSNB,combined_deletion,psg_rst_n_count,0.11938267294194758
-DSNB,combined_deletion,psg_rst_s_count,-0.25738377307186017
-DSNB,combined_deletion,rel_rst_depth_ratio,-0.4537653103609197
-DSNB,combined_deletion,rel_rst_n_ratio,0.7203385893195317
-DSNB,combined_deletion,rst_rel_elaboration_count,-0.23973117757681925
-DSNB,combined_deletion,rst_rel_attribution_count,-0.21956989025434717
-DSNB,combined_deletion,rst_rel_background_count,0.0
-DSNB,combined_deletion,rst_rel_cause_count,0.0
-DSNB,combined_deletion,rst_rel_result_count,0.0
-DSNB,combined_deletion,rst_rel_contrast_count,0.0
-DSNB,combined_deletion,rst_rel_joint_count,0.3213351024624535
-DSNB,combined_deletion,align_jaccard,0.19315194729276475
-DSNB,combined_deletion,align_match_count,0.346224021933707
-DSNB,combined_deletion,align_rouge_l_recall,0.5387279545367141
-DSNB,combined_deletion,align_ne_match,0.059777149836264594
-DSNB,combined_deletion,align_sem_sim,0.8544169397882885
-DSNB,combined_deletion,surp_deletion_drop,-0.4014947213271745
+Feature,Coefficient,Abs_Coefficient,Config Mode,Balancing Mode
+rel_surp_causal_pf_diff,-1.1687600962597722,1.1687600962597722,Combined Model (Config 5),Cluster
+rel_surp_pll_pf_diff,-0.8471202708558514,0.8471202708558514,Combined Model (Config 5),Cluster
+rel_surp_pll_pf_ratio,0.8001096752335294,0.8001096752335294,Combined Model (Config 5),Cluster
+rel_surp_causal_pf_ratio,0.7217742989590431,0.7217742989590431,Combined Model (Config 5),Cluster
+surp_causal_pf_sum,-0.7110794865193761,0.7110794865193761,Combined Model (Config 5),Cluster
+surp_causal_pf_mean,0.650762698533111,0.650762698533111,Combined Model (Config 5),Cluster
+surp_pll_pf_sum,0.6492592509551445,0.6492592509551445,Combined Model (Config 5),Cluster
+word_count,0.6095730507219982,0.6095730507219982,Combined Model (Config 5),Cluster
+gunning_fog,0.5676595683405711,0.5676595683405711,Combined Model (Config 5),Cluster
+concrete_min,0.5289237021062625,0.5289237021062625,Combined Model (Config 5),Cluster
+rst_mean_depth,-0.5210234083081928,0.5210234083081928,Combined Model (Config 5),Cluster
+stopword_ratio,-0.5113778048603934,0.5113778048603934,Combined Model (Config 5),Cluster
+number_ratio,0.4795754697821646,0.4795754697821646,Combined Model (Config 5),Cluster
+rel_surp_causal_pf_sum_ratio,0.46337325676683183,0.46337325676683183,Combined Model (Config 5),Cluster
+surp_pll_pf_std,0.4492330227535775,0.4492330227535775,Combined Model (Config 5),Cluster
+rel_surp_pll_pf_sum_ratio,-0.44263106553415144,0.44263106553415144,Combined Model (Config 5),Cluster
+avg_word_length,-0.3801888739479541,0.3801888739479541,Combined Model (Config 5),Cluster
+rel_rst_n_ratio,0.343289088484948,0.343289088484948,Combined Model (Config 5),Cluster
+ttr,-0.3398559082230271,0.3398559082230271,Combined Model (Config 5),Cluster
+concrete_std,0.31760773389438224,0.31760773389438224,Combined Model (Config 5),Cluster
+psg_rst_n_count,0.3078707406410602,0.3078707406410602,Combined Model (Config 5),Cluster
+flesch_kincaid_grade,-0.30730470269038695,0.30730470269038695,Combined Model (Config 5),Cluster
+sentiment_polarity_compound,0.27285847569879723,0.27285847569879723,Combined Model (Config 5),Cluster
+rst_s_count,-0.2548856294155287,0.2548856294155287,Combined Model (Config 5),Cluster
+rst_rel_elaboration_count,0.24045251347939953,0.24045251347939953,Combined Model (Config 5),Cluster
+discourse_addition_count,-0.22758531573007615,0.22758531573007615,Combined Model (Config 5),Cluster
+surp_deletion_drop,-0.22166072751480748,0.22166072751480748,Combined Model (Config 5),Cluster
+max_parse_depth,0.21307016872300735,0.21307016872300735,Combined Model (Config 5),Cluster
+pron_ratio,0.20304293973384493,0.20304293973384493,Combined Model (Config 5),Cluster
+period_count,-0.19787599824968954,0.19787599824968954,Combined Model (Config 5),Cluster
+comma_count,0.191748391232272,0.191748391232272,Combined Model (Config 5),Cluster
+title_ratio,0.1849865254824176,0.1849865254824176,Combined Model (Config 5),Cluster
+concrete_mean,-0.1736790192315586,0.1736790192315586,Combined Model (Config 5),Cluster
+conj_ratio,0.16859942723452054,0.16859942723452054,Combined Model (Config 5),Cluster
+concrete_max,-0.1675726599974477,0.1675726599974477,Combined Model (Config 5),Cluster
+verb_ratio,0.16709666939910583,0.16709666939910583,Combined Model (Config 5),Cluster
+surp_causal_pf_std,-0.16247538323765412,0.16247538323765412,Combined Model (Config 5),Cluster
+psg_rst_max_depth,0.14302042588952021,0.14302042588952021,Combined Model (Config 5),Cluster
+pron_3rd_ratio,0.13612367982684945,0.13612367982684945,Combined Model (Config 5),Cluster
+prep_ratio,-0.1357419779062936,0.1357419779062936,Combined Model (Config 5),Cluster
+rst_rel_attribution_count,0.13500255108720133,0.13500255108720133,Combined Model (Config 5),Cluster
+rst_rel_joint_count,-0.13318618430607362,0.13318618430607362,Combined Model (Config 5),Cluster
+rst_edu_count,-0.12499010328989575,0.12499010328989575,Combined Model (Config 5),Cluster
+noun_ratio,-0.12264130873612353,0.12264130873612353,Combined Model (Config 5),Cluster
+parenthesis_count,-0.11739236506260207,0.11739236506260207,Combined Model (Config 5),Cluster
+past_tense_ratio,-0.11281066274619664,0.11281066274619664,Combined Model (Config 5),Cluster
+colon_count,0.10648028420974112,0.10648028420974112,Combined Model (Config 5),Cluster
+discourse_contrast_count,-0.105780263384859,0.105780263384859,Combined Model (Config 5),Cluster
+avg_dep_distance,-0.10458907472695497,0.10458907472695497,Combined Model (Config 5),Cluster
+sentiment_polarity_neg,0.08209898334859525,0.08209898334859525,Combined Model (Config 5),Cluster
+present_tense_ratio,0.07697624189147995,0.07697624189147995,Combined Model (Config 5),Cluster
+pron_1st_ratio,-0.0739968871595156,0.0739968871595156,Combined Model (Config 5),Cluster
+rst_n_ratio,0.07309315020667097,0.07309315020667097,Combined Model (Config 5),Cluster
+sentiment_polarity_pos,-0.06986886583615222,0.06986886583615222,Combined Model (Config 5),Cluster
+rel_rst_depth_ratio,0.0681438064093285,0.0681438064093285,Combined Model (Config 5),Cluster
+psg_rst_s_count,0.06483491446939019,0.06483491446939019,Combined Model (Config 5),Cluster
+rst_is_root,0.06455959229641464,0.06455959229641464,Combined Model (Config 5),Cluster
+sentiment_polarity_neu,-0.06426949955533418,0.06426949955533418,Combined Model (Config 5),Cluster
+cap_ratio,0.06121770319128571,0.06121770319128571,Combined Model (Config 5),Cluster
+flesch_reading_ease,-0.05243445900085087,0.05243445900085087,Combined Model (Config 5),Cluster
+surp_pll_pf_max,0.04086779716601267,0.04086779716601267,Combined Model (Config 5),Cluster
+adv_ratio,0.03355109633116957,0.03355109633116957,Combined Model (Config 5),Cluster
+surp_causal_pf_min,-0.030218873107216326,0.030218873107216326,Combined Model (Config 5),Cluster
+adj_ratio,0.028333393839830516,0.028333393839830516,Combined Model (Config 5),Cluster
+semicolon_count,0.021932700850558477,0.021932700850558477,Combined Model (Config 5),Cluster
+pron_2nd_ratio,-0.021018989465431875,0.021018989465431875,Combined Model (Config 5),Cluster
+rst_n_count,0.01698631340713994,0.01698631340713994,Combined Model (Config 5),Cluster
+surp_pll_pf_mean,0.016893927295440588,0.016893927295440588,Combined Model (Config 5),Cluster
+surp_pll_pf_min,0.01521128650027625,0.01521128650027625,Combined Model (Config 5),Cluster
+char_count,-0.009843044005550423,0.009843044005550423,Combined Model (Config 5),Cluster
+discourse_causal_count,-0.0032789656982854507,0.0032789656982854507,Combined Model (Config 5),Cluster
+surp_causal_pf_max,0.0012965378265345797,0.0012965378265345797,Combined Model (Config 5),Cluster
+exclamation_count,0.0,0.0,Combined Model (Config 5),Cluster
+question_count,0.0,0.0,Combined Model (Config 5),Cluster
+rst_rel_background_count,0.0,0.0,Combined Model (Config 5),Cluster
+rst_rel_cause_count,0.0,0.0,Combined Model (Config 5),Cluster
+rst_rel_result_count,0.0,0.0,Combined Model (Config 5),Cluster
+rst_rel_contrast_count,0.0,0.0,Combined Model (Config 5),Cluster
+flesch_kincaid_grade,0.6693549597200966,0.6693549597200966,Combined Model (Config 5),DSNB
+sentiment_polarity_compound,0.517130958590831,0.517130958590831,Combined Model (Config 5),DSNB
+rel_surp_causal_pf_diff,-0.46193193770645646,0.46193193770645646,Combined Model (Config 5),DSNB
+surp_causal_pf_sum,-0.44732894364336806,0.44732894364336806,Combined Model (Config 5),DSNB
+rel_rst_depth_ratio,-0.4352162593200495,0.4352162593200495,Combined Model (Config 5),DSNB
+rel_surp_pll_pf_ratio,0.39590907991271035,0.39590907991271035,Combined Model (Config 5),DSNB
+rel_surp_causal_pf_sum_ratio,0.3915040652265038,0.3915040652265038,Combined Model (Config 5),DSNB
+rel_surp_pll_pf_diff,-0.3858250027548695,0.3858250027548695,Combined Model (Config 5),DSNB
+char_count,0.3604461030535301,0.3604461030535301,Combined Model (Config 5),DSNB
+psg_rst_max_depth,-0.3582728362672091,0.3582728362672091,Combined Model (Config 5),DSNB
+sentiment_polarity_pos,-0.35821448194058564,0.35821448194058564,Combined Model (Config 5),DSNB
+flesch_reading_ease,0.3575341365124651,0.3575341365124651,Combined Model (Config 5),DSNB
+surp_causal_pf_mean,0.3485856017963128,0.3485856017963128,Combined Model (Config 5),DSNB
+rel_surp_pll_pf_sum_ratio,-0.3334769077639078,0.3334769077639078,Combined Model (Config 5),DSNB
+surp_deletion_drop,-0.31487445635763184,0.31487445635763184,Combined Model (Config 5),DSNB
+surp_causal_pf_max,-0.29620721794002297,0.29620721794002297,Combined Model (Config 5),DSNB
+rst_is_root,0.2927040418267483,0.2927040418267483,Combined Model (Config 5),DSNB
+sentiment_polarity_neg,0.27037193865851056,0.27037193865851056,Combined Model (Config 5),DSNB
+psg_rst_n_count,0.2602151909449055,0.2602151909449055,Combined Model (Config 5),DSNB
+stopword_ratio,-0.23985083502046245,0.23985083502046245,Combined Model (Config 5),DSNB
+surp_causal_pf_std,0.23562785462853353,0.23562785462853353,Combined Model (Config 5),DSNB
+pron_1st_ratio,-0.23381247347471293,0.23381247347471293,Combined Model (Config 5),DSNB
+discourse_contrast_count,-0.2333142564272759,0.2333142564272759,Combined Model (Config 5),DSNB
+surp_pll_pf_std,0.22511006339110498,0.22511006339110498,Combined Model (Config 5),DSNB
+discourse_addition_count,-0.22124169382585795,0.22124169382585795,Combined Model (Config 5),DSNB
+concrete_min,-0.21674690053998957,0.21674690053998957,Combined Model (Config 5),DSNB
+word_count,0.21172899074357648,0.21172899074357648,Combined Model (Config 5),DSNB
+colon_count,0.20035923443612388,0.20035923443612388,Combined Model (Config 5),DSNB
+number_ratio,0.19732644790089407,0.19732644790089407,Combined Model (Config 5),DSNB
+rel_rst_n_ratio,0.17674860478594207,0.17674860478594207,Combined Model (Config 5),DSNB
+pron_ratio,0.17011112183876798,0.17011112183876798,Combined Model (Config 5),DSNB
+rel_surp_causal_pf_ratio,0.16830483108800723,0.16830483108800723,Combined Model (Config 5),DSNB
+comma_count,0.1612772684676668,0.1612772684676668,Combined Model (Config 5),DSNB
+concrete_max,0.1606580500094211,0.1606580500094211,Combined Model (Config 5),DSNB
+avg_word_length,-0.15268157938005375,0.15268157938005375,Combined Model (Config 5),DSNB
+period_count,0.1369618683428694,0.1369618683428694,Combined Model (Config 5),DSNB
+rst_mean_depth,0.1281957721717363,0.1281957721717363,Combined Model (Config 5),DSNB
+conj_ratio,0.12805002935881646,0.12805002935881646,Combined Model (Config 5),DSNB
+noun_ratio,-0.1267045917801636,0.1267045917801636,Combined Model (Config 5),DSNB
+pron_3rd_ratio,-0.12504093902634475,0.12504093902634475,Combined Model (Config 5),DSNB
+verb_ratio,0.11119222608971893,0.11119222608971893,Combined Model (Config 5),DSNB
+surp_pll_pf_max,0.10140328769517029,0.10140328769517029,Combined Model (Config 5),DSNB
+surp_causal_pf_min,-0.09835640966465393,0.09835640966465393,Combined Model (Config 5),DSNB
+adv_ratio,-0.09510865928415892,0.09510865928415892,Combined Model (Config 5),DSNB
+pron_2nd_ratio,-0.09293897910888001,0.09293897910888001,Combined Model (Config 5),DSNB
+surp_pll_pf_mean,0.09216536826096704,0.09216536826096704,Combined Model (Config 5),DSNB
+semicolon_count,-0.09037233225497217,0.09037233225497217,Combined Model (Config 5),DSNB
+concrete_std,-0.08320466420038655,0.08320466420038655,Combined Model (Config 5),DSNB
+discourse_causal_count,-0.07454370170826387,0.07454370170826387,Combined Model (Config 5),DSNB
+title_ratio,0.07428062752583563,0.07428062752583563,Combined Model (Config 5),DSNB
+adj_ratio,-0.06438689611881038,0.06438689611881038,Combined Model (Config 5),DSNB
+past_tense_ratio,-0.06282927667529356,0.06282927667529356,Combined Model (Config 5),DSNB
+surp_pll_pf_sum,0.06128546478415704,0.06128546478415704,Combined Model (Config 5),DSNB
+prep_ratio,0.0573185144755981,0.0573185144755981,Combined Model (Config 5),DSNB
+cap_ratio,0.054781286403991,0.054781286403991,Combined Model (Config 5),DSNB
+parenthesis_count,0.04778521877686813,0.04778521877686813,Combined Model (Config 5),DSNB
+max_parse_depth,0.04567657317985699,0.04567657317985699,Combined Model (Config 5),DSNB
+concrete_mean,-0.04306083994788316,0.04306083994788316,Combined Model (Config 5),DSNB
+psg_rst_s_count,-0.029178102243037886,0.029178102243037886,Combined Model (Config 5),DSNB
+rst_rel_attribution_count,0.025684277442235726,0.025684277442235726,Combined Model (Config 5),DSNB
+gunning_fog,-0.02464241839708849,0.02464241839708849,Combined Model (Config 5),DSNB
+sentiment_polarity_neu,0.023739962970021258,0.023739962970021258,Combined Model (Config 5),DSNB
+present_tense_ratio,-0.019023616523951976,0.019023616523951976,Combined Model (Config 5),DSNB
+surp_pll_pf_min,-0.017899080310156096,0.017899080310156096,Combined Model (Config 5),DSNB
+rst_n_ratio,-0.017303319777958022,0.017303319777958022,Combined Model (Config 5),DSNB
+rst_rel_elaboration_count,0.01711648363505658,0.01711648363505658,Combined Model (Config 5),DSNB
+rst_edu_count,-0.014813784424682858,0.014813784424682858,Combined Model (Config 5),DSNB
+rst_s_count,-0.014441385589025269,0.014441385589025269,Combined Model (Config 5),DSNB
+avg_dep_distance,-0.011285738123418206,0.011285738123418206,Combined Model (Config 5),DSNB
+rst_n_count,-0.011165166212051448,0.011165166212051448,Combined Model (Config 5),DSNB
+ttr,-0.009937044224525715,0.009937044224525715,Combined Model (Config 5),DSNB
+rst_rel_joint_count,0.009544444600202486,0.009544444600202486,Combined Model (Config 5),DSNB
+exclamation_count,0.0,0.0,Combined Model (Config 5),DSNB
+question_count,0.0,0.0,Combined Model (Config 5),DSNB
+rst_rel_background_count,0.0,0.0,Combined Model (Config 5),DSNB
+rst_rel_cause_count,0.0,0.0,Combined Model (Config 5),DSNB
+rst_rel_result_count,0.0,0.0,Combined Model (Config 5),DSNB
+rst_rel_contrast_count,0.0,0.0,Combined Model (Config 5),DSNB
+rel_surp_causal_pf_sum_ratio,1.1558676853669378,1.1558676853669378,Combined Model (Config 5),None
+rel_surp_pll_pf_ratio,0.7894292874043448,0.7894292874043448,Combined Model (Config 5),None
+rel_surp_pll_pf_diff,-0.714232534610001,0.714232534610001,Combined Model (Config 5),None
+rel_surp_causal_pf_diff,-0.49000824327804077,0.49000824327804077,Combined Model (Config 5),None
+surp_causal_pf_sum,-0.4619316241484357,0.4619316241484357,Combined Model (Config 5),None
+rel_surp_pll_pf_sum_ratio,-0.3959587657009804,0.3959587657009804,Combined Model (Config 5),None
+surp_pll_pf_sum,0.38592189130391447,0.38592189130391447,Combined Model (Config 5),None
+surp_causal_pf_mean,0.3706256026926329,0.3706256026926329,Combined Model (Config 5),None
+flesch_reading_ease,0.36346564170745277,0.36346564170745277,Combined Model (Config 5),None
+rst_s_count,-0.3489706857711213,0.3489706857711213,Combined Model (Config 5),None
+flesch_kincaid_grade,0.3387360931245173,0.3387360931245173,Combined Model (Config 5),None
+question_count,-0.29693346815612,0.29693346815612,Combined Model (Config 5),None
+number_ratio,0.20727933773923088,0.20727933773923088,Combined Model (Config 5),None
+concrete_mean,-0.1887843711976802,0.1887843711976802,Combined Model (Config 5),None
+rst_mean_depth,-0.18554434391113875,0.18554434391113875,Combined Model (Config 5),None
+stopword_ratio,-0.18247411376267983,0.18247411376267983,Combined Model (Config 5),None
+surp_pll_pf_std,0.1786508386025066,0.1786508386025066,Combined Model (Config 5),None
+word_count,0.16634680354332043,0.16634680354332043,Combined Model (Config 5),None
+rst_n_count,0.16610770092340735,0.16610770092340735,Combined Model (Config 5),None
+verb_ratio,0.16240536688058702,0.16240536688058702,Combined Model (Config 5),None
+concrete_max,0.15110737100875082,0.15110737100875082,Combined Model (Config 5),None
+surp_pll_pf_mean,-0.137015092552865,0.137015092552865,Combined Model (Config 5),None
+sentiment_polarity_compound,0.127481315909658,0.127481315909658,Combined Model (Config 5),None
+psg_rst_s_count,0.12699667146365953,0.12699667146365953,Combined Model (Config 5),None
+conj_ratio,0.12486522034213837,0.12486522034213837,Combined Model (Config 5),None
+surp_causal_pf_min,-0.12263959261677505,0.12263959261677505,Combined Model (Config 5),None
+discourse_addition_count,-0.12064234775895857,0.12064234775895857,Combined Model (Config 5),None
+sentiment_polarity_pos,-0.11949764688452064,0.11949764688452064,Combined Model (Config 5),None
+gunning_fog,0.1136016249187438,0.1136016249187438,Combined Model (Config 5),None
+pron_1st_ratio,-0.11127361808709398,0.11127361808709398,Combined Model (Config 5),None
+concrete_min,0.11018676648922472,0.11018676648922472,Combined Model (Config 5),None
+rst_rel_attribution_count,0.10898975017054924,0.10898975017054924,Combined Model (Config 5),None
+adv_ratio,-0.10811309787916372,0.10811309787916372,Combined Model (Config 5),None
+surp_causal_pf_max,-0.10327295959280508,0.10327295959280508,Combined Model (Config 5),None
+discourse_contrast_count,-0.10316038001902642,0.10316038001902642,Combined Model (Config 5),None
+surp_deletion_drop,0.10303367587849013,0.10303367587849013,Combined Model (Config 5),None
+rel_rst_depth_ratio,-0.10225027419883002,0.10225027419883002,Combined Model (Config 5),None
+parenthesis_count,0.10072467267961326,0.10072467267961326,Combined Model (Config 5),None
+ttr,-0.09368150254689567,0.09368150254689567,Combined Model (Config 5),None
+noun_ratio,-0.0905172763006233,0.0905172763006233,Combined Model (Config 5),None
+cap_ratio,0.08780216164330241,0.08780216164330241,Combined Model (Config 5),None
+surp_causal_pf_std,0.08337806361205585,0.08337806361205585,Combined Model (Config 5),None
+rst_edu_count,-0.07698373600090797,0.07698373600090797,Combined Model (Config 5),None
+past_tense_ratio,-0.07522007054252827,0.07522007054252827,Combined Model (Config 5),None
+semicolon_count,-0.07106687726435153,0.07106687726435153,Combined Model (Config 5),None
+rst_rel_joint_count,-0.06653219930909918,0.06653219930909918,Combined Model (Config 5),None
+psg_rst_n_count,-0.06460943264380017,0.06460943264380017,Combined Model (Config 5),None
+pron_ratio,0.059395875873369364,0.059395875873369364,Combined Model (Config 5),None
+title_ratio,0.0586680811304024,0.0586680811304024,Combined Model (Config 5),None
+concrete_std,0.058547503477636605,0.058547503477636605,Combined Model (Config 5),None
+colon_count,0.05483111361620328,0.05483111361620328,Combined Model (Config 5),None
+max_parse_depth,-0.05407859848184618,0.05407859848184618,Combined Model (Config 5),None
+rst_n_ratio,-0.053128044670714344,0.053128044670714344,Combined Model (Config 5),None
+discourse_causal_count,0.05272792716364646,0.05272792716364646,Combined Model (Config 5),None
+rst_rel_elaboration_count,0.05172432811710568,0.05172432811710568,Combined Model (Config 5),None
+prep_ratio,0.05073084153303293,0.05073084153303293,Combined Model (Config 5),None
+rel_rst_n_ratio,-0.04704642996200329,0.04704642996200329,Combined Model (Config 5),None
+rel_surp_causal_pf_ratio,0.045005579416950145,0.045005579416950145,Combined Model (Config 5),None
+char_count,-0.04007702900587483,0.04007702900587483,Combined Model (Config 5),None
+surp_pll_pf_min,-0.037878313463073146,0.037878313463073146,Combined Model (Config 5),None
+sentiment_polarity_neg,0.03317712882535735,0.03317712882535735,Combined Model (Config 5),None
+psg_rst_max_depth,-0.0329731404133251,0.0329731404133251,Combined Model (Config 5),None
+pron_2nd_ratio,-0.028374744709228367,0.028374744709228367,Combined Model (Config 5),None
+period_count,-0.01926751985946589,0.01926751985946589,Combined Model (Config 5),None
+sentiment_polarity_neu,-0.016488460783822826,0.016488460783822826,Combined Model (Config 5),None
+avg_word_length,-0.013109101360951284,0.013109101360951284,Combined Model (Config 5),None
+pron_3rd_ratio,0.012741883593310068,0.012741883593310068,Combined Model (Config 5),None
+surp_pll_pf_max,0.00984364237598633,0.00984364237598633,Combined Model (Config 5),None
+rst_is_root,0.007993126068434267,0.007993126068434267,Combined Model (Config 5),None
+present_tense_ratio,-0.0055853466055393155,0.0055853466055393155,Combined Model (Config 5),None
+adj_ratio,0.004756439777561781,0.004756439777561781,Combined Model (Config 5),None
+comma_count,-0.004576961341508655,0.004576961341508655,Combined Model (Config 5),None
+avg_dep_distance,0.0022149204785471247,0.0022149204785471247,Combined Model (Config 5),None
+exclamation_count,0.0,0.0,Combined Model (Config 5),None
+rst_rel_background_count,0.0,0.0,Combined Model (Config 5),None
+rst_rel_cause_count,0.0,0.0,Combined Model (Config 5),None
+rst_rel_result_count,0.0,0.0,Combined Model (Config 5),None
+rst_rel_contrast_count,0.0,0.0,Combined Model (Config 5),None
+rel_surp_pll_pf_ratio,1.270838360408269,1.270838360408269,Combined Model (Config 5),Pairwise
+rel_surp_causal_pf_sum_ratio,0.9737741983760758,0.9737741983760758,Combined Model (Config 5),Pairwise
+flesch_kincaid_grade,0.8138835611330523,0.8138835611330523,Combined Model (Config 5),Pairwise
+surp_pll_pf_mean,-0.6199289488235284,0.6199289488235284,Combined Model (Config 5),Pairwise
+rel_surp_pll_pf_diff,-0.6199289488235284,0.6199289488235284,Combined Model (Config 5),Pairwise
+flesch_reading_ease,0.5992096750820993,0.5992096750820993,Combined Model (Config 5),Pairwise
+rel_surp_pll_pf_sum_ratio,-0.4763200856732483,0.4763200856732483,Combined Model (Config 5),Pairwise
+rst_s_count,-0.45344428369606116,0.45344428369606116,Combined Model (Config 5),Pairwise
+question_count,-0.4253724352925169,0.4253724352925169,Combined Model (Config 5),Pairwise
+char_count,-0.41846614198455967,0.41846614198455967,Combined Model (Config 5),Pairwise
+word_count,0.37336713325422394,0.37336713325422394,Combined Model (Config 5),Pairwise
+rst_mean_depth,-0.30446367397148033,0.30446367397148033,Combined Model (Config 5),Pairwise
+concrete_max,0.29596115057694833,0.29596115057694833,Combined Model (Config 5),Pairwise
+number_ratio,0.2937982686863522,0.2937982686863522,Combined Model (Config 5),Pairwise
+surp_pll_pf_std,0.2838458698168427,0.2838458698168427,Combined Model (Config 5),Pairwise
+verb_ratio,0.24550046341429718,0.24550046341429718,Combined Model (Config 5),Pairwise
+surp_causal_pf_sum,-0.23949239545475456,0.23949239545475456,Combined Model (Config 5),Pairwise
+rst_rel_attribution_count,0.23628136603913993,0.23628136603913993,Combined Model (Config 5),Pairwise
+cap_ratio,0.23474471932814267,0.23474471932814267,Combined Model (Config 5),Pairwise
+conj_ratio,0.22478127909551016,0.22478127909551016,Combined Model (Config 5),Pairwise
+surp_pll_pf_sum,0.22201197207814022,0.22201197207814022,Combined Model (Config 5),Pairwise
+noun_ratio,-0.21456487242805158,0.21456487242805158,Combined Model (Config 5),Pairwise
+surp_causal_pf_min,-0.21175293518010405,0.21175293518010405,Combined Model (Config 5),Pairwise
+surp_deletion_drop,0.20085182177858232,0.20085182177858232,Combined Model (Config 5),Pairwise
+rst_n_count,0.19910553542308523,0.19910553542308523,Combined Model (Config 5),Pairwise
+concrete_mean,-0.18861436389698563,0.18861436389698563,Combined Model (Config 5),Pairwise
+avg_word_length,0.17929631526610412,0.17929631526610412,Combined Model (Config 5),Pairwise
+stopword_ratio,-0.17285632090618058,0.17285632090618058,Combined Model (Config 5),Pairwise
+surp_causal_pf_max,-0.16389782474139958,0.16389782474139958,Combined Model (Config 5),Pairwise
+rst_rel_elaboration_count,0.15905661851414649,0.15905661851414649,Combined Model (Config 5),Pairwise
+present_tense_ratio,-0.15512027723209337,0.15512027723209337,Combined Model (Config 5),Pairwise
+adv_ratio,-0.15409108870839947,0.15409108870839947,Combined Model (Config 5),Pairwise
+parenthesis_count,0.15088371415923185,0.15088371415923185,Combined Model (Config 5),Pairwise
+discourse_contrast_count,-0.14004216475020048,0.14004216475020048,Combined Model (Config 5),Pairwise
+rel_surp_causal_pf_ratio,0.1389250962604415,0.1389250962604415,Combined Model (Config 5),Pairwise
+ttr,-0.1296052933756182,0.1296052933756182,Combined Model (Config 5),Pairwise
+surp_causal_pf_mean,-0.12522068737858105,0.12522068737858105,Combined Model (Config 5),Pairwise
+rel_surp_causal_pf_diff,-0.12522068737858105,0.12522068737858105,Combined Model (Config 5),Pairwise
+pron_1st_ratio,-0.11634732703238275,0.11634732703238275,Combined Model (Config 5),Pairwise
+prep_ratio,0.10532806981569101,0.10532806981569101,Combined Model (Config 5),Pairwise
+pron_ratio,0.1014983876460853,0.1014983876460853,Combined Model (Config 5),Pairwise
+past_tense_ratio,-0.10090288663574554,0.10090288663574554,Combined Model (Config 5),Pairwise
+rst_edu_count,-0.10070905521654047,0.10070905521654047,Combined Model (Config 5),Pairwise
+rst_rel_joint_count,-0.09725884680607853,0.09725884680607853,Combined Model (Config 5),Pairwise
+semicolon_count,-0.09088197567523604,0.09088197567523604,Combined Model (Config 5),Pairwise
+period_count,-0.08358642573523226,0.08358642573523226,Combined Model (Config 5),Pairwise
+concrete_min,0.07518670945167152,0.07518670945167152,Combined Model (Config 5),Pairwise
+pron_3rd_ratio,-0.0742590679350553,0.0742590679350553,Combined Model (Config 5),Pairwise
+title_ratio,0.07208964665691323,0.07208964665691323,Combined Model (Config 5),Pairwise
+discourse_addition_count,-0.07193388727848367,0.07193388727848367,Combined Model (Config 5),Pairwise
+rst_is_root,-0.06627180806661255,0.06627180806661255,Combined Model (Config 5),Pairwise
+sentiment_polarity_pos,-0.06588822145013516,0.06588822145013516,Combined Model (Config 5),Pairwise
+rst_n_ratio,-0.06475394851409165,0.06475394851409165,Combined Model (Config 5),Pairwise
+surp_causal_pf_std,0.06331684087874376,0.06331684087874376,Combined Model (Config 5),Pairwise
+discourse_causal_count,0.060321535888672284,0.060321535888672284,Combined Model (Config 5),Pairwise
+sentiment_polarity_neg,-0.05960970082131559,0.05960970082131559,Combined Model (Config 5),Pairwise
+rel_rst_depth_ratio,-0.04860358231353956,0.04860358231353956,Combined Model (Config 5),Pairwise
+colon_count,0.0441325905343475,0.0441325905343475,Combined Model (Config 5),Pairwise
+surp_pll_pf_min,-0.04086027338735884,0.04086027338735884,Combined Model (Config 5),Pairwise
+gunning_fog,-0.03900572424658748,0.03900572424658748,Combined Model (Config 5),Pairwise
+adj_ratio,-0.0381092675092136,0.0381092675092136,Combined Model (Config 5),Pairwise
+concrete_std,-0.03792676228431168,0.03792676228431168,Combined Model (Config 5),Pairwise
+rel_rst_n_ratio,-0.02755237813650559,0.02755237813650559,Combined Model (Config 5),Pairwise
+pron_2nd_ratio,-0.02287784702072643,0.02287784702072643,Combined Model (Config 5),Pairwise
+avg_dep_distance,0.013355693981018811,0.013355693981018811,Combined Model (Config 5),Pairwise
+surp_pll_pf_max,0.013166643948398133,0.013166643948398133,Combined Model (Config 5),Pairwise
+comma_count,-0.01305220196766131,0.01305220196766131,Combined Model (Config 5),Pairwise
+sentiment_polarity_compound,0.009230768030923058,0.009230768030923058,Combined Model (Config 5),Pairwise
+sentiment_polarity_neu,0.006639784740574252,0.006639784740574252,Combined Model (Config 5),Pairwise
+max_parse_depth,-0.0026050192936928423,0.0026050192936928423,Combined Model (Config 5),Pairwise
+exclamation_count,0.0,0.0,Combined Model (Config 5),Pairwise
+psg_rst_max_depth,0.0,0.0,Combined Model (Config 5),Pairwise
+psg_rst_n_count,0.0,0.0,Combined Model (Config 5),Pairwise
+psg_rst_s_count,0.0,0.0,Combined Model (Config 5),Pairwise
+rst_rel_background_count,0.0,0.0,Combined Model (Config 5),Pairwise
+rst_rel_cause_count,0.0,0.0,Combined Model (Config 5),Pairwise
+rst_rel_result_count,0.0,0.0,Combined Model (Config 5),Pairwise
+rst_rel_contrast_count,0.0,0.0,Combined Model (Config 5),Pairwise
+rel_surp_causal_pf_diff,-0.8348092381242171,0.8348092381242171,Combined Model (Config 5),RST-Neighborhood
+rel_surp_causal_pf_sum_ratio,0.6471290121779645,0.6471290121779645,Combined Model (Config 5),RST-Neighborhood
+sentiment_polarity_compound,0.600827559391656,0.600827559391656,Combined Model (Config 5),RST-Neighborhood
+rel_surp_pll_pf_sum_ratio,-0.5816771567808505,0.5816771567808505,Combined Model (Config 5),RST-Neighborhood
+rel_surp_causal_pf_ratio,0.4896705255714678,0.4896705255714678,Combined Model (Config 5),RST-Neighborhood
+char_count,0.47314962182255726,0.47314962182255726,Combined Model (Config 5),RST-Neighborhood
+surp_causal_pf_sum,-0.4603689275960993,0.4603689275960993,Combined Model (Config 5),RST-Neighborhood
+rel_surp_pll_pf_ratio,0.45801313089666246,0.45801313089666246,Combined Model (Config 5),RST-Neighborhood
+rel_surp_pll_pf_diff,-0.45235037121948557,0.45235037121948557,Combined Model (Config 5),RST-Neighborhood
+surp_causal_pf_mean,0.38612772405859175,0.38612772405859175,Combined Model (Config 5),RST-Neighborhood
+flesch_kincaid_grade,0.38145569264945267,0.38145569264945267,Combined Model (Config 5),RST-Neighborhood
+flesch_reading_ease,0.37735848902137886,0.37735848902137886,Combined Model (Config 5),RST-Neighborhood
+sentiment_polarity_pos,-0.34120416437829976,0.34120416437829976,Combined Model (Config 5),RST-Neighborhood
+sentiment_polarity_neg,0.32875643109248054,0.32875643109248054,Combined Model (Config 5),RST-Neighborhood
+gunning_fog,0.32151171923817873,0.32151171923817873,Combined Model (Config 5),RST-Neighborhood
+surp_deletion_drop,-0.3132419900872797,0.3132419900872797,Combined Model (Config 5),RST-Neighborhood
+word_count,0.3073344697071573,0.3073344697071573,Combined Model (Config 5),RST-Neighborhood
+surp_pll_pf_std,0.285602158381966,0.285602158381966,Combined Model (Config 5),RST-Neighborhood
+rel_rst_depth_ratio,-0.24363303457973384,0.24363303457973384,Combined Model (Config 5),RST-Neighborhood
+psg_rst_max_depth,-0.23831520963119562,0.23831520963119562,Combined Model (Config 5),RST-Neighborhood
+stopword_ratio,-0.22787443726804654,0.22787443726804654,Combined Model (Config 5),RST-Neighborhood
+rst_is_root,0.22271857267956846,0.22271857267956846,Combined Model (Config 5),RST-Neighborhood
+avg_word_length,-0.21849750547116195,0.21849750547116195,Combined Model (Config 5),RST-Neighborhood
+discourse_addition_count,-0.21428202286085243,0.21428202286085243,Combined Model (Config 5),RST-Neighborhood
+conj_ratio,0.20156077707904266,0.20156077707904266,Combined Model (Config 5),RST-Neighborhood
+number_ratio,0.19032599100991052,0.19032599100991052,Combined Model (Config 5),RST-Neighborhood
+avg_dep_distance,-0.1822104885131393,0.1822104885131393,Combined Model (Config 5),RST-Neighborhood
+colon_count,0.16894603177219616,0.16894603177219616,Combined Model (Config 5),RST-Neighborhood
+noun_ratio,-0.16573453089860263,0.16573453089860263,Combined Model (Config 5),RST-Neighborhood
+surp_pll_pf_max,0.16206069089155548,0.16206069089155548,Combined Model (Config 5),RST-Neighborhood
+rel_rst_n_ratio,0.16160357763445982,0.16160357763445982,Combined Model (Config 5),RST-Neighborhood
+psg_rst_n_count,0.16124273660233554,0.16124273660233554,Combined Model (Config 5),RST-Neighborhood
+discourse_contrast_count,-0.15799854150119225,0.15799854150119225,Combined Model (Config 5),RST-Neighborhood
+max_parse_depth,0.1491001381106233,0.1491001381106233,Combined Model (Config 5),RST-Neighborhood
+comma_count,0.1420877846620701,0.1420877846620701,Combined Model (Config 5),RST-Neighborhood
+concrete_mean,0.13784360467731505,0.13784360467731505,Combined Model (Config 5),RST-Neighborhood
+cap_ratio,0.1363633727017109,0.1363633727017109,Combined Model (Config 5),RST-Neighborhood
+surp_causal_pf_min,-0.13536446802594543,0.13536446802594543,Combined Model (Config 5),RST-Neighborhood
+verb_ratio,0.12137131052875023,0.12137131052875023,Combined Model (Config 5),RST-Neighborhood
+pron_3rd_ratio,0.11930927927560338,0.11930927927560338,Combined Model (Config 5),RST-Neighborhood
+psg_rst_s_count,0.11594411974534322,0.11594411974534322,Combined Model (Config 5),RST-Neighborhood
+rst_s_count,-0.11063961451500158,0.11063961451500158,Combined Model (Config 5),RST-Neighborhood
+title_ratio,0.10968097524618102,0.10968097524618102,Combined Model (Config 5),RST-Neighborhood
+surp_causal_pf_max,-0.10954289539015828,0.10954289539015828,Combined Model (Config 5),RST-Neighborhood
+past_tense_ratio,-0.10632320213487216,0.10632320213487216,Combined Model (Config 5),RST-Neighborhood
+concrete_min,-0.10135721304067724,0.10135721304067724,Combined Model (Config 5),RST-Neighborhood
+pron_1st_ratio,-0.09206241320812464,0.09206241320812464,Combined Model (Config 5),RST-Neighborhood
+surp_causal_pf_std,0.08777536050402862,0.08777536050402862,Combined Model (Config 5),RST-Neighborhood
+discourse_causal_count,-0.08686415602881786,0.08686415602881786,Combined Model (Config 5),RST-Neighborhood
+prep_ratio,0.08539973275299678,0.08539973275299678,Combined Model (Config 5),RST-Neighborhood
+rst_rel_elaboration_count,0.07931526531342731,0.07931526531342731,Combined Model (Config 5),RST-Neighborhood
+semicolon_count,-0.07711270363157971,0.07711270363157971,Combined Model (Config 5),RST-Neighborhood
+pron_2nd_ratio,-0.07297273194453605,0.07297273194453605,Combined Model (Config 5),RST-Neighborhood
+rst_n_count,0.06301526368793067,0.06301526368793067,Combined Model (Config 5),RST-Neighborhood
+concrete_std,-0.06103709036610173,0.06103709036610173,Combined Model (Config 5),RST-Neighborhood
+period_count,0.05043770626228571,0.05043770626228571,Combined Model (Config 5),RST-Neighborhood
+pron_ratio,-0.043673480965189665,0.043673480965189665,Combined Model (Config 5),RST-Neighborhood
+rst_n_ratio,0.043563523328941686,0.043563523328941686,Combined Model (Config 5),RST-Neighborhood
+surp_pll_pf_mean,0.039594386077023466,0.039594386077023466,Combined Model (Config 5),RST-Neighborhood
+present_tense_ratio,0.036723960304767454,0.036723960304767454,Combined Model (Config 5),RST-Neighborhood
+adv_ratio,-0.024349287360229205,0.024349287360229205,Combined Model (Config 5),RST-Neighborhood
+surp_pll_pf_sum,0.020657836744155618,0.020657836744155618,Combined Model (Config 5),RST-Neighborhood
+rst_edu_count,-0.018790790845808696,0.018790790845808696,Combined Model (Config 5),RST-Neighborhood
+rst_rel_joint_count,-0.018410271286622214,0.018410271286622214,Combined Model (Config 5),RST-Neighborhood
+rst_rel_attribution_count,0.017931010149868587,0.017931010149868587,Combined Model (Config 5),RST-Neighborhood
+surp_pll_pf_min,-0.010847459944909404,0.010847459944909404,Combined Model (Config 5),RST-Neighborhood
+rst_mean_depth,-0.010545717981537943,0.010545717981537943,Combined Model (Config 5),RST-Neighborhood
+concrete_max,0.009635452624611861,0.009635452624611861,Combined Model (Config 5),RST-Neighborhood
+adj_ratio,0.008345746528955063,0.008345746528955063,Combined Model (Config 5),RST-Neighborhood
+ttr,-0.006269728419364651,0.006269728419364651,Combined Model (Config 5),RST-Neighborhood
+parenthesis_count,0.005980263566642491,0.005980263566642491,Combined Model (Config 5),RST-Neighborhood
+sentiment_polarity_neu,-0.003945378289036243,0.003945378289036243,Combined Model (Config 5),RST-Neighborhood
+exclamation_count,0.0,0.0,Combined Model (Config 5),RST-Neighborhood
+question_count,0.0,0.0,Combined Model (Config 5),RST-Neighborhood
+rst_rel_background_count,0.0,0.0,Combined Model (Config 5),RST-Neighborhood
+rst_rel_cause_count,0.0,0.0,Combined Model (Config 5),RST-Neighborhood
+rst_rel_result_count,0.0,0.0,Combined Model (Config 5),RST-Neighborhood
+rst_rel_contrast_count,0.0,0.0,Combined Model (Config 5),RST-Neighborhood
+rst_mean_depth,-0.6226375879130485,0.6226375879130485,Discourse-Only Subsystem (Config 2),Cluster
+psg_rst_max_depth,0.35793064811145875,0.35793064811145875,Discourse-Only Subsystem (Config 2),Cluster
+rel_rst_depth_ratio,0.3088754358974292,0.3088754358974292,Discourse-Only Subsystem (Config 2),Cluster
+rel_rst_n_ratio,0.27574006387506667,0.27574006387506667,Discourse-Only Subsystem (Config 2),Cluster
+psg_rst_n_count,0.2045262286563652,0.2045262286563652,Discourse-Only Subsystem (Config 2),Cluster
+rst_n_count,0.139020254959471,0.139020254959471,Discourse-Only Subsystem (Config 2),Cluster
+rst_rel_elaboration_count,0.12597152954432572,0.12597152954432572,Discourse-Only Subsystem (Config 2),Cluster
+rst_is_root,0.10687039679195715,0.10687039679195715,Discourse-Only Subsystem (Config 2),Cluster
+rst_rel_attribution_count,0.0884403033719623,0.0884403033719623,Discourse-Only Subsystem (Config 2),Cluster
+psg_rst_s_count,-0.0865500978476413,0.0865500978476413,Discourse-Only Subsystem (Config 2),Cluster
+rst_edu_count,0.07310582334625867,0.07310582334625867,Discourse-Only Subsystem (Config 2),Cluster
+rst_rel_joint_count,-0.06487402161152576,0.06487402161152576,Discourse-Only Subsystem (Config 2),Cluster
+rst_n_ratio,-0.05158655279738038,0.05158655279738038,Discourse-Only Subsystem (Config 2),Cluster
+rst_s_count,-0.027263183676903228,0.027263183676903228,Discourse-Only Subsystem (Config 2),Cluster
+rst_rel_background_count,0.0,0.0,Discourse-Only Subsystem (Config 2),Cluster
+rst_rel_cause_count,0.0,0.0,Discourse-Only Subsystem (Config 2),Cluster
+rst_rel_result_count,0.0,0.0,Discourse-Only Subsystem (Config 2),Cluster
+rst_rel_contrast_count,0.0,0.0,Discourse-Only Subsystem (Config 2),Cluster
+rel_rst_depth_ratio,-0.3064543760369897,0.3064543760369897,Discourse-Only Subsystem (Config 2),DSNB
+rst_is_root,0.2853326150538701,0.2853326150538701,Discourse-Only Subsystem (Config 2),DSNB
+rel_rst_n_ratio,0.22887357193524122,0.22887357193524122,Discourse-Only Subsystem (Config 2),DSNB
+psg_rst_max_depth,-0.203050448446773,0.203050448446773,Discourse-Only Subsystem (Config 2),DSNB
+psg_rst_n_count,0.19258373801543466,0.19258373801543466,Discourse-Only Subsystem (Config 2),DSNB
+rst_s_count,0.1658931271359885,0.1658931271359885,Discourse-Only Subsystem (Config 2),DSNB
+rst_edu_count,0.12717673216873995,0.12717673216873995,Discourse-Only Subsystem (Config 2),DSNB
+rst_rel_elaboration_count,0.10215974965077006,0.10215974965077006,Discourse-Only Subsystem (Config 2),DSNB
+rst_n_count,0.060797304680986916,0.060797304680986916,Discourse-Only Subsystem (Config 2),DSNB
+psg_rst_s_count,-0.058535931517407484,0.058535931517407484,Discourse-Only Subsystem (Config 2),DSNB
+rst_rel_joint_count,-0.046685521773961514,0.046685521773961514,Discourse-Only Subsystem (Config 2),DSNB
+rst_n_ratio,0.03505364750343258,0.03505364750343258,Discourse-Only Subsystem (Config 2),DSNB
+rst_rel_attribution_count,-0.0035080798423271302,0.0035080798423271302,Discourse-Only Subsystem (Config 2),DSNB
+rst_mean_depth,0.0027203865984226864,0.0027203865984226864,Discourse-Only Subsystem (Config 2),DSNB
+rst_rel_background_count,0.0,0.0,Discourse-Only Subsystem (Config 2),DSNB
+rst_rel_cause_count,0.0,0.0,Discourse-Only Subsystem (Config 2),DSNB
+rst_rel_result_count,0.0,0.0,Discourse-Only Subsystem (Config 2),DSNB
+rst_rel_contrast_count,0.0,0.0,Discourse-Only Subsystem (Config 2),DSNB
+rst_mean_depth,-0.4616530586447323,0.4616530586447323,Discourse-Only Subsystem (Config 2),None
+rel_rst_n_ratio,0.3433938888835234,0.3433938888835234,Discourse-Only Subsystem (Config 2),None
+rel_rst_depth_ratio,0.15044543591611095,0.15044543591611095,Discourse-Only Subsystem (Config 2),None
+rst_n_count,0.1360603756033521,0.1360603756033521,Discourse-Only Subsystem (Config 2),None
+psg_rst_max_depth,0.1223065910536647,0.1223065910536647,Discourse-Only Subsystem (Config 2),None
+psg_rst_s_count,-0.10722126722724115,0.10722126722724115,Discourse-Only Subsystem (Config 2),None
+rst_rel_elaboration_count,0.09919178721779709,0.09919178721779709,Discourse-Only Subsystem (Config 2),None
+rst_rel_joint_count,-0.07046588367021156,0.07046588367021156,Discourse-Only Subsystem (Config 2),None
+psg_rst_n_count,-0.06594306366491859,0.06594306366491859,Discourse-Only Subsystem (Config 2),None
+rst_edu_count,0.06472746557315374,0.06472746557315374,Discourse-Only Subsystem (Config 2),None
+rst_rel_attribution_count,0.05916550690751803,0.05916550690751803,Discourse-Only Subsystem (Config 2),None
+rst_n_ratio,-0.05409020991677617,0.05409020991677617,Discourse-Only Subsystem (Config 2),None
+rst_s_count,-0.04549219148928885,0.04549219148928885,Discourse-Only Subsystem (Config 2),None
+rst_is_root,0.018038593548488482,0.018038593548488482,Discourse-Only Subsystem (Config 2),None
+rst_rel_background_count,0.0,0.0,Discourse-Only Subsystem (Config 2),None
+rst_rel_cause_count,0.0,0.0,Discourse-Only Subsystem (Config 2),None
+rst_rel_result_count,0.0,0.0,Discourse-Only Subsystem (Config 2),None
+rst_rel_contrast_count,0.0,0.0,Discourse-Only Subsystem (Config 2),None
+rst_mean_depth,-0.6122113175601189,0.6122113175601189,Discourse-Only Subsystem (Config 2),Pairwise
+rst_n_count,0.33488655907898934,0.33488655907898934,Discourse-Only Subsystem (Config 2),Pairwise
+rel_rst_depth_ratio,0.3187763178091929,0.3187763178091929,Discourse-Only Subsystem (Config 2),Pairwise
+rst_s_count,-0.1881907218750099,0.1881907218750099,Discourse-Only Subsystem (Config 2),Pairwise
+rst_rel_elaboration_count,0.18048763845824978,0.18048763845824978,Discourse-Only Subsystem (Config 2),Pairwise
+rst_rel_joint_count,-0.1303869230594805,0.1303869230594805,Discourse-Only Subsystem (Config 2),Pairwise
+rst_edu_count,0.1285518474998624,0.1285518474998624,Discourse-Only Subsystem (Config 2),Pairwise
+rst_rel_attribution_count,0.0852828124809886,0.0852828124809886,Discourse-Only Subsystem (Config 2),Pairwise
+rel_rst_n_ratio,0.04765866778869518,0.04765866778869518,Discourse-Only Subsystem (Config 2),Pairwise
+rst_is_root,-0.04119031056930839,0.04119031056930839,Discourse-Only Subsystem (Config 2),Pairwise
+rst_n_ratio,-0.007932166487707287,0.007932166487707287,Discourse-Only Subsystem (Config 2),Pairwise
+psg_rst_max_depth,0.0,0.0,Discourse-Only Subsystem (Config 2),Pairwise
+psg_rst_n_count,0.0,0.0,Discourse-Only Subsystem (Config 2),Pairwise
+psg_rst_s_count,0.0,0.0,Discourse-Only Subsystem (Config 2),Pairwise
+rst_rel_background_count,0.0,0.0,Discourse-Only Subsystem (Config 2),Pairwise
+rst_rel_cause_count,0.0,0.0,Discourse-Only Subsystem (Config 2),Pairwise
+rst_rel_result_count,0.0,0.0,Discourse-Only Subsystem (Config 2),Pairwise
+rst_rel_contrast_count,0.0,0.0,Discourse-Only Subsystem (Config 2),Pairwise
+rel_rst_n_ratio,0.2484327455708597,0.2484327455708597,Discourse-Only Subsystem (Config 2),RST-Neighborhood
+rst_is_root,0.23526439587749962,0.23526439587749962,Discourse-Only Subsystem (Config 2),RST-Neighborhood
+rel_rst_depth_ratio,-0.14385250078698428,0.14385250078698428,Discourse-Only Subsystem (Config 2),RST-Neighborhood
+rst_edu_count,0.11881784674840423,0.11881784674840423,Discourse-Only Subsystem (Config 2),RST-Neighborhood
+psg_rst_n_count,0.11568522877561131,0.11568522877561131,Discourse-Only Subsystem (Config 2),RST-Neighborhood
+rst_n_count,0.11220229465521339,0.11220229465521339,Discourse-Only Subsystem (Config 2),RST-Neighborhood
+rst_rel_elaboration_count,0.09956056180428789,0.09956056180428789,Discourse-Only Subsystem (Config 2),RST-Neighborhood
+rst_mean_depth,-0.09402172596563256,0.09402172596563256,Discourse-Only Subsystem (Config 2),RST-Neighborhood
+rst_s_count,0.0890040036814951,0.0890040036814951,Discourse-Only Subsystem (Config 2),RST-Neighborhood
+psg_rst_max_depth,-0.06734991614489683,0.06734991614489683,Discourse-Only Subsystem (Config 2),RST-Neighborhood
+rst_n_ratio,0.04994667031250402,0.04994667031250402,Discourse-Only Subsystem (Config 2),RST-Neighborhood
+rst_rel_joint_count,-0.04407744639689392,0.04407744639689392,Discourse-Only Subsystem (Config 2),RST-Neighborhood
+rst_rel_attribution_count,0.005814128873863454,0.005814128873863454,Discourse-Only Subsystem (Config 2),RST-Neighborhood
+psg_rst_s_count,0.0035718567477624535,0.0035718567477624535,Discourse-Only Subsystem (Config 2),RST-Neighborhood
+rst_rel_background_count,0.0,0.0,Discourse-Only Subsystem (Config 2),RST-Neighborhood
+rst_rel_cause_count,0.0,0.0,Discourse-Only Subsystem (Config 2),RST-Neighborhood
+rst_rel_result_count,0.0,0.0,Discourse-Only Subsystem (Config 2),RST-Neighborhood
+rst_rel_contrast_count,0.0,0.0,Discourse-Only Subsystem (Config 2),RST-Neighborhood
+word_count,0.66198832980156,0.66198832980156,Linguistic-Only Subsystem (Config 3),Cluster
+concrete_min,0.603260109008806,0.603260109008806,Linguistic-Only Subsystem (Config 3),Cluster
+stopword_ratio,-0.5095953636737227,0.5095953636737227,Linguistic-Only Subsystem (Config 3),Cluster
+number_ratio,0.3813568492154654,0.3813568492154654,Linguistic-Only Subsystem (Config 3),Cluster
+sentiment_polarity_compound,0.3642183386405558,0.3642183386405558,Linguistic-Only Subsystem (Config 3),Cluster
+concrete_std,0.3149432474247987,0.3149432474247987,Linguistic-Only Subsystem (Config 3),Cluster
+gunning_fog,0.3096993678849561,0.3096993678849561,Linguistic-Only Subsystem (Config 3),Cluster
+flesch_kincaid_grade,-0.2957555510429807,0.2957555510429807,Linguistic-Only Subsystem (Config 3),Cluster
+avg_word_length,-0.2819054087311021,0.2819054087311021,Linguistic-Only Subsystem (Config 3),Cluster
+concrete_mean,-0.2751277830887505,0.2751277830887505,Linguistic-Only Subsystem (Config 3),Cluster
+pron_ratio,0.2620015351610801,0.2620015351610801,Linguistic-Only Subsystem (Config 3),Cluster
+ttr,-0.24155968037087724,0.24155968037087724,Linguistic-Only Subsystem (Config 3),Cluster
+char_count,-0.22262932235421604,0.22262932235421604,Linguistic-Only Subsystem (Config 3),Cluster
+sentiment_polarity_neg,0.21891829637783702,0.21891829637783702,Linguistic-Only Subsystem (Config 3),Cluster
+discourse_addition_count,-0.2167687674709726,0.2167687674709726,Linguistic-Only Subsystem (Config 3),Cluster
+title_ratio,0.19747500095714637,0.19747500095714637,Linguistic-Only Subsystem (Config 3),Cluster
+present_tense_ratio,0.18239034803163337,0.18239034803163337,Linguistic-Only Subsystem (Config 3),Cluster
+comma_count,0.17874004691864567,0.17874004691864567,Linguistic-Only Subsystem (Config 3),Cluster
+flesch_reading_ease,-0.17428100965002832,0.17428100965002832,Linguistic-Only Subsystem (Config 3),Cluster
+sentiment_polarity_pos,-0.1591911406118905,0.1591911406118905,Linguistic-Only Subsystem (Config 3),Cluster
+discourse_contrast_count,-0.14870623077690812,0.14870623077690812,Linguistic-Only Subsystem (Config 3),Cluster
+conj_ratio,0.12995565636790415,0.12995565636790415,Linguistic-Only Subsystem (Config 3),Cluster
+sentiment_polarity_neu,-0.0970997570907213,0.0970997570907213,Linguistic-Only Subsystem (Config 3),Cluster
+prep_ratio,-0.09176251400038217,0.09176251400038217,Linguistic-Only Subsystem (Config 3),Cluster
+semicolon_count,0.08950249423320691,0.08950249423320691,Linguistic-Only Subsystem (Config 3),Cluster
+concrete_max,-0.08881045659565857,0.08881045659565857,Linguistic-Only Subsystem (Config 3),Cluster
+period_count,-0.0815640886319282,0.0815640886319282,Linguistic-Only Subsystem (Config 3),Cluster
+discourse_causal_count,-0.06876755568728979,0.06876755568728979,Linguistic-Only Subsystem (Config 3),Cluster
+max_parse_depth,0.06746985390612241,0.06746985390612241,Linguistic-Only Subsystem (Config 3),Cluster
+adj_ratio,0.06429804401836259,0.06429804401836259,Linguistic-Only Subsystem (Config 3),Cluster
+noun_ratio,-0.059171897028889905,0.059171897028889905,Linguistic-Only Subsystem (Config 3),Cluster
+pron_3rd_ratio,0.04726195542847619,0.04726195542847619,Linguistic-Only Subsystem (Config 3),Cluster
+past_tense_ratio,-0.04716132209101387,0.04716132209101387,Linguistic-Only Subsystem (Config 3),Cluster
+parenthesis_count,0.044950549004635645,0.044950549004635645,Linguistic-Only Subsystem (Config 3),Cluster
+pron_1st_ratio,-0.0444621378080155,0.0444621378080155,Linguistic-Only Subsystem (Config 3),Cluster
+avg_dep_distance,-0.04094037259128788,0.04094037259128788,Linguistic-Only Subsystem (Config 3),Cluster
+cap_ratio,0.027292934182876923,0.027292934182876923,Linguistic-Only Subsystem (Config 3),Cluster
+verb_ratio,0.024425418862822637,0.024425418862822637,Linguistic-Only Subsystem (Config 3),Cluster
+pron_2nd_ratio,-0.01707983262079244,0.01707983262079244,Linguistic-Only Subsystem (Config 3),Cluster
+adv_ratio,0.015174207942901278,0.015174207942901278,Linguistic-Only Subsystem (Config 3),Cluster
+colon_count,0.004250242809644556,0.004250242809644556,Linguistic-Only Subsystem (Config 3),Cluster
+exclamation_count,0.0,0.0,Linguistic-Only Subsystem (Config 3),Cluster
+question_count,0.0,0.0,Linguistic-Only Subsystem (Config 3),Cluster
+flesch_kincaid_grade,0.6556662130835487,0.6556662130835487,Linguistic-Only Subsystem (Config 3),DSNB
+sentiment_polarity_compound,0.4414975057571438,0.4414975057571438,Linguistic-Only Subsystem (Config 3),DSNB
+sentiment_polarity_pos,-0.2926095674397334,0.2926095674397334,Linguistic-Only Subsystem (Config 3),DSNB
+sentiment_polarity_neg,0.26680979679303524,0.26680979679303524,Linguistic-Only Subsystem (Config 3),DSNB
+discourse_contrast_count,-0.25312699037217146,0.25312699037217146,Linguistic-Only Subsystem (Config 3),DSNB
+flesch_reading_ease,0.24864885002117676,0.24864885002117676,Linguistic-Only Subsystem (Config 3),DSNB
+number_ratio,0.2428733146645842,0.2428733146645842,Linguistic-Only Subsystem (Config 3),DSNB
+pron_1st_ratio,-0.23435826315746433,0.23435826315746433,Linguistic-Only Subsystem (Config 3),DSNB
+word_count,0.20838854047564445,0.20838854047564445,Linguistic-Only Subsystem (Config 3),DSNB
+colon_count,0.2054293406199708,0.2054293406199708,Linguistic-Only Subsystem (Config 3),DSNB
+discourse_addition_count,-0.204929343714526,0.204929343714526,Linguistic-Only Subsystem (Config 3),DSNB
+stopword_ratio,-0.18575107053189469,0.18575107053189469,Linguistic-Only Subsystem (Config 3),DSNB
+avg_dep_distance,-0.14409052444197612,0.14409052444197612,Linguistic-Only Subsystem (Config 3),DSNB
+pron_3rd_ratio,-0.13070333008948418,0.13070333008948418,Linguistic-Only Subsystem (Config 3),DSNB
+pron_ratio,0.12923990437906993,0.12923990437906993,Linguistic-Only Subsystem (Config 3),DSNB
+comma_count,0.12710429802757867,0.12710429802757867,Linguistic-Only Subsystem (Config 3),DSNB
+gunning_fog,-0.12696549326771372,0.12696549326771372,Linguistic-Only Subsystem (Config 3),DSNB
+concrete_min,-0.11745897121911632,0.11745897121911632,Linguistic-Only Subsystem (Config 3),DSNB
+conj_ratio,0.11674529937410813,0.11674529937410813,Linguistic-Only Subsystem (Config 3),DSNB
+discourse_causal_count,-0.11532718525582215,0.11532718525582215,Linguistic-Only Subsystem (Config 3),DSNB
+period_count,0.11442155797662043,0.11442155797662043,Linguistic-Only Subsystem (Config 3),DSNB
+cap_ratio,0.11393012385100966,0.11393012385100966,Linguistic-Only Subsystem (Config 3),DSNB
+semicolon_count,-0.10441872755162528,0.10441872755162528,Linguistic-Only Subsystem (Config 3),DSNB
+pron_2nd_ratio,-0.10240985164121774,0.10240985164121774,Linguistic-Only Subsystem (Config 3),DSNB
+verb_ratio,0.08917420831465052,0.08917420831465052,Linguistic-Only Subsystem (Config 3),DSNB
+char_count,0.08290383972820654,0.08290383972820654,Linguistic-Only Subsystem (Config 3),DSNB
+adv_ratio,-0.08074625847612107,0.08074625847612107,Linguistic-Only Subsystem (Config 3),DSNB
+parenthesis_count,0.07975246192653027,0.07975246192653027,Linguistic-Only Subsystem (Config 3),DSNB
+prep_ratio,0.07936111727607978,0.07936111727607978,Linguistic-Only Subsystem (Config 3),DSNB
+noun_ratio,-0.07785825472330897,0.07785825472330897,Linguistic-Only Subsystem (Config 3),DSNB
+concrete_max,0.07680142532033093,0.07680142532033093,Linguistic-Only Subsystem (Config 3),DSNB
+avg_word_length,-0.0512328107938897,0.0512328107938897,Linguistic-Only Subsystem (Config 3),DSNB
+max_parse_depth,-0.04951814905434097,0.04951814905434097,Linguistic-Only Subsystem (Config 3),DSNB
+concrete_std,-0.049076292922341565,0.049076292922341565,Linguistic-Only Subsystem (Config 3),DSNB
+past_tense_ratio,-0.040112206277036995,0.040112206277036995,Linguistic-Only Subsystem (Config 3),DSNB
+title_ratio,0.03699747432762832,0.03699747432762832,Linguistic-Only Subsystem (Config 3),DSNB
+adj_ratio,0.020546138921042092,0.020546138921042092,Linguistic-Only Subsystem (Config 3),DSNB
+ttr,0.019788717397239024,0.019788717397239024,Linguistic-Only Subsystem (Config 3),DSNB
+concrete_mean,0.012277413048737154,0.012277413048737154,Linguistic-Only Subsystem (Config 3),DSNB
+sentiment_polarity_neu,0.004150657409103585,0.004150657409103585,Linguistic-Only Subsystem (Config 3),DSNB
+present_tense_ratio,0.001716505411313494,0.001716505411313494,Linguistic-Only Subsystem (Config 3),DSNB
+exclamation_count,0.0,0.0,Linguistic-Only Subsystem (Config 3),DSNB
+question_count,0.0,0.0,Linguistic-Only Subsystem (Config 3),DSNB
+word_count,0.5537232469419637,0.5537232469419637,Linguistic-Only Subsystem (Config 3),None
+question_count,-0.33610624397164135,0.33610624397164135,Linguistic-Only Subsystem (Config 3),None
+char_count,-0.22944019027744111,0.22944019027744111,Linguistic-Only Subsystem (Config 3),None
+sentiment_polarity_compound,0.21664911784117852,0.21664911784117852,Linguistic-Only Subsystem (Config 3),None
+discourse_addition_count,-0.1983766672882996,0.1983766672882996,Linguistic-Only Subsystem (Config 3),None
+concrete_max,0.1911021324366785,0.1911021324366785,Linguistic-Only Subsystem (Config 3),None
+concrete_mean,-0.1893388316862009,0.1893388316862009,Linguistic-Only Subsystem (Config 3),None
+cap_ratio,0.17973804875497876,0.17973804875497876,Linguistic-Only Subsystem (Config 3),None
+flesch_kincaid_grade,0.17487284768069616,0.17487284768069616,Linguistic-Only Subsystem (Config 3),None
+number_ratio,0.17037815586737187,0.17037815586737187,Linguistic-Only Subsystem (Config 3),None
+conj_ratio,0.15403016995103563,0.15403016995103563,Linguistic-Only Subsystem (Config 3),None
+sentiment_polarity_pos,-0.14753163994237475,0.14753163994237475,Linguistic-Only Subsystem (Config 3),None
+stopword_ratio,-0.13890378184332589,0.13890378184332589,Linguistic-Only Subsystem (Config 3),None
+discourse_contrast_count,-0.12674003392883573,0.12674003392883573,Linguistic-Only Subsystem (Config 3),None
+concrete_min,0.12184775210964655,0.12184775210964655,Linguistic-Only Subsystem (Config 3),None
+adv_ratio,-0.09905634170890236,0.09905634170890236,Linguistic-Only Subsystem (Config 3),None
+pron_1st_ratio,-0.09332939373221742,0.09332939373221742,Linguistic-Only Subsystem (Config 3),None
+sentiment_polarity_neg,0.09080177177644082,0.09080177177644082,Linguistic-Only Subsystem (Config 3),None
+comma_count,0.09064284910303215,0.09064284910303215,Linguistic-Only Subsystem (Config 3),None
+avg_dep_distance,0.07997526089210727,0.07997526089210727,Linguistic-Only Subsystem (Config 3),None
+flesch_reading_ease,0.07686471883300755,0.07686471883300755,Linguistic-Only Subsystem (Config 3),None
+parenthesis_count,0.07161265417635633,0.07161265417635633,Linguistic-Only Subsystem (Config 3),None
+ttr,-0.06630949597531659,0.06630949597531659,Linguistic-Only Subsystem (Config 3),None
+gunning_fog,-0.06380555573851798,0.06380555573851798,Linguistic-Only Subsystem (Config 3),None
+pron_ratio,0.055464446816670544,0.055464446816670544,Linguistic-Only Subsystem (Config 3),None
+semicolon_count,-0.05528549984059049,0.05528549984059049,Linguistic-Only Subsystem (Config 3),None
+avg_word_length,0.05515967700657917,0.05515967700657917,Linguistic-Only Subsystem (Config 3),None
+title_ratio,-0.05351751370152364,0.05351751370152364,Linguistic-Only Subsystem (Config 3),None
+prep_ratio,0.04924744762816289,0.04924744762816289,Linguistic-Only Subsystem (Config 3),None
+verb_ratio,-0.044150273186956905,0.044150273186956905,Linguistic-Only Subsystem (Config 3),None
+noun_ratio,-0.04192570480853463,0.04192570480853463,Linguistic-Only Subsystem (Config 3),None
+colon_count,0.04160632536615905,0.04160632536615905,Linguistic-Only Subsystem (Config 3),None
+past_tense_ratio,-0.036619610687156516,0.036619610687156516,Linguistic-Only Subsystem (Config 3),None
+concrete_std,-0.036398209304330624,0.036398209304330624,Linguistic-Only Subsystem (Config 3),None
+pron_2nd_ratio,-0.027101824293644966,0.027101824293644966,Linguistic-Only Subsystem (Config 3),None
+adj_ratio,-0.023327125741246343,0.023327125741246343,Linguistic-Only Subsystem (Config 3),None
+pron_3rd_ratio,-0.015238418685070695,0.015238418685070695,Linguistic-Only Subsystem (Config 3),None
+discourse_causal_count,-0.014306135223401984,0.014306135223401984,Linguistic-Only Subsystem (Config 3),None
+sentiment_polarity_neu,0.011301289108826818,0.011301289108826818,Linguistic-Only Subsystem (Config 3),None
+max_parse_depth,-0.006904985065308935,0.006904985065308935,Linguistic-Only Subsystem (Config 3),None
+period_count,-0.005738596447622501,0.005738596447622501,Linguistic-Only Subsystem (Config 3),None
+present_tense_ratio,-0.001279181749037817,0.001279181749037817,Linguistic-Only Subsystem (Config 3),None
+exclamation_count,0.0,0.0,Linguistic-Only Subsystem (Config 3),None
+word_count,0.6079711773294311,0.6079711773294311,Linguistic-Only Subsystem (Config 3),Pairwise
+flesch_kincaid_grade,0.6074913683901302,0.6074913683901302,Linguistic-Only Subsystem (Config 3),Pairwise
+char_count,-0.5107832080380065,0.5107832080380065,Linguistic-Only Subsystem (Config 3),Pairwise
+question_count,-0.4341460206746979,0.4341460206746979,Linguistic-Only Subsystem (Config 3),Pairwise
+flesch_reading_ease,0.38302623166336214,0.38302623166336214,Linguistic-Only Subsystem (Config 3),Pairwise
+conj_ratio,0.28094039580601143,0.28094039580601143,Linguistic-Only Subsystem (Config 3),Pairwise
+number_ratio,0.2659136938844216,0.2659136938844216,Linguistic-Only Subsystem (Config 3),Pairwise
+cap_ratio,0.21359403771681112,0.21359403771681112,Linguistic-Only Subsystem (Config 3),Pairwise
+ttr,-0.2068623842272095,0.2068623842272095,Linguistic-Only Subsystem (Config 3),Pairwise
+concrete_max,0.191873226408686,0.191873226408686,Linguistic-Only Subsystem (Config 3),Pairwise
+discourse_contrast_count,-0.19015660080299124,0.19015660080299124,Linguistic-Only Subsystem (Config 3),Pairwise
+stopword_ratio,-0.18939413182484943,0.18939413182484943,Linguistic-Only Subsystem (Config 3),Pairwise
+noun_ratio,-0.18793512092564305,0.18793512092564305,Linguistic-Only Subsystem (Config 3),Pairwise
+discourse_addition_count,-0.16905262790626419,0.16905262790626419,Linguistic-Only Subsystem (Config 3),Pairwise
+prep_ratio,0.15023757003292437,0.15023757003292437,Linguistic-Only Subsystem (Config 3),Pairwise
+sentiment_polarity_pos,-0.14655948680259867,0.14655948680259867,Linguistic-Only Subsystem (Config 3),Pairwise
+title_ratio,0.14514111814461886,0.14514111814461886,Linguistic-Only Subsystem (Config 3),Pairwise
+concrete_mean,-0.14375590833007904,0.14375590833007904,Linguistic-Only Subsystem (Config 3),Pairwise
+avg_word_length,0.141204275926511,0.141204275926511,Linguistic-Only Subsystem (Config 3),Pairwise
+sentiment_polarity_compound,0.1343711807377482,0.1343711807377482,Linguistic-Only Subsystem (Config 3),Pairwise
+pron_ratio,0.11903704641342155,0.11903704641342155,Linguistic-Only Subsystem (Config 3),Pairwise
+pron_3rd_ratio,-0.10855472396179028,0.10855472396179028,Linguistic-Only Subsystem (Config 3),Pairwise
+present_tense_ratio,-0.10775538247950128,0.10775538247950128,Linguistic-Only Subsystem (Config 3),Pairwise
+concrete_min,0.10630485123586003,0.10630485123586003,Linguistic-Only Subsystem (Config 3),Pairwise
+adv_ratio,-0.10552762716244708,0.10552762716244708,Linguistic-Only Subsystem (Config 3),Pairwise
+gunning_fog,-0.10490560687576482,0.10490560687576482,Linguistic-Only Subsystem (Config 3),Pairwise
+pron_1st_ratio,-0.09992025714708455,0.09992025714708455,Linguistic-Only Subsystem (Config 3),Pairwise
+verb_ratio,0.09602762489690272,0.09602762489690272,Linguistic-Only Subsystem (Config 3),Pairwise
+comma_count,0.09267438991505277,0.09267438991505277,Linguistic-Only Subsystem (Config 3),Pairwise
+sentiment_polarity_neg,0.06405270537340142,0.06405270537340142,Linguistic-Only Subsystem (Config 3),Pairwise
+avg_dep_distance,0.056485518353502275,0.056485518353502275,Linguistic-Only Subsystem (Config 3),Pairwise
+parenthesis_count,0.05443375289276148,0.05443375289276148,Linguistic-Only Subsystem (Config 3),Pairwise
+pron_2nd_ratio,-0.05282279988909577,0.05282279988909577,Linguistic-Only Subsystem (Config 3),Pairwise
+semicolon_count,-0.05020200444480556,0.05020200444480556,Linguistic-Only Subsystem (Config 3),Pairwise
+past_tense_ratio,-0.0483380174962726,0.0483380174962726,Linguistic-Only Subsystem (Config 3),Pairwise
+colon_count,0.038785148899104414,0.038785148899104414,Linguistic-Only Subsystem (Config 3),Pairwise
+concrete_std,-0.026707792967476354,0.026707792967476354,Linguistic-Only Subsystem (Config 3),Pairwise
+discourse_causal_count,0.025824919445972233,0.025824919445972233,Linguistic-Only Subsystem (Config 3),Pairwise
+sentiment_polarity_neu,0.02132607780383478,0.02132607780383478,Linguistic-Only Subsystem (Config 3),Pairwise
+max_parse_depth,-0.013744302495410862,0.013744302495410862,Linguistic-Only Subsystem (Config 3),Pairwise
+adj_ratio,-0.009486139533224018,0.009486139533224018,Linguistic-Only Subsystem (Config 3),Pairwise
+period_count,-0.001232110359936291,0.001232110359936291,Linguistic-Only Subsystem (Config 3),Pairwise
+exclamation_count,0.0,0.0,Linguistic-Only Subsystem (Config 3),Pairwise
+sentiment_polarity_compound,0.5907690845952723,0.5907690845952723,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+flesch_kincaid_grade,0.4638403163395866,0.4638403163395866,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+sentiment_polarity_neg,0.3507066955685072,0.3507066955685072,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+sentiment_polarity_pos,-0.326261875570384,0.326261875570384,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+stopword_ratio,-0.2315613338972122,0.2315613338972122,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+conj_ratio,0.21314484442337653,0.21314484442337653,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+flesch_reading_ease,0.21206343782424192,0.21206343782424192,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+avg_dep_distance,-0.2119953141703632,0.2119953141703632,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+discourse_addition_count,-0.20985603812302855,0.20985603812302855,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+number_ratio,0.20435805965673098,0.20435805965673098,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+discourse_contrast_count,-0.20125766974341414,0.20125766974341414,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+word_count,0.1869806527162061,0.1869806527162061,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+char_count,0.18500295822398563,0.18500295822398563,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+colon_count,0.16870363565819108,0.16870363565819108,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+avg_word_length,-0.16284495956093284,0.16284495956093284,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+noun_ratio,-0.1467470786370267,0.1467470786370267,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+prep_ratio,0.14543952957291278,0.14543952957291278,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+cap_ratio,0.1449846166146237,0.1449846166146237,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+concrete_mean,0.1307647104255338,0.1307647104255338,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+discourse_causal_count,-0.12953158079283947,0.12953158079283947,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+pron_1st_ratio,-0.12270686916447737,0.12270686916447737,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+title_ratio,0.12004970370515834,0.12004970370515834,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+gunning_fog,0.10304762764492215,0.10304762764492215,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+pron_2nd_ratio,-0.10030977192581844,0.10030977192581844,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+period_count,0.09196868221610016,0.09196868221610016,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+verb_ratio,0.09000782386422103,0.09000782386422103,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+comma_count,0.08959580991235752,0.08959580991235752,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+semicolon_count,-0.0866286179130578,0.0866286179130578,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+parenthesis_count,0.08456479622774789,0.08456479622774789,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+present_tense_ratio,0.07396946375060696,0.07396946375060696,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+adj_ratio,0.07061840589048765,0.07061840589048765,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+pron_3rd_ratio,0.06940460364286129,0.06940460364286129,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+max_parse_depth,0.049766515432518824,0.049766515432518824,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+past_tense_ratio,-0.04168630749781824,0.04168630749781824,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+pron_ratio,-0.028616528458721813,0.028616528458721813,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+concrete_max,-0.025828268326008878,0.025828268326008878,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+sentiment_polarity_neu,-0.020312883542430275,0.020312883542430275,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+adv_ratio,-0.015850050484854536,0.015850050484854536,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+concrete_std,-0.00570056891912285,0.00570056891912285,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+ttr,-0.0034030216417504917,0.0034030216417504917,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+concrete_min,-0.0008365412162222496,0.0008365412162222496,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+exclamation_count,0.0,0.0,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+question_count,0.0,0.0,Linguistic-Only Subsystem (Config 3),RST-Neighborhood
+rel_surp_pll_pf_diff,-0.8489112410565259,0.8489112410565259,Surprisal-Only Subsystem (Config 4),Cluster
+rel_surp_pll_pf_ratio,0.8213996868286252,0.8213996868286252,Surprisal-Only Subsystem (Config 4),Cluster
+rel_surp_causal_pf_sum_ratio,0.6010502339236832,0.6010502339236832,Surprisal-Only Subsystem (Config 4),Cluster
+rel_surp_causal_pf_diff,-0.5435335552891959,0.5435335552891959,Surprisal-Only Subsystem (Config 4),Cluster
+surp_pll_pf_sum,0.4987596030622114,0.4987596030622114,Surprisal-Only Subsystem (Config 4),Cluster
+rel_surp_causal_pf_ratio,0.402659706798306,0.402659706798306,Surprisal-Only Subsystem (Config 4),Cluster
+rel_surp_pll_pf_sum_ratio,-0.3704095873871188,0.3704095873871188,Surprisal-Only Subsystem (Config 4),Cluster
+surp_pll_pf_std,0.3258269429681119,0.3258269429681119,Surprisal-Only Subsystem (Config 4),Cluster
+surp_pll_pf_min,0.16701229205443485,0.16701229205443485,Surprisal-Only Subsystem (Config 4),Cluster
+surp_causal_pf_mean,0.15494898937399731,0.15494898937399731,Surprisal-Only Subsystem (Config 4),Cluster
+surp_causal_pf_max,-0.14918406913662535,0.14918406913662535,Surprisal-Only Subsystem (Config 4),Cluster
+surp_pll_pf_max,0.11894348760596031,0.11894348760596031,Surprisal-Only Subsystem (Config 4),Cluster
+surp_deletion_drop,-0.115882695623618,0.115882695623618,Surprisal-Only Subsystem (Config 4),Cluster
+surp_pll_pf_mean,0.021747097465090785,0.021747097465090785,Surprisal-Only Subsystem (Config 4),Cluster
+surp_causal_pf_std,-0.01940113427614632,0.01940113427614632,Surprisal-Only Subsystem (Config 4),Cluster
+surp_causal_pf_sum,-0.012362681557905568,0.012362681557905568,Surprisal-Only Subsystem (Config 4),Cluster
+surp_causal_pf_min,0.003404097509943709,0.003404097509943709,Surprisal-Only Subsystem (Config 4),Cluster
+rel_surp_causal_pf_sum_ratio,0.7189480325042121,0.7189480325042121,Surprisal-Only Subsystem (Config 4),DSNB
+rel_surp_pll_pf_sum_ratio,-0.5168071438187422,0.5168071438187422,Surprisal-Only Subsystem (Config 4),DSNB
+surp_pll_pf_sum,0.4408701082538194,0.4408701082538194,Surprisal-Only Subsystem (Config 4),DSNB
+rel_surp_causal_pf_diff,-0.41906151002048675,0.41906151002048675,Surprisal-Only Subsystem (Config 4),DSNB
+rel_surp_causal_pf_ratio,0.3326152415222002,0.3326152415222002,Surprisal-Only Subsystem (Config 4),DSNB
+rel_surp_pll_pf_ratio,0.3037796338224379,0.3037796338224379,Surprisal-Only Subsystem (Config 4),DSNB
+rel_surp_pll_pf_diff,-0.26822427495380424,0.26822427495380424,Surprisal-Only Subsystem (Config 4),DSNB
+surp_causal_pf_max,-0.25449775107562206,0.25449775107562206,Surprisal-Only Subsystem (Config 4),DSNB
+surp_causal_pf_std,0.21532814404383516,0.21532814404383516,Surprisal-Only Subsystem (Config 4),DSNB
+surp_deletion_drop,-0.21291030498169314,0.21291030498169314,Surprisal-Only Subsystem (Config 4),DSNB
+surp_pll_pf_std,0.1542072251603248,0.1542072251603248,Surprisal-Only Subsystem (Config 4),DSNB
+surp_pll_pf_max,0.10465156135223778,0.10465156135223778,Surprisal-Only Subsystem (Config 4),DSNB
+surp_pll_pf_min,0.0894111806380254,0.0894111806380254,Surprisal-Only Subsystem (Config 4),DSNB
+surp_causal_pf_mean,0.08011673472358487,0.08011673472358487,Surprisal-Only Subsystem (Config 4),DSNB
+surp_causal_pf_sum,0.01597217074926659,0.01597217074926659,Surprisal-Only Subsystem (Config 4),DSNB
+surp_causal_pf_min,-0.014680573880424761,0.014680573880424761,Surprisal-Only Subsystem (Config 4),DSNB
+surp_pll_pf_mean,0.004481208643730684,0.004481208643730684,Surprisal-Only Subsystem (Config 4),DSNB
+rel_surp_causal_pf_sum_ratio,1.1166340745675767,1.1166340745675767,Surprisal-Only Subsystem (Config 4),None
+rel_surp_pll_pf_ratio,1.0146313717730882,1.0146313717730882,Surprisal-Only Subsystem (Config 4),None
+rel_surp_pll_pf_diff,-1.0002996738755803,1.0002996738755803,Surprisal-Only Subsystem (Config 4),None
+rel_surp_pll_pf_sum_ratio,-0.32300201768600556,0.32300201768600556,Surprisal-Only Subsystem (Config 4),None
+rel_surp_causal_pf_diff,-0.1737458649757809,0.1737458649757809,Surprisal-Only Subsystem (Config 4),None
+surp_deletion_drop,0.157879961406003,0.157879961406003,Surprisal-Only Subsystem (Config 4),None
+surp_causal_pf_max,-0.13829692157920587,0.13829692157920587,Surprisal-Only Subsystem (Config 4),None
+surp_pll_pf_std,0.12198742383919753,0.12198742383919753,Surprisal-Only Subsystem (Config 4),None
+surp_causal_pf_std,0.10624061379880337,0.10624061379880337,Surprisal-Only Subsystem (Config 4),None
+surp_pll_pf_min,0.06531082577447377,0.06531082577447377,Surprisal-Only Subsystem (Config 4),None
+surp_causal_pf_mean,0.04893453632662308,0.04893453632662308,Surprisal-Only Subsystem (Config 4),None
+rel_surp_causal_pf_ratio,-0.03421915352102019,0.03421915352102019,Surprisal-Only Subsystem (Config 4),None
+surp_causal_pf_min,-0.032845323564877064,0.032845323564877064,Surprisal-Only Subsystem (Config 4),None
+surp_pll_pf_max,0.0247747574927094,0.0247747574927094,Surprisal-Only Subsystem (Config 4),None
+surp_causal_pf_sum,-0.022892457193284046,0.022892457193284046,Surprisal-Only Subsystem (Config 4),None
+surp_pll_pf_mean,-0.007906061521966927,0.007906061521966927,Surprisal-Only Subsystem (Config 4),None
+surp_pll_pf_sum,0.0036626856027850525,0.0036626856027850525,Surprisal-Only Subsystem (Config 4),None
+rel_surp_pll_pf_ratio,1.6654948813600154,1.6654948813600154,Surprisal-Only Subsystem (Config 4),Pairwise
+rel_surp_causal_pf_sum_ratio,1.2296215983126855,1.2296215983126855,Surprisal-Only Subsystem (Config 4),Pairwise
+rel_surp_pll_pf_sum_ratio,-0.8943904324732695,0.8943904324732695,Surprisal-Only Subsystem (Config 4),Pairwise
+surp_pll_pf_mean,-0.8059683072085976,0.8059683072085976,Surprisal-Only Subsystem (Config 4),Pairwise
+rel_surp_pll_pf_diff,-0.8059683072085976,0.8059683072085976,Surprisal-Only Subsystem (Config 4),Pairwise
+surp_deletion_drop,0.3330889895669241,0.3330889895669241,Surprisal-Only Subsystem (Config 4),Pairwise
+surp_causal_pf_max,-0.21958807102910344,0.21958807102910344,Surprisal-Only Subsystem (Config 4),Pairwise
+surp_pll_pf_sum,0.19245103723203183,0.19245103723203183,Surprisal-Only Subsystem (Config 4),Pairwise
+rel_surp_causal_pf_ratio,-0.16472604344018404,0.16472604344018404,Surprisal-Only Subsystem (Config 4),Pairwise
+surp_pll_pf_std,0.1225978246411644,0.1225978246411644,Surprisal-Only Subsystem (Config 4),Pairwise
+surp_causal_pf_std,0.10643301878302067,0.10643301878302067,Surprisal-Only Subsystem (Config 4),Pairwise
+surp_pll_pf_min,0.1058039917631854,0.1058039917631854,Surprisal-Only Subsystem (Config 4),Pairwise
+surp_causal_pf_min,-0.09264502043118898,0.09264502043118898,Surprisal-Only Subsystem (Config 4),Pairwise
+surp_pll_pf_max,0.0500612364246864,0.0500612364246864,Surprisal-Only Subsystem (Config 4),Pairwise
+surp_causal_pf_sum,0.03397973819278131,0.03397973819278131,Surprisal-Only Subsystem (Config 4),Pairwise
+surp_causal_pf_mean,0.021384263244052435,0.021384263244052435,Surprisal-Only Subsystem (Config 4),Pairwise
+rel_surp_causal_pf_diff,0.021384263244052435,0.021384263244052435,Surprisal-Only Subsystem (Config 4),Pairwise
+rel_surp_causal_pf_sum_ratio,0.9845441144950071,0.9845441144950071,Surprisal-Only Subsystem (Config 4),RST-Neighborhood
+rel_surp_pll_pf_sum_ratio,-0.7569304846855857,0.7569304846855857,Surprisal-Only Subsystem (Config 4),RST-Neighborhood
+rel_surp_causal_pf_diff,-0.6441764118467647,0.6441764118467647,Surprisal-Only Subsystem (Config 4),RST-Neighborhood
+rel_surp_causal_pf_ratio,0.4802219990604842,0.4802219990604842,Surprisal-Only Subsystem (Config 4),RST-Neighborhood
+rel_surp_pll_pf_ratio,0.39015508555668066,0.39015508555668066,Surprisal-Only Subsystem (Config 4),RST-Neighborhood
+surp_pll_pf_sum,0.34638094904797995,0.34638094904797995,Surprisal-Only Subsystem (Config 4),RST-Neighborhood
+rel_surp_pll_pf_diff,-0.33225720744183057,0.33225720744183057,Surprisal-Only Subsystem (Config 4),RST-Neighborhood
+surp_deletion_drop,-0.19816595142637364,0.19816595142637364,Surprisal-Only Subsystem (Config 4),RST-Neighborhood
+surp_pll_pf_max,0.18731618437195288,0.18731618437195288,Surprisal-Only Subsystem (Config 4),RST-Neighborhood
+surp_causal_pf_max,-0.18698605278273986,0.18698605278273986,Surprisal-Only Subsystem (Config 4),RST-Neighborhood
+surp_pll_pf_std,0.1584062561348479,0.1584062561348479,Surprisal-Only Subsystem (Config 4),RST-Neighborhood
+surp_causal_pf_std,0.13976723702744379,0.13976723702744379,Surprisal-Only Subsystem (Config 4),RST-Neighborhood
+surp_pll_pf_min,0.08536121177882866,0.08536121177882866,Surprisal-Only Subsystem (Config 4),RST-Neighborhood
+surp_causal_pf_mean,0.08331806427240972,0.08331806427240972,Surprisal-Only Subsystem (Config 4),RST-Neighborhood
+surp_causal_pf_min,-0.05273801962513028,0.05273801962513028,Surprisal-Only Subsystem (Config 4),RST-Neighborhood
+surp_causal_pf_sum,0.04334371913851397,0.04334371913851397,Surprisal-Only Subsystem (Config 4),RST-Neighborhood
+surp_pll_pf_mean,-0.03248797334898437,0.03248797334898437,Surprisal-Only Subsystem (Config 4),RST-Neighborhood

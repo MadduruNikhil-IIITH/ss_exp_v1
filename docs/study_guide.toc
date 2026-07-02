@@ -1,0 +1,97 @@
+\contentsline {section}{\numberline {1}Introduction and Project Scope}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}The Downstream Application: Query-Independent Question Generation}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Why Exclude Alignment Features?}{4}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Rhetorical Structure Theory (RST) in Depth}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Structural Units}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Common Discourse Relations}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Discourse Features Extracted}{5}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Information Theory and Cognitive Surprisal}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Mathematical Formulation of Surprisal}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Causal vs. Masked Surprisal}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Uniform Information Density (UID)}{5}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Sentence Deletion Coherence Drop}{6}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Dataset Biases and Feature Engineering}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Lead Position Bias}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Feature Families}{6}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Dataset Balancing Algorithms}{6}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Discourse-Semantic Neighborhood Balancing (DSNB)}{7}{subsection.5.1}%
+\contentsline {section}{\numberline {6}Model Architectures and Mathematical Formulations}{7}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Hybrid Gated BERT (Config 6)}{7}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Gated BERT Mathematical Flow}{7}{subsubsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.2}FiLM BERT (Config 7)}{8}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}FiLM Mathematical Flow}{8}{subsubsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.3}LGSM (Language-Guided Salience Model - Config 12)}{8}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}LGSM Mathematical Flow}{8}{subsubsection.6.3.1}%
+\contentsline {section}{\numberline {7}The 12 Evaluated Configurations}{9}{section.7}%
+\contentsline {section}{\numberline {8}Dataset Balancing Methods: Formulations \& Mathematical Details}{9}{section.8}%
+\contentsline {subsection}{\numberline {8.1}None (Raw Unbalanced)}{9}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Pairwise Balancing (Relative Ranking)}{9}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Cluster-Based Balancing}{10}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}RST-Neighborhood Balancing}{10}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}DSNB (Discourse-Semantic Neighborhood Balancing)}{10}{subsection.8.5}%
+\contentsline {section}{\numberline {9}Evaluation \& Ranking Metrics: Formulations \& Project Significance}{11}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Flat Classification Metrics}{11}{subsection.9.1}%
+\contentsline {subsubsection}{\numberline {9.1.1}Precision}{11}{subsubsection.9.1.1}%
+\contentsline {subsubsection}{\numberline {9.1.2}Recall}{11}{subsubsection.9.1.2}%
+\contentsline {subsubsection}{\numberline {9.1.3}F1-Score}{11}{subsubsection.9.1.3}%
+\contentsline {subsection}{\numberline {9.2}Context-Level Ranking Metrics}{11}{subsection.9.2}%
+\contentsline {subsubsection}{\numberline {9.2.1}Mean Average Precision (MAP)}{11}{subsubsection.9.2.1}%
+\contentsline {subsubsection}{\numberline {9.2.2}Mean Reciprocal Rank (MRR)}{12}{subsubsection.9.2.2}%
+\contentsline {subsubsection}{\numberline {9.2.3}Normalized Discounted Cumulative Gain (NDCG)}{12}{subsubsection.9.2.3}%
+\contentsline {section}{\numberline {10}Statistical Analyses \& Refitting Formulations}{12}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Post-LASSO Feature Selection}{12}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Wald Hypothesis Testing}{13}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Cohen's Kappa ($\kappa $)}{13}{subsection.10.3}%
+\contentsline {section}{\numberline {11}Presenter's Academic Q\&A Bank (Mock Defense)}{13}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Theory \& Motivation}{13}{subsection.11.1}%
+\contentsline {subsubsection}{\numberline {11.1.1}Q1: Why is query-independent salience prediction a harder task than query-focused QA?}{13}{subsubsection.11.1.1}%
+\contentsline {subsubsection}{\numberline {11.1.2}Q2: Why did you exclude alignment features (`align\_`) from your models? Doesn't that hurt performance?}{14}{subsubsection.11.1.2}%
+\contentsline {subsubsection}{\numberline {11.1.3}Q3: Explain the Uniform Information Density (UID) hypothesis. How does it relate to your surprisal features?}{14}{subsubsection.11.1.3}%
+\contentsline {subsubsection}{\numberline {11.1.4}Q4: What is the difference between causal surprisal and masked surprisal (PLL) in your feature extraction?}{14}{subsubsection.11.1.4}%
+\contentsline {subsubsection}{\numberline {11.1.5}Q5: Why does deleting a salient sentence cause a "coherence drop"? How is this calculated?}{14}{subsubsection.11.1.5}%
+\contentsline {subsection}{\numberline {11.2}Feature Engineering \& RST}{14}{subsection.11.2}%
+\contentsline {subsubsection}{\numberline {11.2.1}Q6: Rhetorical Structure Theory (RST) was designed for human text analysis. How does a parser automate this, and what errors does it introduce?}{14}{subsubsection.11.2.1}%
+\contentsline {subsubsection}{\numberline {11.2.2}Q7: Why does a negative coefficient for `rel\_rst\_depth\_ratio` ($-0.4352$) indicate high salience?}{15}{subsubsection.11.2.2}%
+\contentsline {subsubsection}{\numberline {11.2.3}Q8: How does the Brysbaert Concreteness Lexicon help in predicting sentence salience?}{15}{subsubsection.11.2.3}%
+\contentsline {subsubsection}{\numberline {11.2.4}Q9: Why is `sentiment\_polarity\_compound` a positive predictor of salience in your LR model?}{15}{subsubsection.11.2.4}%
+\contentsline {subsubsection}{\numberline {11.2.5}Q10: Since character count (`char\_count`) is a positive predictor, does your model simply favor long sentences?}{15}{subsubsection.11.2.5}%
+\contentsline {subsection}{\numberline {11.3}Dataset Balancing \& DSNB}{15}{subsection.11.3}%
+\contentsline {subsubsection}{\numberline {11.3.1}Q11: SQuAD has a 19.5\% positive rate. Why is training on raw unbalanced data bad for this task?}{15}{subsubsection.11.3.1}%
+\contentsline {subsubsection}{\numberline {11.3.2}Q12: How does DSNB differ from standard random under-sampling?}{15}{subsubsection.11.3.2}%
+\contentsline {subsubsection}{\numberline {11.3.3}Q13: Why does the coefficient of `surp\_deletion\_drop` flip from positive (`+0.20` in Pairwise) to negative (`-0.31` in DSNB)?}{16}{subsubsection.11.3.3}%
+\contentsline {subsubsection}{\numberline {11.3.4}Q14: Pairwise balancing also achieves 1:1 balance. Why is DSNB superior?}{16}{subsubsection.11.3.4}%
+\contentsline {subsubsection}{\numberline {11.3.5}Q15: How does RST-Neighborhood balancing handle contexts where the RST parse tree is disconnected?}{16}{subsubsection.11.3.5}%
+\contentsline {subsection}{\numberline {11.4}Architectures}{16}{subsection.11.4}%
+\contentsline {subsubsection}{\numberline {11.4.1}Q16: In Gated BERT, how does the gate vector $g$ prevent the tab features from being overwhelmed by the 768-dimensional BERT CLS embedding?}{16}{subsubsection.11.4.1}%
+\contentsline {subsubsection}{\numberline {11.4.2}Q17: What is the advantage of FiLM (Feature-wise Linear Modulation) over simple vector concatenation?}{16}{subsubsection.11.4.2}%
+\contentsline {subsubsection}{\numberline {11.4.3}Q18: Guided BERT (Config 11) fuses priors at the logit level. Why is this useful compared to representation fusion?}{17}{subsubsection.11.4.3}%
+\contentsline {subsubsection}{\numberline {11.4.4}Q19: LGSM uses Binary Focal Loss instead of Cross-Entropy. What is the mathematical benefit of this?}{17}{subsubsection.11.4.4}%
+\contentsline {subsubsection}{\numberline {11.4.5}Q20: Why did you use a sequence-level Transformer in LGSM instead of treating each sentence independently?}{17}{subsubsection.11.4.5}%
+\contentsline {subsection}{\numberline {11.5}Statistics \& Evaluation}{17}{subsection.11.5}%
+\contentsline {subsubsection}{\numberline {11.5.1}Q21: Why do you report 5-fold cross-validation at the context level instead of the sentence level?}{17}{subsubsection.11.5.1}%
+\contentsline {subsubsection}{\numberline {11.5.2}Q22: Explain the difference between MAP and NDCG. Why are they better than F1 for your application?}{17}{subsubsection.11.5.2}%
+\contentsline {subsubsection}{\numberline {11.5.3}Q23: How does the Wald test justify your feature selection in the post-LASSO study?}{18}{subsubsection.11.5.3}%
+\contentsline {subsubsection}{\numberline {11.5.4}Q24: Your Cohen's Kappa score is 0.44. Isn't that low?}{18}{subsubsection.11.5.4}%
+\contentsline {subsubsection}{\numberline {11.5.5}Q25: What is the optimal threshold for LGSM, and how did you determine it?}{18}{subsubsection.11.5.5}%
+\contentsline {subsection}{\numberline {11.6}Future Work \& Scaling}{18}{subsection.11.6}%
+\contentsline {subsubsection}{\numberline {11.6.1}Q26: Why do you expect precision to increase when you scale from 100 to 500 contexts?}{18}{subsubsection.11.6.1}%
+\contentsline {subsubsection}{\numberline {11.6.2}Q27: How will you evaluate the downstream QG quality in your future work?}{18}{subsubsection.11.6.2}%
+\contentsline {subsubsection}{\numberline {11.6.3}Q28: How does your approach handle multi-paragraph documents?}{19}{subsubsection.11.6.3}%
+\contentsline {subsubsection}{\numberline {11.6.4}Q29: Could you replace the heavy RST parser with a faster syntactic parser (like dependency parsing)?}{19}{subsubsection.11.6.4}%
+\contentsline {subsubsection}{\numberline {11.6.5}Q30: Why did you choose Qwen-2.5-1.5B-Instruct as your LLM judge rather than a larger model like GPT-4?}{19}{subsubsection.11.6.5}%
+\contentsline {subsubsection}{\numberline {11.6.6}Q31: What is the main bottleneck in your feature extraction pipeline, and how can it be optimized?}{19}{subsubsection.11.6.6}%
+\contentsline {subsubsection}{\numberline {11.6.7}Q32: Why does DSNB perform better than other methods at ranking metrics like MAP and NDCG?}{19}{subsubsection.11.6.7}%
+\contentsline {section}{\numberline {12}Experimental Visualisations}{20}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Fig 1: Positional Bias Distribution}{20}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Fig 2: Sentence Length Comparison}{20}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Fig 3: Text Readability (Gunning Fog Index)}{20}{subsection.12.3}%
+\contentsline {subsection}{\numberline {12.4}Fig 4: Syntactic Complexity (Dependency Distance)}{21}{subsection.12.4}%
+\contentsline {subsection}{\numberline {12.5}Fig 5: RST Relations Frequency Comparison}{22}{subsection.12.5}%
+\contentsline {subsection}{\numberline {12.6}Fig 6: Information Density --- Surprisal Deletion Drop}{23}{subsection.12.6}%
+\contentsline {subsection}{\numberline {12.7}Fig 7: UID Distribution --- Word-Level Surprisal CDFs}{23}{subsection.12.7}%
+\contentsline {subsection}{\numberline {12.8}Fig 8: Soft Hybrid Target Label Separability}{23}{subsection.12.8}%
+\contentsline {subsection}{\numberline {12.9}Fig 9: Pearson Correlation of Features with Salience}{24}{subsection.12.9}%
+\contentsline {subsection}{\numberline {12.10}Fig 10: Pearson Correlation Matrix of Key Features}{25}{subsection.12.10}%
+\contentsline {subsection}{\numberline {12.11}Fig 11: LGSM Gating Analysis}{26}{subsection.12.11}%
+\contentsline {subsection}{\numberline {12.12}Fig 12: Threshold Sensitivity Analysis}{27}{subsection.12.12}%
+\contentsline {subsection}{\numberline {12.13}Fig 13: Top-K Recall Curve}{28}{subsection.12.13}%

@@ -1,3 +1,5 @@
+checkpoints/
+
 # Python cache directories
 __pycache__/
 *.py[cod]
@@ -5,6 +7,8 @@ __pycache__/
 
 # Local project cache (SQuAD feature pickles)
 *.pkl
+*.pt
+*joblib
 
 # Local agent run logs and system-generated files
 .system_generated/

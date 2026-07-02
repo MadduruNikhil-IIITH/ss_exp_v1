@@ -1,3 +1,22 @@
+# Reference: Query-Alignment Feature Extraction (Deprecated)
+
+This document preserves the implementation of the query-alignment feature extractor, which was used during the **query-focused** experiments. It is preserved here for reference and potential future query-focused extensions.
+
+---
+
+## 1. Feature Specifications
+The query-focused pipeline extracted **5 semantic and lexical alignment features** comparing each sentence to the question:
+1.  `align_jaccard`: Jaccard similarity coefficient based on non-stopword lemmatized token overlaps.
+2.  `align_match_count`: Absolute count of intersecting lemmatized tokens between question and sentence.
+3.  `align_rouge_l_recall`: Approximate ROUGE-L recall using the Longest Common Subsequence (LCS) algorithm over lemmatized tokens.
+4.  `align_ne_match`: Binary indicator ($0/1$) showing if the sentence contains the named entity type expected by the question keyword (e.g., expecting `DATE` for "when", `PERSON` for "who").
+5.  `align_sem_sim`: Cosine similarity between SBERT (`all-MiniLM-L6-v2`) embeddings of the question and the sentence text.
+
+---
+
+## 2. Python Code (`src/alignment_features.py`)
+
+```python
 import spacy
 import torch
 from sentence_transformers import SentenceTransformer
@@ -105,3 +124,4 @@ class AlignmentFeatureExtractor:
                 else:
                     dp[i][j] = max(dp[i-1][j], dp[i][j-1])
         return dp[m][n]
+```

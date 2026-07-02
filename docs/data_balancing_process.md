@@ -7,7 +7,7 @@ This document details the dataset balancing techniques implemented in `src/data_
 ## 1. The Class Imbalance Problem
 
 In SQuAD sentence salience, a context passage typically has 5–8 sentences, but exactly **one** sentence contains the answer to the question (Class 1, salient). The rest are Class 0 (non-salient).
-* **Imbalance Ratio**: ~1:5.4 (15.72% positive examples in the training set).
+* **Imbalance Ratio**: ~1:4.09 (19.64% positive examples in the training set).
 * **The Risk**: Models trained without balancing tend to predict Class 0 by default, or exploit simple shortcuts like sentence length or positional biases (since early sentences are more likely to contain answers in SQuAD).
 
 To address this, we compare five distinct training-only balancing methods.
@@ -59,3 +59,18 @@ To address this, we compare five distinct training-only balancing methods.
     $$\text{Hardness}(s_j^-) = 0.4 \cdot w_{\text{pos}} + 0.4 \cdot w_{\text{sem}} + 0.2 \cdot w_{\text{rst}}$$
   * We select the negative sentences with the highest hardness scores.
 * **Analysis**: DSNB constructs a training set composed of hard negatives that look like answers (high semantic similarity) and occupy similar discourse structures (RST depth). This forces the classifier to look beyond simple keyword matching and learn fine-grained discourse boundaries, resulting in highly robust model generalizability.
+
+---
+
+## 3. Dataset Dimensions per Balancing Method
+
+The table below outlines the exact number of training records and class allocations after applying each balancing method:
+
+| Balancing Method | Training Samples | Salient (Class 1) | Non-Salient (Class 0) | Label Balance |
+| :--- | :---: | :---: | :---: | :---: |
+| **None (Unbalanced Raw)** | 2,301 | 452 | 1,849 | 19.64% / 80.36% |
+| **Pairwise** | 1,849 | 925 | 924 | 50.00% / 50.00% |
+| **Cluster** | 892 | 446 | 446 | 50.00% / 50.00% |
+| **RST-Neighborhood** | 892 | 446 | 446 | 50.00% / 50.00% |
+| **DSNB (Proposed)** | 892 | 446 | 446 | 50.00% / 50.00% |
+

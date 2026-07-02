@@ -26,16 +26,16 @@ Detailed guides detailing each step of the data and modeling process are availab
 
 ## 3. Core Experimental Results
 
-Evaluated on SQuAD contexts (2,156 training records and 1,322 validation records) across all 5 dataset balancing techniques. The complete, detailed metrics grid containing Accuracy, Precision, Recall, F1, MRR, MAP, and NDCG for all 13 configurations is available in the dedicated **[Metrics Table (metrics.md)](metrics.md)**.
+Evaluated on SQuAD contexts (2,301 training records and 229 validation records) across all 5 dataset balancing techniques. The complete, detailed metrics grid containing Accuracy, Precision, Recall, F1, MRR, MAP, and NDCG for all 13 configurations is available in the dedicated **[Metrics Table (metrics.md)](metrics.md)**.
 
-### Top-Performing Configurations Summary
+### Top-Performing Configurations Summary (Threshold = 0.30)
 
-| Model Configuration | Balancing Method | Accuracy | F1-Score | NDCG |
-| :--- | :--- | :---: | :---: | :---: |
-| **Heuristic-Guided BERT (RST)** | None | **0.8404** | **0.6874** | **0.9587** |
-| **Heuristic-Guided BERT (RST)** | Pairwise | 0.7534 | 0.6386 | 0.9561 |
-| **Combined Logistic Regression** | None | 0.7867 | 0.6375 | 0.9496 |
-| **Combined Logistic Regression** | DSNB | 0.7224 | 0.5853 | 0.9195 |
+| Model Configuration | Balancing Method | Accuracy | F1-Score | MAP | MRR | NDCG |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
+| **Gated BERT (Context)** | Pairwise | 0.2882 | 0.3347 | **0.6415** | **0.6408** | **0.7300** |
+| **Heuristic-Guided BERT** | DSNB | 0.1921 | 0.3071 | **0.6176** | **0.6165** | **0.7111** |
+| **Combined Logistic Regression** | DSNB | 0.2751 | 0.3141 | 0.5617 | 0.5606 | 0.6684 |
+| **LGSM** | None | **0.6332** | **0.3438** | 0.5118 | 0.5118 | 0.6320 |
 
 *For the full 65-row results grid, please refer to the **[Complete Experimental Results (metrics.md)](metrics.md)**.*
 
@@ -43,13 +43,13 @@ Evaluated on SQuAD contexts (2,156 training records and 1,322 validation records
 
 ## 4. Dataset Statistics & Analysis
 
-Rigorous statistical analysis of our processed SQuAD sentence-level dataset (3,478 records total) highlights several key characteristics:
+Rigorous statistical analysis of our processed SQuAD sentence-level dataset (2,530 records total) highlights several key characteristics:
 
 ### A. Dimensions & Splits
-* **Total unique contexts**: 75 (60 train, 15 validation)
-* **Total QA pairs**: 640 (337 train, 303 validation)
-* **Total sentence-question records**: 3,478 (2,156 train, 1,322 validation)
-* **Class Imbalance**: Salient sentences (Class 1) comprise **19.41%** (675 records), while Non-salient sentences (Class 0) comprise **80.59%** (2,803 records).
+* **Total unique contexts**: 100 (90 train, 10 validation)
+* **Total QA pairs**: 491 (452 train, 39 validation)
+* **Total sentence-question records**: 2,530 (2,301 train, 229 validation)
+* **Class Imbalance**: Salient sentences (Class 1) comprise **19.49%** (493 records), while Non-salient sentences (Class 0) comprise **80.51%** (2,037 records).
 
 ### B. Extreme Positional Bias
 Over **66.37%** of all salient sentences reside at Sentence Index 0, 1, or 2 inside their context paragraph. This creates a spatial shortcut that classifiers can easily exploit unless neutralized by balancing methods like **DSNB** (Discourse-Semantic Neighborhood Balancing).
@@ -79,22 +79,55 @@ Pearson correlation matrix of the top features shows that semantic alignment fea
 
 ---
 
-## 5. Quick Start
+## 5. Running the 4-Stage Pipeline
 
-### Installation
-Set up a python environment (e.g. Conda) and install requirements:
+The codebase is organized into a clean 4-stage execution sequence:
+
+### Step 1: Installation & Setup
+Set up a python environment (e.g., Conda) and install dependencies:
 ```bash
 pip install -r requirements.txt
 python -m spacy download en_core_web_sm
 ```
 
-### Running the Pipeline
-Run the SQuAD feature extraction (Stage 1) and model experiments (Stage 2):
-```bash
-# Optional: Extract features and build cache (Stage 1)
-python run_feature_extraction.py
+### Step 2: Pipeline Execution
 
-# Train all 13 configurations and evaluate (Stage 2)
-python run_experiments.py
+#### Stage 1: Dataset Preparation & LLM-as-a-Judge Audit
+Prepares SQuAD context splits and runs a local LLM Judge to verify silver target labels:
+```bash
+python run_stage1_dataset_prep.py --train_ratio 0.9 --total_contexts 100
 ```
-This script automatically runs all 13 model configurations across all 5 dataset balancing techniques and saves the output to `metrics.csv` and `metrics.md`.
+
+#### Stage 2: Feature Extraction
+Extracts concreteness, sentiment, surprisals (UID), syntax, and discourse (RST) features, saving to `features_cache.pkl`:
+```bash
+python run_stage2_feature_extraction.py
+```
+
+#### Stage 3: Model Training & Checkpointing Experiments
+Trains all baseline classifiers, Hybrid BERT models, and the LGSM sequence model, saving weights to `checkpoints/`:
+```bash
+python run_stage3_experiments.py
+```
+
+#### Stage 4: Diagnostics, Independent Evaluation & Cross-Validation
+*   **Part 1: Standalone Evaluation**: Evaluates saved checkpoints at a specific threshold (e.g., 0.35):
+    ```bash
+    python run_stage4_evaluation.py --threshold 0.35
+    ```
+*   **Part 2: Diagnostics Plotting**: Sweeps thresholds and generates Top-K recall curves in `docs/images/`:
+    ```bash
+    python run_stage4_diagnostics.py
+    ```
+*   **Part 3: 5-Fold Cross-Validation**: Runs context-level cross-validation to assess generalization variance:
+    ```bash
+    python run_stage4_cross_validation.py
+    ```
+
+---
+
+## 6. Slide Presentations & Academic Reports
+
+*   **LaTeX Beamer Slides**: Source code and compiled PDF slides are located in **`ppt/`** (`ppt/presentation.tex` and `ppt/presentation.pdf`).
+*   **SHAP & Positional Recall Analysis**: Explained in [docs/shap_and_lost_in_the_middle.md](docs/shap_and_lost_in_the_middle.md).
+*   **BERT Configurations Guide**: Outlined in [docs/hybrid_bert_comparison.md](docs/hybrid_bert_comparison.md).

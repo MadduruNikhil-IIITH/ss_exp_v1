@@ -33,9 +33,8 @@ class SQuADPairwiseDataset(Dataset):
         s1_text = record["s1_text"]
         s2_text = record["s2_text"]
         
-        # Tokenize pair 1: (Question, s1_text)
+        # Tokenize sentence 1 text only (Query-Independent)
         enc1 = self.tokenizer(
-            question,
             s1_text,
             add_special_tokens=True,
             max_length=self.max_len,
@@ -45,9 +44,8 @@ class SQuADPairwiseDataset(Dataset):
             return_tensors="pt"
         )
         
-        # Tokenize pair 2: (Question, s2_text)
+        # Tokenize sentence 2 text only (Query-Independent)
         enc2 = self.tokenizer(
-            question,
             s2_text,
             add_special_tokens=True,
             max_length=self.max_len,
@@ -129,9 +127,8 @@ class SQuADSentenceDataset(Dataset):
         question = record["question"]
         sentence = record["sentence_text"]
         
-        # Tokenize pair: (Question, Sentence)
+        # Tokenize sentence text only (Query-Independent)
         encoding = self.tokenizer(
-            question,
             sentence,
             add_special_tokens=True,
             max_length=self.max_len,
@@ -298,6 +295,9 @@ class HybridBERTClassifier:
         self.rst_cols = categories["rst"]
         # Other cols: linguistic + surprisal + alignment
         self.other_cols = categories["linguistic"] + categories["surprisal"] + categories["alignment"]
+        self.tabular_dim = len(self.feature_cols)
+        self.rst_dim = len(self.rst_cols)
+        self.other_dim = len(self.other_cols)
 
     def fit(self, train_records, val_records=None, epochs=3, batch_size=8, lr=2e-5, use_soft_labels=False):
         """
@@ -334,17 +334,14 @@ class HybridBERTClassifier:
         train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
         
         # Initialize network
-        tab_dim = len(self.feature_cols)
-        rst_dim = len(self.rst_cols)
-        other_dim = len(self.other_cols)
-        
         self.model = HybridGatedBERTModel(
-            tabular_dim=tab_dim,
-            rst_dim=rst_dim,
-            other_dim=other_dim,
+            tabular_dim=self.tabular_dim,
+            rst_dim=self.rst_dim,
+            other_dim=self.other_dim,
             mode=model_mode,
             pretrained_name=self.pretrained_name
         ).to(self.device)
+
         
         optimizer = torch.optim.AdamW(self.model.parameters(), lr=lr, weight_decay=0.01)
         # Use BCEWithLogitsLoss for binary targets (both standard and pairwise), and MSELoss for continuous targets
@@ -485,3 +482,58 @@ class HybridBERTClassifier:
         """
         probas = self.predict_proba(test_records, batch_size)
         return (probas >= threshold).astype(int)
+
+    def save(self, filepath):
+        """
+        Saves the model state dict and configuration metadata to a file.
+        """
+        import torch
+        checkpoint = {
+            "model_state_dict": self.model.state_dict() if self.model else None,
+            "pretrained_name": self.pretrained_name,
+            "mode": self.mode,
+            "feature_cols": self.feature_cols,
+            "rst_cols": self.rst_cols,
+            "other_cols": self.other_cols,
+            "tabular_dim": self.tabular_dim,
+            "rst_dim": self.rst_dim,
+            "other_dim": self.other_dim
+        }
+        torch.save(checkpoint, filepath)
+        print(f"Saved HybridBERTClassifier checkpoint to '{filepath}'")
+
+    def load(self, filepath, device="cuda"):
+        """
+        Loads the checkpoint and instantiates the model weights.
+        """
+        import torch
+        checkpoint = torch.load(filepath, map_location=device)
+        self.pretrained_name = checkpoint["pretrained_name"]
+        self.mode = checkpoint["mode"]
+        self.feature_cols = checkpoint["feature_cols"]
+        self.rst_cols = checkpoint["rst_cols"]
+        self.other_cols = checkpoint["other_cols"]
+        self.tabular_dim = checkpoint["tabular_dim"]
+        self.rst_dim = checkpoint["rst_dim"]
+        self.other_dim = checkpoint["other_dim"]
+        self.device = torch.device(device if torch.cuda.is_available() else "cpu")
+        self.tokenizer = BertTokenizer.from_pretrained(self.pretrained_name)
+        
+        # Instantiate HybridGatedBERTModel
+        model_mode = self.mode
+        if model_mode in ("heuristic_guided_rst", "heuristic_guided_deletion"):
+            model_mode = "heuristic_guided"
+            
+        self.model = HybridGatedBERTModel(
+            tabular_dim=self.tabular_dim,
+            rst_dim=self.rst_dim,
+            other_dim=self.other_dim,
+            mode=model_mode,
+            pretrained_name=self.pretrained_name
+        ).to(self.device)
+        
+        if checkpoint["model_state_dict"] is not None:
+            self.model.load_state_dict(checkpoint["model_state_dict"])
+        self.model.eval()
+        print(f"Loaded HybridBERTClassifier checkpoint from '{filepath}'")
+

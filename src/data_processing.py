@@ -89,8 +89,13 @@ def build_silver_squad_dataset(num_contexts=100, split="train"):
             contexts_map[context] = []
         contexts_map[context].append(item)
     
-    # Process only a subset of contexts for performance
-    unique_contexts = list(contexts_map.keys())[:num_contexts]
+    # Process only a subset of contexts for performance (randomized for diverse topic distribution)
+    import random
+    unique_contexts = list(contexts_map.keys())
+    # Set seed for reproducibility of the randomized split
+    random.seed(42)
+    random.shuffle(unique_contexts)
+    unique_contexts = unique_contexts[:num_contexts]
     print(f"Processing {len(unique_contexts)} unique contexts ({len(dataset)} total QA pairs in SQuAD)...")
     
     processed_records = []
@@ -389,11 +394,6 @@ def apply_dsnb_balancing(input_data):
             ns_feats = ns_row.get("features", {})
             ns_depth = ns_feats.get("rst_mean_depth", 0.0)
             
-            # Semantic similarity to question (SBERT score)
-            sem_sim = ns_feats.get("align_sem_sim", 0.0)
-            # Clip between [0, 1] for normalization
-            w_sem = max(0.0, min(1.0, sem_sim))
-            
             # Find maximum hardness score relative to any positive sentence
             max_hardness = -1.0
             for _, s_row in salient_rows.iterrows():
@@ -405,7 +405,12 @@ def apply_dsnb_balancing(input_data):
                 dist_pos = abs(ns_idx - s_idx)
                 w_pos = 0.5 ** dist_pos
                 
-                # 2. RST Discourse depth similarity
+                # 2. Semantic Jaccard overlap between negative and positive sentence (Query-Independent)
+                w1 = set(ns_row.get("sentence_text", "").lower().split())
+                w2 = set(s_row.get("sentence_text", "").lower().split())
+                w_sem = len(w1.intersection(w2)) / max(1, len(w1.union(w2)))
+                
+                # 3. RST Discourse depth similarity
                 dist_rst = abs(ns_depth - s_depth)
                 w_rst = 1.0 - (dist_rst / max_depth)
                 w_rst = max(0.0, w_rst)

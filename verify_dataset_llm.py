@@ -75,7 +75,6 @@ def main():
     cache_path = "features_cache_deletion.pkl"
     if not os.path.exists(cache_path):
         cache_path = "features_cache.pkl"
-    artifact_dir = r"C:\Users\maddu\.gemini\antigravity\brain\64294085-ec70-478d-8d81-2ec235975552"
     
     print("="*60)
     print("LLM-AS-A-JUDGE DATASET VERIFICATION START")
@@ -165,10 +164,9 @@ def main():
     print(f"Silver Label F1 Score:     {f1:.4f}")
     print(f"Confusion Matrix: [TP: {tp}, FP: {fp}, FN: {fn}, TN: {tn}]")
     
-    # Save markdown report to artifacts and workspace
-    report_path = os.path.join(artifact_dir, "llm_judge_verification.md")
+    # Save markdown report to workspace
     report_workspace_path = os.path.join("docs", "llm_judge_verification.md")
-    print(f"Saving report to '{report_path}' and '{report_workspace_path}'...")
+    print(f"Saving report to '{report_workspace_path}'...")
     
     # Extract examples of disagreements
     false_positives = [e for e in evaluations if e["silver"] == 1 and e["llm"] == 0]
@@ -222,7 +220,6 @@ def main():
             else:
                 f.write("*No examples found in this category.*\n\n")
 
-    write_report(report_path)
     write_report(report_workspace_path)
     print("Verification reports saved successfully.")
     print("="*60)

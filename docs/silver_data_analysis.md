@@ -8,9 +8,9 @@ This document provides a comprehensive statistical profile of the SQuAD sentence
 
 | Metric | Combined Dataset (Total) |
 | :--- | :---: |
-| **Unique Contexts** | 75 |
-| **QA Pairs (Questions)** | 640 |
-| **Sentence-Question Records** | 3,478 |
+| **Unique Contexts** | 100 |
+| **QA Pairs (Questions)** | 491 |
+| **Sentence-Question Records** | 2,530 |
 | **Average Sentences per Context** | 6.40 (Min: 3, Max: 13) |
 
 ---
@@ -20,17 +20,17 @@ This document provides a comprehensive statistical profile of the SQuAD sentence
 Since each question typically has exactly one sentence containing the answer span, the dataset is inherently imbalanced.
 
 * **Combined Dataset Class Distribution**:
-  * **Salient (Class 1 - Contains Answer)**: 675 (19.41%)
-  * **Non-Salient (Class 0 - Negative Context)**: 2,803 (80.59%)
-  * **Imbalance Ratio**: **~1 : 4.15**
+  * **Salient (Class 1 - Contains Answer)**: 493 (19.49%)
+  * **Non-Salient (Class 0 - Negative Context)**: 2,037 (80.51%)
+  * **Imbalance Ratio**: **~1 : 4.13**
 
 ### Sentence Length Comparison: Salient vs. Non-Salient
 Sentence lengths in terms of words and characters show that salient sentences containing the answer spans are slightly longer on average:
 
 ![Sentence Length Comparison](images/length_comparison.png)
 
-* **Average Word Count**: **18.7** words for salient vs. **16.6** words for non-salient.
-* **Average Character Count**: **117.8** chars for salient vs. **103.7** chars for non-salient.
+* **Average Word Count**: **28.0** words for salient vs. **22.4** words for non-salient.
+* **Average Character Count**: **174.6** chars for salient vs. **139.4** chars for non-salient.
 
 ---
 
@@ -40,24 +40,23 @@ The table below shows the distribution of Class 1 (salient answer sentences) by 
 
 | Sentence Index | Salient Sentence Count | Percentage (%) | Cumulative Percentage (%) |
 | :---: | :---: | :---: | :---: |
-| Index 0 | 194 | 28.74% | 28.74% |
-| Index 1 | 179 | 26.52% | 55.26% |
-| Index 2 | 140 | 20.74% | 76.00% |
-| Index 3 | 67 | 9.93% | 85.93% |
-| Index 4 | 40 | 5.93% | 91.85% |
-| Index 5 | 20 | 2.96% | 94.81% |
-| Index 6 | 15 | 2.22% | 97.04% |
-| Index 7 | 9 | 1.33% | 98.37% |
-| Index 8 | 4 | 0.59% | 98.96% |
-| Index 9 | 5 | 0.74% | 99.70% |
-| Index 10 | 1 | 0.15% | 99.85% |
-| Index 12 | 1 | 0.15% | 100.00% |
+| Index 0 | 156 | 31.64% | 31.64% |
+| Index 1 | 103 | 20.89% | 52.54% |
+| Index 2 | 85 | 17.24% | 69.78% |
+| Index 3 | 69 | 14.00% | 83.77% |
+| Index 4 | 42 | 8.52% | 92.29% |
+| Index 5 | 16 | 3.25% | 95.54% |
+| Index 6 | 12 | 2.43% | 97.97% |
+| Index 7 | 4 | 0.81% | 98.78% |
+| Index 8 | 4 | 0.81% | 99.59% |
+| Index 9 | 1 | 0.20% | 99.80% |
+| Index 11 | 1 | 0.20% | 100.00% |
 
 ### Positional Bias Visualization
 ![Positional Bias](images/positional_bias.png)
 
 > [!WARNING]
-> **Extreme Positional Bias**: Over **66.37%** of all salient sentences reside at Sentence Index 0, 1, or 2, and **79.65%** reside at Sentence Index 0-3. This represents a significant spatial shortcut that models can exploit (e.g., simply predicting that early sentences are salient). This highlights the critical importance of neighborhood-balancing methods like **DSNB** which mine negatives from the same positional neighborhoods to break this bias.
+> **Extreme Positional Bias**: Over **69.78%** of all salient sentences reside at Sentence Index 0, 1, or 2, and **83.77%** reside at Sentence Index 0-3. This represents a significant spatial shortcut that models can exploit (e.g., simply predicting that early sentences are salient). This highlights the critical importance of neighborhood-balancing methods like **DSNB** which mine negatives from the same positional neighborhoods to break this bias.
 
 ---
 
