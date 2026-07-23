@@ -38,6 +38,8 @@ class TabularClassifierWrapper:
             return categories["alignment"]
         elif self.feature_mode == "combined":
             return categories["all"]
+        elif self.feature_mode == "combined_no_rst":
+            return [k for k in categories["all"] if not k.startswith("rst_") and not k.startswith("rel_rst_")]
         elif self.feature_mode == "combined_heuristic":
             return categories["all"]
         elif self.feature_mode == "combined_deletion":
@@ -84,9 +86,10 @@ class TabularClassifierWrapper:
                 h_diff = (h1_scores - h2_scores).reshape(-1, 1)
                 X_raw = np.hstack([X_raw, h_diff])
         else:
-            # Get feature keys from first record
-            all_feature_keys = records[0]["features"].keys()
-            self.selected_cols = self.get_feature_columns(all_feature_keys)
+            # Get feature keys from first record if training or selected_cols not set
+            if fit_scaler or not self.selected_cols:
+                all_feature_keys = records[0]["features"].keys()
+                self.selected_cols = self.get_feature_columns(all_feature_keys)
             
             X_raw = []
             for r in records:

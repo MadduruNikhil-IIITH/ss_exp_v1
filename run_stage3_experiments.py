@@ -11,6 +11,7 @@ from src.classifiers.rule_based_rst import RuleBasedRSTClassifier
 from src.classifiers.logistic_reg import TabularClassifierWrapper
 from src.classifiers.hybrid_bert import HybridBERTClassifier
 from src.classifiers.lgsm import LGSMSaliencyClassifier
+from src.classifiers.llm_judge import LLMJudgeClassifier
 from run_stage2_feature_extraction import run_stage2_pipeline
 
 def compute_classification_metrics(y_true, y_pred):
@@ -140,60 +141,49 @@ def main():
     print(f"[{time.strftime('%X')}] Balanced datasets generated in {time.time() - start_balance:.2f} seconds.")
 
     # =========================================================================
-    # CONFIG 2-5: Logistic Regression Configurations
+    # CONFIG 5: Logistic Regression (Combined)
     # =========================================================================
-    balancing_methods = ["None", "Pairwise", "Cluster", "RST-Neighborhood", "DSNB"]
+    balancing_methods = ["None", "Cluster", "RST-Neighborhood", "DSNB"]
     all_coefs_list = []
     
     for balancing in tqdm(balancing_methods, desc="Logistic Regression Experiments"):
         balanced_train = balanced_datasets[balancing]
-        modes = ["rst", "linguistic", "surprisal", "combined"]
-        for mode in modes:
-            config_num = {"rst": 2, "linguistic": 3, "surprisal": 4, "combined": 5}[mode]
-            disp_name = mode.upper() if mode == "rst" else mode.replace('_', ' ').title()
-            model_name = f"{config_num}. LR ({disp_name})"
-            
-            lr_wrapper = TabularClassifierWrapper(feature_mode=mode, use_soft_targets=False)
-            lr_wrapper.fit(balanced_train)
-            
-            # Save checkpoint
-            checkpoint_path = os.path.join(checkpoint_dir, f"lr_{mode}_{balancing}.joblib")
-            lr_wrapper.save(checkpoint_path)
-            
-            # Save coefficients for all modes and balancing methods
-            try:
-                coefs = lr_wrapper.model.coef_[0]
-                feature_names = lr_wrapper.selected_cols
-                mode_display_map = {
-                    "combined": "Combined Model (Config 5)",
-                    "surprisal": "Surprisal-Only Subsystem (Config 4)",
-                    "linguistic": "Linguistic-Only Subsystem (Config 3)",
-                    "rst": "Discourse-Only Subsystem (Config 2)"
-                }
-                config_mode_name = mode_display_map.get(mode, disp_name)
-                for feat, coef in zip(feature_names, coefs):
-                    all_coefs_list.append({
-                        "Feature": feat,
-                        "Coefficient": coef,
-                        "Abs_Coefficient": np.abs(coef),
-                        "Config Mode": config_mode_name,
-                        "Balancing Mode": balancing
-                    })
-            except Exception as e:
-                print(f"\nWarning: Could not extract coefficients for mode {mode} under {balancing}: {e}")
-                    
-            probas = lr_wrapper.predict_proba(val_records)
-            preds = lr_wrapper.predict(val_records)
-            
-            cls_metrics = compute_classification_metrics(y_val_true, preds)
-            rank_metrics = compute_ranking_metrics(val_records, probas)
-            
-            results.append({
-                "Model Configuration": model_name,
-                "Balancing": balancing,
-                **cls_metrics,
-                **rank_metrics
-            })
+        model_name = "5. LR (Combined)"
+        
+        lr_wrapper = TabularClassifierWrapper(feature_mode="combined", use_soft_targets=False)
+        lr_wrapper.fit(balanced_train)
+        
+        # Save checkpoint
+        checkpoint_path = os.path.join(checkpoint_dir, f"lr_combined_{balancing}.joblib")
+        lr_wrapper.save(checkpoint_path)
+        
+        # Save coefficients
+        try:
+            coefs = lr_wrapper.model.coef_[0]
+            feature_names = lr_wrapper.selected_cols
+            for feat, coef in zip(feature_names, coefs):
+                all_coefs_list.append({
+                    "Feature": feat,
+                    "Coefficient": coef,
+                    "Abs_Coefficient": np.abs(coef),
+                    "Config Mode": "Combined Model (Config 5)",
+                    "Balancing Mode": balancing
+                })
+        except Exception as e:
+            print(f"\nWarning: Could not extract coefficients under {balancing}: {e}")
+                
+        probas = lr_wrapper.predict_proba(val_records)
+        preds = lr_wrapper.predict(val_records)
+        
+        cls_metrics = compute_classification_metrics(y_val_true, preds)
+        rank_metrics = compute_ranking_metrics(val_records, probas)
+        
+        results.append({
+            "Model Configuration": model_name,
+            "Balancing": balancing,
+            **cls_metrics,
+            **rank_metrics
+        })
 
     # Save accumulated coefficients to lr_coefficients.csv
     if all_coefs_list:
@@ -208,18 +198,11 @@ def main():
 
 
     # =========================================================================
-    # CONFIG 6-9, 11: BERT-Based Configurations
+    # CONFIG 6 & 11: BERT-Based Configurations
     # =========================================================================
     bert_experiments = []
     for balancing in ["None", "Pairwise", "Cluster", "RST-Neighborhood", "DSNB"]:
-        for mode, name in [
-            ("gated_all", "6. Gated BERT (Context Features)"),
-            ("film_rst_skip", "7. FiLM BERT (RST Modulation)"),
-            ("concat_all", "8. Concat BERT (Context Features)"),
-            ("no_rst", "9. Gated BERT (No RST)"),
-            ("heuristic_guided_rst", "11. Heuristic-Guided BERT (RST Prior)")
-        ]:
-            bert_experiments.append((mode, name, balancing))
+        bert_experiments.append(("gated_all", "6. Gated BERT (Context Features)", balancing))
     
     for mode, name, balancing in tqdm(bert_experiments, desc="BERT Experiments"):
         print(f"\n[{time.strftime('%X')}] Training {name} with {balancing} balancing...")
@@ -248,41 +231,70 @@ def main():
     # =========================================================================
     # CONFIG 12: LGSM Model (Convex Gated Fusion + Sequence Transformer + Focal Loss)
     # =========================================================================
-    print(f"\n[{time.strftime('%X')}] Training Config 12: LGSM Saliency Classifier...")
-    lgsm_classifier = LGSMSaliencyClassifier(pretrained_name="bert-base-uncased", device="cuda")
-    lgsm_classifier.fit(train_records, val_records, epochs=4, batch_size=4, lr=2e-5)
-    
-    # Save checkpoint
-    checkpoint_path = os.path.join(checkpoint_dir, "lgsm.pt")
-    lgsm_classifier.save(checkpoint_path)
-    
-    probas, gates = lgsm_classifier.predict_proba(val_records, batch_size=4)
+    lgsm_experiments = [
+        ("None", True),
+        ("Cluster", True),
+        ("RST-Neighborhood", True),
+        ("DSNB", True)
+    ]
+    for balancing, use_rst in lgsm_experiments:
+        print(f"\n[{time.strftime('%X')}] Training Config 12: LGSM Saliency Classifier with {balancing} balancing...")
+        
+        balanced_train = balanced_datasets[balancing]
+        lgsm_classifier = LGSMSaliencyClassifier(pretrained_name="bert-base-uncased", device="cuda")
+        lgsm_classifier.fit(balanced_train, val_records, epochs=4, batch_size=4, lr=2e-5, use_rst=True)
+        
+        # Save checkpoint
+        checkpoint_path = os.path.join(checkpoint_dir, f"lgsm_{balancing}.pt")
+        lgsm_classifier.save(checkpoint_path)
+        
+        probas, gates = lgsm_classifier.predict_proba(val_records, batch_size=4)
+        preds = (probas >= 0.5).astype(int)
+        
+        cls_metrics = compute_classification_metrics(y_val_true, preds)
+        rank_metrics = compute_ranking_metrics(val_records, probas)
+        
+        results.append({
+            "Model Configuration": "12. LGSM",
+            "Balancing": balancing,
+            **cls_metrics,
+            **rank_metrics
+        })
+        
+        # Save default predictions for subsequent analysis using None
+        if balancing == "None":
+            try:
+                val_analysis_data = {
+                    "val_records": val_records,
+                    "y_val_true": y_val_true,
+                    "probas": probas,
+                    "gates": gates
+                }
+                with open("lgsm_predictions.pkl", "wb") as f:
+                    pickle.dump(val_analysis_data, f)
+                # Also save standard lgsm.pt for web app compatibility
+                lgsm_classifier.save(os.path.join(checkpoint_dir, "lgsm.pt"))
+                print(f"[{time.strftime('%X')}] Saved standard LGSM predictions to 'lgsm_predictions.pkl' and checkpoint to 'checkpoints/lgsm.pt'.")
+            except Exception as e:
+                print(f"Warning: Could not save default validation data: {e}")
 
-    preds = (probas >= 0.5).astype(int)
+    # =========================================================================
+    # CONFIG 13: Zero-shot LLM Judge
+    # =========================================================================
+    print(f"\n[{time.strftime('%X')}] Evaluating Config 13: Zero-shot LLM Judge...")
+    llm_classifier = LLMJudgeClassifier(device="cuda")
+    probas_llm = llm_classifier.predict_proba(val_records)
+    preds_llm = (probas_llm >= 0.5).astype(int)
     
-    cls_metrics = compute_classification_metrics(y_val_true, preds)
-    rank_metrics = compute_ranking_metrics(val_records, probas)
+    cls_metrics = compute_classification_metrics(y_val_true, preds_llm)
+    rank_metrics = compute_ranking_metrics(val_records, probas_llm)
     
     results.append({
-        "Model Configuration": "12. LGSM",
+        "Model Configuration": "13. LLM Judge",
         "Balancing": "None",
         **cls_metrics,
         **rank_metrics
     })
-    
-    # Save the gate values and predictions for subsequent Gating & UID analysis
-    try:
-        val_analysis_data = {
-            "val_records": val_records,
-            "y_val_true": y_val_true,
-            "probas": probas,
-            "gates": gates
-        }
-        with open("lgsm_predictions.pkl", "wb") as f:
-            pickle.dump(val_analysis_data, f)
-        print(f"[{time.strftime('%X')}] Saved LGSM validation predictions and gates to 'lgsm_predictions.pkl'.")
-    except Exception as e:
-        print(f"Warning: Could not save validation analysis data: {e}")
 
     # 4. Group & Sort Comparative Metrics
     df_results = pd.DataFrame(results)
@@ -293,16 +305,11 @@ def main():
     
     model_order = [
         "1. RST Rule-Based",
-        "2. LR (RST)",
-        "3. LR (Linguistic)",
-        "4. LR (Surprisal)",
         "5. LR (Combined)",
         "6. Gated BERT (Context Features)",
-        "7. FiLM BERT (RST Modulation)",
-        "8. Concat BERT (Context Features)",
-        "9. Gated BERT (No RST)",
         "11. Heuristic-Guided BERT (RST Prior)",
-        "12. LGSM"
+        "12. LGSM",
+        "13. LLM Judge"
     ]
     df_results["Model Configuration"] = pd.Categorical(df_results["Model Configuration"], categories=model_order, ordered=True)
     df_results = df_results.sort_values(by=["Model Configuration", "Balancing"]).reset_index(drop=True)

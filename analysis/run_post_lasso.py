@@ -4,14 +4,16 @@ import numpy as np
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
-import statsmodels.api as sm
+from scipy.stats import norm
 
 def main():
     print("="*80)
     print("CONTROLLED CORPUS STUDY: POST-LASSO LOGISTIC REGRESSION")
     print("="*80)
 
-    cache_path = "features_cache.pkl"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    cache_path = os.path.abspath(os.path.join(script_dir, "../features_cache.pkl"))
+    
     if not os.path.exists(cache_path):
         print(f"Error: Cache file '{cache_path}' not found. Run Stage 2 first!")
         return
@@ -63,9 +65,6 @@ def main():
     print(f"LASSO selected {len(selected_features)} features.")
 
     # Force-include controls: length control (word_count) and position control (sentence_idx)
-    # Note: sentence_idx is not in the feature keys directly, let's extract it from records
-    # Let's add sentence_idx to X matrix as a feature
-    # We will rebuild the matrix of selected features + controls
     control_names = ["word_count", "sentence_idx_control"]
     
     # Rebuild X matrix containing selected features and controls
@@ -87,33 +86,48 @@ def main():
     selected_cols = list(df_selected.columns)
     df_selected_scaled = pd.DataFrame(scaler.fit_transform(df_selected), columns=selected_cols)
 
-    # Stage 2: Unregularized Refit using statsmodels Logit
-    print("Stage 2: Fitting unregularized Logistic Regression refit via statsmodels...")
-    # Add constant for intercept
-    X_logit = sm.add_constant(df_selected_scaled)
-    
-    # Fit model
-    try:
-        model = sm.Logit(y, X_logit)
-        results = model.fit(maxiter=100)
-        summary = results.summary2()
-        print(results.summary())
-    except Exception as e:
-        print(f"Error fitting Logit: {e}")
-        return
+    # Stage 2: Unregularized Refit using scikit-learn + scipy for Wald Inference
+    print("Stage 2: Fitting unregularized Logistic Regression refit via scikit-learn + scipy...")
+    X_mat = df_selected_scaled.values
+    intercept_col = np.ones((X_mat.shape[0], 1))
+    X_logit = np.hstack([intercept_col, X_mat])
+    logit_cols = ["const"] + list(df_selected_scaled.columns)
 
-    # Extract statistics
-    coefs = results.params
-    p_values = results.pvalues
-    bse = results.bse
-    z_scores = coefs / bse
+    # Fit unregularized Logistic Regression
+    clf = LogisticRegression(penalty=None, solver='lbfgs', max_iter=200, random_state=42)
+    clf.fit(X_mat, y)
+
+    coefs = np.insert(clf.coef_[0], 0, clf.intercept_[0])
+    
+    # Calculate Standard Errors using Hessian matrix H = X^T * W * X
+    p_hat = 1.0 / (1.0 + np.exp(-np.dot(X_logit, coefs)))
+    p_hat = np.clip(p_hat, 1e-15, 1 - 1e-15)
+    W = p_hat * (1.0 - p_hat)
+    
+    # Inverse Fisher Information matrix
+    H = np.dot(X_logit.T * W, X_logit)
+    try:
+        cov_matrix = np.linalg.inv(H)
+        bse = np.sqrt(np.maximum(0, np.diag(cov_matrix)))
+    except np.linalg.LinAlgError:
+        cov_matrix = np.linalg.pinv(H)
+        bse = np.sqrt(np.maximum(0, np.diag(cov_matrix)))
+
+    z_scores = np.where(bse > 0, coefs / bse, 0.0)
+    p_values = 2.0 * (1.0 - norm.cdf(np.abs(z_scores)))
+
+    coefs_series = pd.Series(coefs, index=logit_cols)
+    bse_series = pd.Series(bse, index=logit_cols)
+    z_series = pd.Series(z_scores, index=logit_cols)
+    p_series = pd.Series(p_values, index=logit_cols)
 
     # Build results table
     res_df = pd.DataFrame({
-        "Coef": coefs,
-        "Std_Err": bse,
-        "z": z_scores,
-        "p": p_values
+        "Feature": logit_cols,
+        "Coef": coefs_series.values,
+        "Std_Err": bse_series.values,
+        "z": z_series.values,
+        "p": p_series.values
     })
 
     # Add significance flags
@@ -125,7 +139,6 @@ def main():
     res_df["sig"] = res_df["p"].apply(get_sig)
 
     # Sort by absolute z-value (excluding intercept const)
-    res_df = res_df.reset_index().rename(columns={"index": "Feature"})
     res_df_sorted = res_df[res_df["Feature"] != "const"].copy()
     res_df_sorted["abs_z"] = res_df_sorted["z"].abs()
     res_df_sorted = res_df_sorted.sort_values(by="abs_z", ascending=False).drop(columns=["abs_z"]).reset_index(drop=True)
@@ -137,18 +150,20 @@ def main():
     print(res_df_sorted.head(30).to_string(index=False))
     print("="*80)
 
-    # Save to CSV
-    res_df_sorted.to_csv("post_lasso_results.csv", index=False)
+    # Save to CSV in project root
+    csv_path = os.path.abspath(os.path.join(script_dir, "../post_lasso_results.csv"))
+    res_df_sorted.to_csv(csv_path, index=False)
     
     # Save Markdown report
-    os.makedirs("docs", exist_ok=True)
-    report_workspace_path = os.path.join("docs", "post_lasso_report.md")
+    docs_dir = os.path.abspath(os.path.join(script_dir, "../docs"))
+    os.makedirs(docs_dir, exist_ok=True)
+    report_workspace_path = os.path.join(docs_dir, "post_lasso_report.md")
 
     def write_report(path):
         with open(path, "w", encoding="utf-8") as f:
             f.write("# SQuAD Controlled Corpus Study: Post-LASSO Regression Analysis\n\n")
             f.write("> [!IMPORTANT]\n")
-            f.write("> **Single Model Configuration Note**: This controlled corpus study is conducted using a **single, specific model configuration** to establish statistical significance. Specifically, we run an unregularized Logistic Regression refit (`statsmodels.Logit`) on the **raw, unbalanced training split** (2,301 records). Crucially, we force-include two baseline control variables—**Sentence Length (`word_count`)** and **Linear Position (`sentence_idx`)**—alongside the features selected by the L1 (LASSO) penalty. This isolates the independent predictive signals of our engineered discourse (RST) and cognitive (surprisal) features from simple physical shortcuts.\n\n")
+            f.write("> **Single Model Configuration Note**: This controlled corpus study is conducted using a **single, specific model configuration** to establish statistical significance. Specifically, we run an unregularized Logistic Regression refit on the **raw, unbalanced training split** (2,301 records). Crucially, we force-include two baseline control variables—**Sentence Length (`word_count`)** and **Linear Position (`sentence_idx`)**—alongside the features selected by the L1 (LASSO) penalty. This isolates the independent predictive signals of our engineered discourse (RST) and cognitive (surprisal) features from simple physical shortcuts.\n\n")
             f.write("---\n\n")
             f.write("## 1. Top Predictive Features\n")
             f.write("| Rank | Feature | Coefficient | z-score | p-value | Significance |\n")
@@ -201,7 +216,7 @@ def main():
                 f.write("No surprisal features were selected by LASSO under the L1 penalty threshold.\n")
 
     write_report(report_workspace_path)
-    print("Post-LASSO analysis completed successfully. Reports saved to 'docs/post_lasso_report.md'.")
+    print(f"Post-LASSO analysis completed successfully. Reports saved to '{report_workspace_path}'.")
 
 if __name__ == "__main__":
     main()

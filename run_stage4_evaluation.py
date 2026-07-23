@@ -11,6 +11,7 @@ from src.classifiers.rule_based_rst import RuleBasedRSTClassifier
 from src.classifiers.logistic_reg import TabularClassifierWrapper
 from src.classifiers.hybrid_bert import HybridBERTClassifier
 from src.classifiers.lgsm import LGSMSaliencyClassifier
+from src.classifiers.llm_judge import LLMJudgeClassifier
 
 # Re-use metric computation functions from Stage 3 for consistency
 def compute_classification_metrics(y_true, y_pred):
@@ -156,16 +157,16 @@ def main():
         })
 
         # -------------------------------------------------------------------------
-        # CONFIG 2-5: Logistic Regression Configurations
+        # CONFIG 5: Logistic Regression (Combined)
         # -------------------------------------------------------------------------
         balancing_methods = ["None", "Pairwise", "Cluster", "RST-Neighborhood", "DSNB"]
-        modes = ["rst", "linguistic", "surprisal", "combined"]
+        modes = ["combined", "combined_no_rst"]
         
         for balancing in balancing_methods:
             for mode in modes:
-                config_num = {"rst": 2, "linguistic": 3, "surprisal": 4, "combined": 5}[mode]
-                disp_name = mode.upper() if mode == "rst" else mode.replace('_', ' ').title()
-                model_name = f"{config_num}. LR ({disp_name})"
+                config_num = 5
+                model_name = "5. LR (Combined)"
+                balancing_label = "DSNB (No RST)" if (balancing == "DSNB" and mode == "combined_no_rst") else balancing
                 
                 checkpoint_path = os.path.join(checkpoint_dir, f"lr_{mode}_{balancing}.joblib")
                 if not os.path.exists(checkpoint_path):
@@ -183,7 +184,7 @@ def main():
                 
                 results.append({
                     "Model Configuration": model_name,
-                    "Balancing": balancing,
+                    "Balancing": balancing_label,
                     "Split": split_name,
                     **cls_metrics,
                     **macro_metrics,
@@ -191,23 +192,25 @@ def main():
                 })
 
         # -------------------------------------------------------------------------
-        # CONFIG 6-9, 11: BERT-Based Configurations
+        # CONFIG 6 & 11: BERT-Based Configurations
         # -------------------------------------------------------------------------
         bert_configs = [
             ("gated_all", "6. Gated BERT (Context Features)"),
-            ("film_rst_skip", "7. FiLM BERT (RST Modulation)"),
-            ("concat_all", "8. Concat BERT (Context Features)"),
-            ("no_rst", "9. Gated BERT (No RST)"),
             ("heuristic_guided_rst", "11. Heuristic-Guided BERT (RST Prior)")
         ]
         
+        bert_runs = []
         for balancing in balancing_methods:
+            bert_runs.append((balancing, balancing))
+        bert_runs.append(("DSNB_no_rst", "DSNB (No RST)"))
+        
+        for balancing_suffix, balancing_label in bert_runs:
             for mode, name in bert_configs:
-                checkpoint_path = os.path.join(checkpoint_dir, f"bert_{mode}_{balancing}.pt")
+                checkpoint_path = os.path.join(checkpoint_dir, f"bert_{mode}_{balancing_suffix}.pt")
                 if not os.path.exists(checkpoint_path):
                     continue
                     
-                print(f"Loading & evaluating {name} ({balancing} balancing) on {split_name}...")
+                print(f"Loading & evaluating {name} ({balancing_label} balancing) on {split_name}...")
                 bert_classifier = HybridBERTClassifier(mode=mode, device="cuda")
                 bert_classifier.load(checkpoint_path, device="cuda")
                 
@@ -220,7 +223,7 @@ def main():
                 
                 results.append({
                     "Model Configuration": name,
-                    "Balancing": balancing,
+                    "Balancing": balancing_label,
                     "Split": split_name,
                     **cls_metrics,
                     **macro_metrics,
@@ -230,21 +233,55 @@ def main():
         # -------------------------------------------------------------------------
         # CONFIG 12: LGSM Model
         # -------------------------------------------------------------------------
-        checkpoint_path = os.path.join(checkpoint_dir, "lgsm.pt")
-        if os.path.exists(checkpoint_path):
-            print(f"Loading & evaluating Config 12: LGSM Saliency Classifier on {split_name}...")
-            lgsm_classifier = LGSMSaliencyClassifier(pretrained_name="bert-base-uncased", device="cuda")
-            lgsm_classifier.load(checkpoint_path, device="cuda")
+        lgsm_runs = [
+            ("None", "None", "lgsm_None.pt"),
+            ("Cluster", "Cluster", "lgsm_Cluster.pt"),
+            ("RST-Neighborhood", "RST-Neighborhood", "lgsm_RST-Neighborhood.pt"),
+            ("DSNB", "DSNB", "lgsm_DSNB.pt"),
+            ("DSNB_no_rst", "DSNB (No RST)", "lgsm_DSNB_no_rst.pt")
+        ]
+        
+        for suffix, label, filename in lgsm_runs:
+            checkpoint_path = os.path.join(checkpoint_dir, filename)
+            if suffix == "None" and not os.path.exists(checkpoint_path):
+                checkpoint_path = os.path.join(checkpoint_dir, "lgsm.pt")
+                
+            if os.path.exists(checkpoint_path):
+                print(f"Loading & evaluating Config 12: LGSM ({label} balancing) on {split_name}...")
+                lgsm_classifier = LGSMSaliencyClassifier(pretrained_name="bert-base-uncased", device="cuda")
+                lgsm_classifier.load(checkpoint_path, device="cuda")
+                
+                probas, _ = lgsm_classifier.predict_proba(split_records, batch_size=4)
+                preds = (probas >= args.threshold).astype(int)
+                
+                cls_metrics = compute_classification_metrics(y_true, preds)
+                rank_metrics = compute_ranking_metrics(split_records, probas)
+                macro_metrics = compute_macro_metrics(split_records, preds)
+                
+                results.append({
+                    "Model Configuration": "12. LGSM",
+                    "Balancing": label,
+                    "Split": split_name,
+                    **cls_metrics,
+                    **macro_metrics,
+                    **rank_metrics
+                })
+
+        # -------------------------------------------------------------------------
+        # CONFIG 13: LLM Judge
+        # -------------------------------------------------------------------------
+        if split_name == "validation":
+            print(f"Evaluating Config 13: Zero-shot LLM Judge on {split_name}...")
+            llm_classifier = LLMJudgeClassifier(device="cuda")
+            probas_llm = llm_classifier.predict_proba(split_records)
+            preds_llm = (probas_llm >= args.threshold).astype(int)
             
-            probas, _ = lgsm_classifier.predict_proba(split_records, batch_size=4)
-            preds = (probas >= args.threshold).astype(int)
-            
-            cls_metrics = compute_classification_metrics(y_true, preds)
-            rank_metrics = compute_ranking_metrics(split_records, probas)
-            macro_metrics = compute_macro_metrics(split_records, preds)
+            cls_metrics = compute_classification_metrics(y_true, preds_llm)
+            rank_metrics = compute_ranking_metrics(split_records, probas_llm)
+            macro_metrics = compute_macro_metrics(split_records, preds_llm)
             
             results.append({
-                "Model Configuration": "12. LGSM",
+                "Model Configuration": "13. LLM Judge",
                 "Balancing": "None",
                 "Split": split_name,
                 **cls_metrics,
@@ -264,16 +301,11 @@ def main():
     
     model_order = [
         "1. RST Rule-Based",
-        "2. LR (RST)",
-        "3. LR (Linguistic)",
-        "4. LR (Surprisal)",
         "5. LR (Combined)",
         "6. Gated BERT (Context Features)",
-        "7. FiLM BERT (RST Modulation)",
-        "8. Concat BERT (Context Features)",
-        "9. Gated BERT (No RST)",
         "11. Heuristic-Guided BERT (RST Prior)",
-        "12. LGSM"
+        "12. LGSM",
+        "13. LLM Judge"
     ]
     df_results["Model Configuration"] = pd.Categorical(df_results["Model Configuration"], categories=model_order, ordered=True)
     

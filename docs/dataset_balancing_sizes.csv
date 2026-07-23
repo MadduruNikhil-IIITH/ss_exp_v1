@@ -1,6 +1,6 @@
 Balancing Method,Training Samples,Salient (Class 1),Non-Salient (Class 0),Label Balance
-None (Unbalanced Raw),2301,452,1849,19.64% / 80.36%
-Pairwise,1849,925,924,50.00% / 50.00%
-Cluster,892,446,446,50.00% / 50.00%
-RST-Neighborhood,892,446,446,50.00% / 50.00%
-DSNB (Proposed),892,446,446,50.00% / 50.00%
+None (Unbalanced Raw),3896,2523,1373,64.76% / 35.24%
+Pairwise,4530,2265,2265,50.00% / 50.00%
+Cluster,3650,1825,1825,50.00% / 50.00%
+RST-Neighborhood,3650,1825,1825,50.00% / 50.00%
+DSNB (Proposed),3650,1825,1825,50.00% / 50.00%

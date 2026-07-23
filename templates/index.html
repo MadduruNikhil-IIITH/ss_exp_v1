@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQuAD Sentence Salience QA Agent System</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="glow-container">
+        <div class="glow-circle purple"></div>
+        <div class="glow-circle blue"></div>
+    </div>
+    
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-brain-circuit logo-icon"></i>
+                <h1>SQuAD Sentence Salience <span>QA Agent</span></h1>
+            </div>
+            <p class="subtitle">Discourse-aware sentence saliency classification and closed-loop question generation verification</p>
+        </header>
+
+        <!-- Main Dashboard -->
+        <main class="dashboard">
+            <!-- Left Panel: Input & Model Config -->
+            <section class="panel glass">
+                <div class="panel-header">
+                    <i class="fa-solid fa-pen-nib section-icon"></i>
+                    <h2>Context & Model Configurations</h2>
+                </div>
+                
+                <div class="input-group">
+                    <label for="context-input">Context Paragraph</label>
+                    <textarea id="context-input" placeholder="Paste your reading comprehension paragraph context here..."></textarea>
+                </div>
+                
+                <div class="config-grid">
+                    <div class="input-group">
+                        <label for="model-select">Saliency Predictor Model</label>
+                        <div class="custom-select-wrapper">
+                            <select id="model-select">
+                                <option value="lgsm" selected>Config 12: LGSM (Trained Sequence Model)</option>
+                                <option value="bert_pairwise">Config 6: Gated BERT (Pairwise Balancing)</option>
+                                <option value="llm_judge">Config 13: LLM-as-a-Judge (Zero-shot Qwen)</option>
+                                <option value="lr_combined">Config 5: Tabular LR (DSNB Balancing)</option>
+                                <option value="rst_rule_based">Config 1: RST Rule-Based Heuristic</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <button id="analyze-btn" class="btn primary-btn">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span>Analyze Saliency</span>
+                    </button>
+                    <button id="quiz-btn" class="btn secondary-btn" style="background: rgba(157, 78, 221, 0.15); border-color: var(--accent-purple);">
+                        <i class="fa-solid fa-graduation-cap" style="color: var(--accent-purple);"></i>
+                        <span style="color: var(--accent-purple); font-weight: 700;">Generate Quiz</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Right Panel: Saliency Output & Downstream QG -->
+            <section class="panel glass">
+                <div class="panel-header">
+                    <i class="fa-solid fa-chart-line section-icon"></i>
+                    <h2>Interactive Saliency Highlighting & Quiz</h2>
+                </div>
+
+                <!-- Highlighted Context Output -->
+                <div class="highlight-container">
+                    <p id="saliency-guide-text" class="placeholder-text">Enter context paragraph and press "Analyze Saliency" or "Generate Quiz" to begin...</p>
+                    <div id="highlight-viewer" class="highlight-viewer hidden"></div>
+                </div>
+
+                <!-- Sentence Salience Priority Ranking Table (Top-5 Ranked Table) -->
+                <div id="priority-table-card" class="qg-card glass-inner hidden" style="margin-top: 1.5rem;">
+                    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-solid fa-list-ol" style="color: var(--yellow-salient);"></i>
+                            <h3 style="margin: 0;">Sentence Salience Priority Ranking</h3>
+                        </div>
+                        <span class="badge" style="background: rgba(255,183,3,0.15); color: var(--yellow-salient); border: 1px solid var(--yellow-salient);">High -> Low Priority</span>
+                    </div>
+                    
+                    <div class="table-responsive" style="overflow-x: auto; margin-top: 1rem;">
+                        <table class="salience-priority-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.88rem;">
+                            <thead>
+                                <tr style="border-bottom: 1px solid var(--panel-border); color: var(--text-muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <th style="padding: 0.75rem 0.5rem; text-align: center;">Priority</th>
+                                    <th style="padding: 0.75rem 0.5rem; text-align: center;">Sent #</th>
+                                    <th style="padding: 0.75rem 0.5rem;">Sentence Content</th>
+                                    <th style="padding: 0.75rem 0.5rem; text-align: center;">Salience Prob</th>
+                                    <th style="padding: 0.75rem 0.5rem; text-align: center; color: var(--accent-purple);">Zero-Shot LLM</th>
+                                    <th style="padding: 0.75rem 0.5rem; text-align: center;">RST N-Ratio</th>
+                                    <th style="padding: 0.75rem 0.5rem; text-align: center;">Surprisal Drop</th>
+                                    <th style="padding: 0.75rem 0.5rem; text-align: center;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="priority-table-body">
+                                <!-- Priority rows rendered dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Downstream QA Pipeline Controls (Single Sentence Mode) -->
+                <div id="qg-card" class="qg-card glass-inner hidden">
+                    <div class="card-header">
+                        <i class="fa-solid fa-cogs"></i>
+                        <h3>Downstream Question Generation & QA Verification</h3>
+                    </div>
+                    
+                    <div class="selected-sentence-box">
+                        <span class="badge">Target Answer Sentence</span>
+                        <p id="selected-sent-text"></p>
+                    </div>
+
+                    <!-- Step 1: QG Action -->
+                    <div class="pipeline-step" id="step-qg">
+                        <button id="generate-q-btn" class="btn secondary-btn">
+                            <i class="fa-solid fa-gears"></i>
+                            <span>Generate Question</span>
+                        </button>
+                        <div id="generated-q-output" class="step-output hidden">
+                            <label>Generated Question</label>
+                            <div class="question-text-box">
+                                <p id="generated-q-text"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: QA Solver Action -->
+                    <div class="pipeline-step hidden" id="step-qa">
+                        <button id="solve-q-btn" class="btn secondary-btn">
+                            <i class="fa-solid fa-user-robot"></i>
+                            <span>Verify with QA Solver Agent</span>
+                        </button>
+                        <div id="solver-output" class="step-output hidden">
+                            <div class="solver-grid">
+                                <div>
+                                    <label>QA Agent Predicted Answer</label>
+                                    <div class="answer-text-box">
+                                        <p id="solver-answer-text"></p>
+                                    </div>
+                                </div>
+                                <div class="verification-box">
+                                    <label>Acceptability Status</label>
+                                    <div id="verification-status" class="status-indicator">
+                                        <i class="fa-solid"></i>
+                                        <span id="status-text"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full Quiz Mode Card -->
+                <div id="quiz-card" class="qg-card glass-inner hidden" style="margin-top: 1.5rem;">
+                    <div class="card-header">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <h3>Generated Reading Comprehension Quiz</h3>
+                    </div>
+                    <div id="quiz-items-container" style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1rem;">
+                        <!-- Quiz Items rendered dynamically -->
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Advanced Agentic Coding - SQuAD Sentence Salience Dashboard</p>
+        </footer>
+    </div>
+
+    <!-- Features Tooltip -->
+    <div id="features-tooltip" class="tooltip hidden">
+        <h4>Sentence Features</h4>
+        <ul id="tooltip-features-list"></ul>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

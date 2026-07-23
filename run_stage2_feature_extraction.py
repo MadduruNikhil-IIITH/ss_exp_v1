@@ -104,8 +104,9 @@ def run_stage2_pipeline(input_csv="squad_labeled_dataset.csv", cache_path="featu
             sentences = sorted(sentences, key=lambda x: x["sentence_idx"])
             
             # C. Extract Linguistic features per sentence
-            ling_feats = []
+            ling_feats_map = {}
             for sent in sentences:
+                sent_idx = sent["sentence_idx"]
                 try:
                     lf = extract_linguistic_features(sent["text"])
                     # Extract concreteness features
@@ -119,13 +120,13 @@ def run_stage2_pipeline(input_csv="squad_labeled_dataset.csv", cache_path="featu
                     lf["sentiment_polarity_compound"] = float(s_scores["compound"])
                 except Exception as e:
                     lf = {}
-                ling_feats.append(lf)
+                ling_feats_map[sent_idx] = lf
                 
             # Merge
-            for idx, (_, row) in enumerate(group.iterrows()):
+            for _, row in group.iterrows():
                 sent_idx = int(row["sentence_idx"])
                 
-                s_ling = ling_feats[idx] if idx < len(ling_feats) else {}
+                s_ling = ling_feats_map.get(sent_idx, {})
                 s_surp = surp_feats[sent_idx] if surp_feats and sent_idx < len(surp_feats) else {}
                 s_rst = rst_feats[sent_idx] if rst_feats and sent_idx < len(rst_feats) else {}
                 

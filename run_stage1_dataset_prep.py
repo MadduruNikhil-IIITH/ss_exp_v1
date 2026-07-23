@@ -66,7 +66,7 @@ def run_llm_judge(model, tokenizer, context, question, sentence, device="cuda"):
     binary_judgment = 1 if judgment == "Yes" else 0
     return binary_judgment, response
 
-def run_stage1_pipeline(num_train_contexts=15, num_val_contexts=5, output_csv="squad_labeled_dataset.csv"):
+def run_stage1_pipeline(num_train_contexts=15, num_val_contexts=5, output_csv="squad_labeled_dataset.csv", audit_ratio=0.20):
     print("="*80)
     print("STAGE 1: SILVER DATASET PREPARATION & LLM-AS-A-JUDGE AUDIT")
     print("="*80)
@@ -97,17 +97,12 @@ def run_stage1_pipeline(num_train_contexts=15, num_val_contexts=5, output_csv="s
     
     # 2. Run LLM-as-a-Judge Audit
     print(f"\n[{time.strftime('%X')}] Starting LLM-as-a-Judge audit...")
-    salient_records = [r for r in all_records if r["binary_label"] == 1]
-    non_salient_records = [r for r in all_records if r["binary_label"] == 0]
     
-    sample_size = min(50, len(salient_records), len(non_salient_records))
-    print(f"   - Sampling balanced set of {sample_size * 2} records (50% Salient, 50% Non-Salient) for audit...")
+    sample_size = int(len(all_records) * audit_ratio)
+    print(f"   - Sampling {sample_size} random records ({audit_ratio*100:.1f}% of {len(all_records)} total sentences) for audit...")
     
     random.seed(42)
-    sampled_salient = random.sample(salient_records, sample_size)
-    sampled_non_salient = random.sample(non_salient_records, sample_size)
-    eval_set = sampled_salient + sampled_non_salient
-    random.shuffle(eval_set)
+    eval_set = random.sample(all_records, sample_size)
     
     device = "cuda" if torch.cuda.is_available() else "cpu"
     try:
@@ -228,16 +223,17 @@ if __name__ == "__main__":
     parser.add_argument("--total_contexts", type=int, default=100, help="Total number of contexts to split")
     parser.add_argument("--num_train_contexts", type=int, default=None, help="Explicit number of train contexts")
     parser.add_argument("--num_val_contexts", type=int, default=None, help="Explicit number of val contexts")
+    parser.add_argument("--audit_ratio", type=float, default=0.20, help="Ratio of records to verify with LLM-as-a-Judge")
     args = parser.parse_args()
     
     if args.train_ratio is not None:
         num_train = int(args.total_contexts * args.train_ratio)
         num_val = args.total_contexts - num_train
         print(f"Dynamic splitting active: train_ratio={args.train_ratio}, total_contexts={args.total_contexts} -> train={num_train}, val={num_val}")
-        run_stage1_pipeline(num_train_contexts=num_train, num_val_contexts=num_val)
+        run_stage1_pipeline(num_train_contexts=num_train, num_val_contexts=num_val, audit_ratio=args.audit_ratio)
     elif args.num_train_contexts is not None and args.num_val_contexts is not None:
-        run_stage1_pipeline(num_train_contexts=args.num_train_contexts, num_val_contexts=args.num_val_contexts)
+        run_stage1_pipeline(num_train_contexts=args.num_train_contexts, num_val_contexts=args.num_val_contexts, audit_ratio=args.audit_ratio)
     else:
         # Default fallback (Standardized 90/10 split over 100 contexts)
-        run_stage1_pipeline(num_train_contexts=90, num_val_contexts=10)
+        run_stage1_pipeline(num_train_contexts=90, num_val_contexts=10, audit_ratio=args.audit_ratio)
 

@@ -64,8 +64,8 @@ def has_token_overlap(ans_text, sent_text):
     ans_doc = nlp(ans_text.lower())
     sent_doc = nlp(sent_text.lower())
     
-    ans_tokens = {t.text for t in ans_doc if not t.is_stop and t.is_alpha}
-    sent_tokens = {t.text for t in sent_doc if not t.is_stop and t.is_alpha}
+    ans_tokens = {t.lemma_ for t in ans_doc if not t.is_stop and t.is_alpha}
+    sent_tokens = {t.lemma_ for t in sent_doc if not t.is_stop and t.is_alpha}
     
     # If the answer is purely stopwords or non-alphanumeric, fallback to exact string matching
     if not ans_tokens:
@@ -76,7 +76,7 @@ def has_token_overlap(ans_text, sent_text):
 def build_silver_squad_dataset(num_contexts=100, split="train"):
     """
     Downloads SQuAD v1.1, processes contexts, matches answer spans to sentence boundaries,
-    and returns a DataFrame containing QA pairs with sentence level labels and metadata.
+    and returns a DataFrame containing context-sentence records with labels and metadata.
     """
     print(f"Loading SQuAD v1.1 ({split} split)...")
     dataset = load_dataset("rajpurkar/squad", split=split)
@@ -100,19 +100,18 @@ def build_silver_squad_dataset(num_contexts=100, split="train"):
     
     processed_records = []
     
-    for context in tqdm(unique_contexts, desc="Silver labeling contexts"):
+    for ctx_idx, context in enumerate(tqdm(unique_contexts, desc="Silver labeling contexts")):
         sentences = get_sentence_boundaries(context)
         if not sentences:
             continue
             
         qa_pairs = contexts_map[context]
+        all_questions = [qa["question"] for qa in qa_pairs]
+        
+        # 1. Exact-Index Binary Labels across all QA pairs in the context
+        all_salient_indices = set()
         for qa in qa_pairs:
-            q_id = qa["id"]
-            question = qa["question"]
             answers = qa["answers"]
-            
-            # 1. Exact-Index Binary Labels with Token-Level Intersection Filter
-            salient_indices = set()
             for ans_text, ans_start in zip(answers["text"], answers["answer_start"]):
                 ans_end = ans_start + len(ans_text)
                 for sent in sentences:
@@ -120,41 +119,54 @@ def build_silver_squad_dataset(num_contexts=100, split="train"):
                     if max(sent["start_char"], ans_start) < min(sent["end_char"], ans_end):
                         # Filter out punctuation and boundary noise via token overlap check
                         if has_token_overlap(ans_text, sent["text"]):
-                            salient_indices.add(sent["sentence_idx"])
+                            all_salient_indices.add(sent["sentence_idx"])
             
-            # Primary answer sentence (first annotated answer)
-            primary_ans_idx = 0
-            if salient_indices:
-                primary_ans_idx = min(salient_indices)
+        # 2. Compute TF-IDF question-sentence similarities (maximum similarity across all questions)
+        tfidf_max_sims = [0.0] * len(sentences)
+        if sentences and all_questions:
+            try:
+                # Fit TF-IDF on sentences + questions
+                all_texts = [sent["text"] for sent in sentences] + all_questions
+                vectorizer = TfidfVectorizer(stop_words='english')
+                tfidf_matrix = vectorizer.fit_transform(all_texts)
+                
+                num_sents = len(sentences)
+                sent_vecs = tfidf_matrix[:num_sents]
+                q_vecs = tfidf_matrix[num_sents:]
+                
+                sim_matrix = cosine_similarity(sent_vecs, q_vecs)
+                tfidf_max_sims = sim_matrix.max(axis=1).tolist()
+            except Exception:
+                tfidf_max_sims = [0.0] * len(sentences)
+                
+        # 3. Process each sentence in the context at context-sentence level
+        q_id = f"ctx_{split}_{ctx_idx}"
+        question_str = " | ".join(all_questions)
+        
+        for idx, sent in enumerate(sentences):
+            # Binary salience: 1 if answers ANY question
+            is_salient = 1 if idx in all_salient_indices else 0
             
-            # Compute TF-IDF question-sentence similarities
-            tfidf_sims = compute_tfidf_similarity(question, sentences)
+            # Distance-based decay label
+            dist = min([abs(idx - s_idx) for s_idx in all_salient_indices]) if all_salient_indices else 0
+            soft_decay = 0.5 ** dist
             
-            # Process each sentence in the context for this question
-            for idx, sent in enumerate(sentences):
-                # Binary salience
-                is_salient = 1 if idx in salient_indices else 0
-                
-                # Distance-based decay label
-                dist = min([abs(idx - s_idx) for s_idx in salient_indices]) if salient_indices else abs(idx - primary_ans_idx)
-                soft_decay = 0.5 ** dist
-                
-                # Hybrid semantic label (decay + TF-IDF similarity)
-                sim_score = tfidf_sims[idx] if idx < len(tfidf_sims) else 0.0
-                soft_hybrid = 0.7 * soft_decay + 0.3 * sim_score
-                
-                processed_records.append({
-                    "question_id": q_id,
-                    "question": question,
-                    "context": context,
-                    "sentence_idx": idx,
-                    "sentence_text": sent["text"],
-                    "start_char": sent["start_char"],
-                    "end_char": sent["end_char"],
-                    "binary_label": is_salient,
-                    "soft_label_decay": soft_decay,
-                    "soft_label_hybrid": soft_hybrid
-                })
+            # Hybrid semantic label (decay + TF-IDF similarity)
+            sim_score = tfidf_max_sims[idx] if idx < len(tfidf_max_sims) else 0.0
+            soft_hybrid = 0.7 * soft_decay + 0.3 * sim_score
+            
+            processed_records.append({
+                "question_id": q_id,
+                "question": question_str,
+                "context": context,
+                "sentence_idx": idx,
+                "sentence_text": sent["text"],
+                "start_char": sent["start_char"],
+                "end_char": sent["end_char"],
+                "binary_label": is_salient,
+                "soft_label_decay": soft_decay,
+                "soft_label_hybrid": soft_hybrid
+            })
                 
     return pd.DataFrame(processed_records)
 

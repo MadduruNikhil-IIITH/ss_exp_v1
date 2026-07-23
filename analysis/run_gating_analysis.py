@@ -10,7 +10,9 @@ def main():
     print("INTERPRETABILITY STUDY: LGSM GATE BEHAVIOR ANALYSIS")
     print("="*80)
 
-    pred_path = "lgsm_predictions.pkl"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    pred_path = os.path.abspath(os.path.join(script_dir, "../lgsm_predictions.pkl"))
+    
     if not os.path.exists(pred_path):
         print(f"Error: LGSM predictions file '{pred_path}' not found. Run Stage 3 first!")
         return
@@ -92,12 +94,17 @@ def main():
     axes[2].grid(True, linestyle=':', alpha=0.6)
 
     plt.tight_layout()
-    plot_path = os.path.join("docs", "images", "gating_progression.png")
+    docs_images_dir = os.path.abspath(os.path.join(script_dir, "../docs/images"))
+    os.makedirs(docs_images_dir, exist_ok=True)
+    
+    plot_path = os.path.join(docs_images_dir, "gating_progression.png")
     plt.savefig(plot_path, dpi=150)
     print(f"\nSaved gating analysis plots to '{plot_path}'")
     
     # Write Markdown report
-    report_path = os.path.join("docs", "gating_analysis_report.md")
+    docs_dir = os.path.abspath(os.path.join(script_dir, "../docs"))
+    os.makedirs(docs_dir, exist_ok=True)
+    report_path = os.path.join(docs_dir, "gating_analysis_report.md")
     
     def write_report(path):
         with open(path, "w", encoding="utf-8") as f:
@@ -153,7 +160,7 @@ def main():
                 f.write(f"The low correlation of `{corr:.4f}` suggests that the gating coefficient adjusts dynamically and relationally to select salient sentences, rather than acting as a simple monotonic filter.\n")
 
     write_report(report_path)
-    print("Gating Analysis completed successfully. Reports saved to 'docs/gating_analysis_report.md'.")
+    print(f"Gating Analysis completed successfully. Reports saved to '{report_path}'.")
 
 if __name__ == "__main__":
     main()

@@ -17,7 +17,7 @@ def validate_environment():
         print("   - Warning: Running on CPU. Reinstall PyTorch with CUDA if you want GPU speed.")
     print("   - SUCCESS: Environment check completed.\n")
 
-def validate_cache(cache_path="features_cache_deletion.pkl"):
+def validate_cache(cache_path="features_cache.pkl"):
     print("2. Checking Features Cache Validity...")
     if not os.path.exists(cache_path):
         print(f"   - Error: Cache file '{cache_path}' not found. Run run_feature_extraction.py first.")

@@ -4,8 +4,13 @@ import time
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import sys
 from tqdm import tqdm
 from scipy.stats import ks_2samp
+
+# Enable parent folder import for src module
+script_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.abspath(os.path.join(script_dir, "..")))
 from src.surprisal_features import SurprisalCalculator
 
 def main():
@@ -13,7 +18,7 @@ def main():
     print("INFORMATION DENSITY STUDY: TOKEN-LEVEL SURPRISAL UID ANALYSIS")
     print("="*80)
 
-    cache_path = "features_cache.pkl"
+    cache_path = os.path.abspath(os.path.join(script_dir, "../features_cache.pkl"))
     if not os.path.exists(cache_path):
         print(f"Error: Cache file '{cache_path}' not found. Run Stage 2 first!")
         return
@@ -94,7 +99,7 @@ def main():
                 else:
                     non_salient_surprisals.extend(surps)
             except Exception as e:
-                # Silently skip errors (e.g. empty target)
+                # Silently skip errors
                 pass
 
     salient_arr = np.array(salient_surprisals)
@@ -163,14 +168,16 @@ def main():
     plt.grid(True, linestyle=':', alpha=0.6)
     
     # Save plot
-    plot_path = os.path.join("docs", "images", "uid_distribution.png")
+    docs_images_dir = os.path.abspath(os.path.join(script_dir, "../docs/images"))
+    os.makedirs(docs_images_dir, exist_ok=True)
+    plot_path = os.path.join(docs_images_dir, "uid_distribution.png")
     plt.savefig(plot_path, dpi=150)
     print(f"Saved CDF comparison plot to '{plot_path}'")
     
-    # Saved to workspace
-
     # Write Markdown report
-    report_path = os.path.join("docs", "uid_analysis_report.md")
+    docs_dir = os.path.abspath(os.path.join(script_dir, "../docs"))
+    os.makedirs(docs_dir, exist_ok=True)
+    report_path = os.path.join(docs_dir, "uid_analysis_report.md")
     
     def write_report(path):
         with open(path, "w", encoding="utf-8") as f:
@@ -204,7 +211,7 @@ def main():
                 f.write("The results do not show a pronounced upper-tail suppression in salient sentences. The distributions remain close across both quantiles.\n")
 
     write_report(report_path)
-    print("UID Analysis completed successfully. Reports saved to 'docs/uid_analysis_report.md'.")
+    print(f"UID Analysis completed successfully. Reports saved to '{report_path}'.")
 
 if __name__ == "__main__":
     main()

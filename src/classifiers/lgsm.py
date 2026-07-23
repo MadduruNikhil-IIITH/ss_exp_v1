@@ -267,23 +267,29 @@ class LGSMSaliencyClassifier:
         self.rst_cols = []
         self.other_cols = []
 
-    def _setup_columns(self, all_feature_keys):
+    def _setup_columns(self, all_feature_keys, use_rst=True):
         from src.data_processing import classify_feature_keys
         categories = classify_feature_keys(all_feature_keys)
         self.feature_cols = categories["all"]
         self.rst_cols = categories["rst"]
         # Other cols: linguistic + surprisal + (no alignment keys)
         self.other_cols = [c for c in categories["linguistic"] + categories["surprisal"] if not c.startswith("align_")]
+        
+        if not use_rst:
+            self.feature_cols = [c for c in self.feature_cols if not c.startswith("rst_") and not c.startswith("rel_rst_")]
+            self.rst_cols = []
+            self.other_cols = [c for c in self.other_cols if not c.startswith("rst_") and not c.startswith("rel_rst_")]
+            
         self.tabular_dim = len(self.feature_cols)
         self.rst_dim = len(self.rst_cols)
         self.other_dim = len(self.other_cols)
 
-    def fit(self, train_records, val_records=None, epochs=4, batch_size=4, lr=2e-5):
+    def fit(self, train_records, val_records=None, epochs=4, batch_size=4, lr=2e-5, use_rst=True):
         """
         Trains the LGSM sequence model using Focal Loss and AdamW.
         """
         all_feature_keys = train_records[0]["features"].keys()
-        self._setup_columns(all_feature_keys)
+        self._setup_columns(all_feature_keys, use_rst=use_rst)
         
         # Prepare datasets & loaders
         train_dataset = SQuADSequenceDataset(
