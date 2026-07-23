@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.7.1)  22 JUL 2026 23:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.7.1)  23 JUL 2026 08:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./paper/acl_paper.tex
-(paper/acl_paper.tex
+**./acl_paper.tex
+(acl_paper.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
 (C:\Users\maddu\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -23,7 +23,7 @@ File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
 )
-(D:\Research\Sqaud-Salience\paper\acl.sty
+(acl.sty
 Package: acl 2023/01/01 ACL Style Shim
 
 (C:\Users\maddu\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
@@ -811,27 +811,27 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 24.
 tex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count350
-) (D:\Research\Sqaud-Salience\paper\acl_paper.aux)
+) (acl_paper.aux)
 \openout1 = `acl_paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -854,26 +854,26 @@ LaTeX Font Info:    ... okay on input line 36.
 * \headsep=25.0pt
 * \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=50.0pt
+* \marginparwidth=4.0pt
 * \marginparsep=10.0pt
 * \columnsep=18.06749pt
 * \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
-* \@twocolumnfalse
+* \@twocolumntrue
 * \@twosidefalse
 * \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 36.
-Package microtype Info: Applying patch `item' on input line 36.
-Package microtype Info: Applying patch `toc' on input line 36.
-Package microtype Info: Applying patch `eqnum' on input line 36.
-Package microtype Info: Applying patch `footnote' on input line 36.
-Package microtype Info: Applying patch `verbatim' on input line 36.
-LaTeX Info: Redefining \microtypesetup on input line 36.
+LaTeX Info: Redefining \microtypecontext on input line 34.
+Package microtype Info: Applying patch `item' on input line 34.
+Package microtype Info: Applying patch `toc' on input line 34.
+Package microtype Info: Applying patch `eqnum' on input line 34.
+Package microtype Info: Applying patch `footnote' on input line 34.
+Package microtype Info: Applying patch `verbatim' on input line 34.
+LaTeX Info: Redefining \microtypesetup on input line 34.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -887,10 +887,9 @@ Package microtype Info: No adjustment of character kerning.
 (C:\Users\maddu\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
-Package hyperref Info: Link coloring ON on input line 36.
+Package hyperref Info: Link coloring ON on input line 34.
 
-(D:\Research\Sqaud-Salience\paper\acl_paper.out)
-(D:\Research\Sqaud-Salience\paper\acl_paper.out)
+(acl_paper.out) (acl_paper.out)
 \@outlinefile=\write4
 \openout4 = `acl_paper.out'.
 
@@ -928,13 +927,13 @@ Package caption Info: End \AtBeginDocument code.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 39
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 37
 .
 
 (C:\Users\maddu\AppData\Local\Programs\MiKTeX\tex/latex/base\ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 37.
 
 
 (C:\Users\maddu\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
@@ -943,7 +942,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (C:\Users\maddu\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 37.
 
 
 (C:\Users\maddu\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -962,25 +961,116 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `pcr' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 41.
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 41.
 
-[1
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+\T1/ptm/m/n/10 (+20) com-pre-hen-sion pas-sage are \T1/ptm/m/it/10 (+20) salien
+t\T1/ptm/m/n/10 (+20) ---
+ []
 
-{C:/Users/maddu/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/madd
-u/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 8
-5.
 
+Underfull \hbox (badness 1052) in paragraph at lines 39--40
+\T1/ptm/m/n/10 (+20) eval-u-a-tion of a 5-stage discourse-aware
+ []
+
+
+Underfull \hbox (badness 6461) in paragraph at lines 39--40
+\T1/ptm/m/n/10 (+20) salience ar-chi-tec-ture. We in-tro-duce
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+\T1/ptm/b/n/10 (+20) Discourse-Semantic Neigh-bor-hood
+ []
+
+
+Underfull \hbox (badness 6575) in paragraph at lines 39--40
+\T1/ptm/m/n/10 (+20) al-go-rithm com-bin-ing po-si-tional de-cay,
+ []
+
+
+Underfull \hbox (badness 4726) in paragraph at lines 39--40
+\T1/ptm/m/n/10 (+20) with 71 ex-plicit multi-modal fea-tures.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+\T1/ptm/m/n/10 (+20) DSNB-balanced LGSM demon-strates
+ []
+
+
+Underfull \hbox (badness 3503) in paragraph at lines 39--40
+\T1/ptm/m/n/10 (+20) rank-ing ($\OT1/cmr/m/n/10 94\OML/cmm/m/it/10 :\OT1/cmr/m/
+n/10 50%$ \T1/ptm/m/n/10 (+20) Top-1 ac-cu-racy) and
+ []
+
+
+Underfull \hbox (badness 1365) in paragraph at lines 39--40
+\T1/ptm/m/n/10 (+20) ($\OT1/cmr/m/n/10 92\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 50%$
+ \T1/ptm/m/n/10 (+20) QA ac-cept-abil-ity rate). Data
+ []
+
+
+Underfull \hbox (badness 3635) in paragraph at lines 39--40
+\T1/ptm/m/n/10 (+20) and code for this pa-per are pub-licly
+ []
+
+
+Underfull \hbox (badness 6575) in paragraph at lines 39--40
+\T1/ptm/m/n/10 (+20) avail-able at [][]$\T1/pcr/m/n/10 https : / / github . com
+ /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+\T1/pcr/m/n/10 MadduruNikhil-[]IIITH / ss _ exp _
+ []
+
+<../docs/images/positional_bias.png, id=111, 505.89pt x 325.215pt>
+File: ../docs/images/positional_bias.png Graphic file (type png)
+<use ../docs/images/positional_bias.png>
+Package pdftex.def Info: ../docs/images/positional_bias.png  used on input line
+ 49.
+(pdftex.def)             Requested size: 217.4502pt x 139.7901pt.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 5
+6.
 (C:\Users\maddu\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-[2] [3]
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 16
-5.
- (C:\Users\maddu\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
+Underfull \hbox (badness 1565) in paragraph at lines 57--58
+[]\T1/ptm/b/n/10.95 (+20) RQ2: \T1/ptm/m/n/10.95 (+20) Can Rhetor-i-cal Struc-t
+ure The-ory
+ []
+
+[1{C:/Users/maddu/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/ma
+ddu/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
+
+
+ <../docs/images/positional_bias.png>] [2]
+Overfull \hbox (8.2289pt too wide) in paragraph at lines 101--112
+ [][] 
+ []
+
+
+Overfull \hbox (10.7291pt too wide) in paragraph at lines 123--134
+ [][] 
+ []
+
+<../docs/images/correlation_heatmap.png, id=176, 650.43pt x 578.16pt>
+File: ../docs/images/correlation_heatmap.png Graphic file (type png)
+<use ../docs/images/correlation_heatmap.png>
+Package pdftex.def Info: ../docs/images/correlation_heatmap.png  used on input 
+line 142.
+(pdftex.def)             Requested size: 217.4502pt x 193.29001pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--149
+[]\T1/ptm/b/n/14.4 (+20) Proposed Saliency Model
+ []
+
+[3 <../docs/images/correlation_heatmap.png>]
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 17
+6.
+
+(C:\Users\maddu\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 Package microtype Info: Loading generic protrusion settings for font family
@@ -988,97 +1078,121 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 171.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 182.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 171.
- [4]
-Overfull \hbox (7.32956pt too wide) in paragraph at lines 241--242
-\T1/ptm/m/n/10.95 (-20) To an-swer \T1/ptm/b/n/10.95 (-20) RQ2\T1/ptm/m/n/10.95
- (-20) , we ex-e-cute a closed-loop gen-er-a-tive ver-i-fi-ca-tion task us-ing 
-\T1/pcr/m/n/10.95 Qwen2.5-1.5B-Instruct\T1/ptm/m/n/10.95 (-20) .
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 182.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 216.
+<../docs/images/top_k_recall_curve.png, id=193, 505.89pt x 361.35pt>
+File: ../docs/images/top_k_recall_curve.png Graphic file (type png)
+<use ../docs/images/top_k_recall_curve.png>
+Package pdftex.def Info: ../docs/images/top_k_recall_curve.png  used on input l
+ine 264.
+(pdftex.def)             Requested size: 217.4502pt x 155.32233pt.
+
+Underfull \vbox (badness 2229) has occurred while \output is active []
+
+ [4 <../docs/images/top_k_recall_curve.png>] [5]
+<../docs/images/gating_progression.png, id=227, 1300.86pt x 361.35pt>
+File: ../docs/images/gating_progression.png Graphic file (type png)
+<use ../docs/images/gating_progression.png>
+Package pdftex.def Info: ../docs/images/gating_progression.png  used on input l
+ine 336.
+(pdftex.def)             Requested size: 385.02547pt x 106.9502pt.
+<../docs/images/rst_relations_comparison.png, id=228, 578.16pt x 361.35pt>
+File: ../docs/images/rst_relations_comparison.png Graphic file (type png)
+<use ../docs/images/rst_relations_comparison.png>
+Package pdftex.def Info: ../docs/images/rst_relations_comparison.png  used on i
+nput line 345.
+(pdftex.def)             Requested size: 385.02547pt x 240.63658pt.
+
+Underfull \vbox (badness 6691) has occurred while \output is active []
+
+
+Underfull \hbox (badness 1043) in paragraph at lines 367--368
+[]\T1/ptm/m/n/10.95 (+20) Our qual-i-ta-tive anal-y-sis re-veals a clear di-
  []
 
-[5] [6]
-<docs/images/uid_distribution.png, id=147, 578.16pt x 433.62pt>
-File: docs/images/uid_distribution.png Graphic file (type png)
-<use docs/images/uid_distribution.png>
-Package pdftex.def Info: docs/images/uid_distribution.png  used on input line 3
-00.
+[6] [7 <../docs/images/gating_progression.png> <../docs/images/rst_relations_co
+mparison.png>]
+Underfull \hbox (badness 2181) in paragraph at lines 377--378
+[]\T1/ptm/m/n/10.95 (+20) Pranav Ra-jpurkar et al. 2016. SQuAD:
+ []
+
+
+Underfull \hbox (badness 1603) in paragraph at lines 383--384
+[]\T1/ptm/m/n/10.95 (+20) Rodrigo Nogueira and Kyunghyun Cho.
+ []
+
+[8] [9
+
+]
+<../docs/images/uid_distribution.png, id=251, 578.16pt x 433.62pt>
+File: ../docs/images/uid_distribution.png Graphic file (type png)
+<use ../docs/images/uid_distribution.png>
+Package pdftex.def Info: ../docs/images/uid_distribution.png  used on input lin
+e 431.
 (pdftex.def)             Requested size: 452.9679pt x 339.72418pt.
-<docs/images/gating_progression.png, id=149, 1300.86pt x 361.35pt>
-File: docs/images/gating_progression.png Graphic file (type png)
-<use docs/images/gating_progression.png>
-Package pdftex.def Info: docs/images/gating_progression.png  used on input line
- 307.
-(pdftex.def)             Requested size: 452.9679pt x 125.82376pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<docs/images/correlation_heatmap.png, id=150, 650.43pt x 578.16pt>
-File: docs/images/correlation_heatmap.png Graphic file (type png)
-<use docs/images/correlation_heatmap.png>
-Package pdftex.def Info: docs/images/correlation_heatmap.png  used on input lin
-e 314.
-(pdftex.def)             Requested size: 362.37569pt x 322.11768pt.
+<../docs/images/threshold_sensitivity.png, id=253, 867.24pt x 361.35pt>
+File: ../docs/images/threshold_sensitivity.png Graphic file (type png)
+<use ../docs/images/threshold_sensitivity.png>
+Package pdftex.def Info: ../docs/images/threshold_sensitivity.png  used on inpu
+t line 442.
+(pdftex.def)             Requested size: 271.7835pt x 113.2414pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<docs/images/threshold_sensitivity.png, id=151, 867.24pt x 361.35pt>
-File: docs/images/threshold_sensitivity.png Graphic file (type png)
-<use docs/images/threshold_sensitivity.png>
-Package pdftex.def Info: docs/images/threshold_sensitivity.png  used on input l
-ine 321.
-(pdftex.def)             Requested size: 362.37569pt x 150.98853pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[7
+[10
 
- <./docs/images/uid_distribution.png>] [8 <./docs/images/gating_progression.png
-> <./docs/images/correlation_heatmap.png>] [9 <./docs/images/threshold_sensitiv
-ity.png>] (D:\Research\Sqaud-Salience\paper\acl_paper.aux)
+
+] [11 <../docs/images/uid_distribution.png> <../docs/images/threshold_sensitivi
+ty.png>] [12] (acl_paper.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
 Package rerunfilecheck Info: File `acl_paper.out' has not changed.
-(rerunfilecheck)             Checksum: E442E2CECE66306271BAF17C66296D3A;2876.
+(rerunfilecheck)             Checksum: FEBF4CB07ED88AECC3D6CB8D4E25D87D;4492.
  ) 
 Here is how much of TeX's memory you used:
- 27287 strings out of 467871
- 507563 string characters out of 5418377
- 934873 words of memory out of 5000000
- 55351 multiletter control sequences out of 15000+600000
- 703353 words of font info for 318 fonts, out of 8000000 for 9000
+ 27466 strings out of 467871
+ 510308 string characters out of 5418377
+ 945692 words of memory out of 5000000
+ 55401 multiletter control sequences out of 15000+600000
+ 716806 words of font info for 383 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,12n,104p,1451b,837s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,12n,104p,1686b,831s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/maddu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmbx10.pfb><C:/Users/maddu/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmbx8.pfb><C:/Users/maddu/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/amsfonts/cm/cmmi10.pfb><C:/Users/maddu/AppData/Local/Programs/MiKTeX/fonts
 /type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/maddu/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/maddu/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/maddu/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/maddu/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:
-/Users/maddu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10
-.pfb><C:/Users/maddu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmr7.pfb><C:/Users/maddu/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmr8.pfb><C:/Users/maddu/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb><C:/Users/maddu/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/maddu/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/maddu/AppData/Local
-/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/maddu/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/maddu/AppData/
-Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/maddu/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/maddu/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/maddu/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on D:\Research\Sqaud-Salience\paper\acl_paper.pdf (9 pages, 7337
-38 bytes).
+eX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/maddu/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/maddu/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/Users/m
+addu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:
+/Users/maddu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.
+pfb><C:/Users/maddu/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmr8.pfb><C:/Users/maddu/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb><C:/Users/maddu/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmsy8.pfb><C:/Users/maddu/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/maddu/AppData/Local/Program
+s/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/maddu/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/maddu/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/maddu/AppData/Local
+/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/maddu/AppData/Local
+/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/maddu/AppData/Local
+/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on acl_paper.pdf (12 pages, 908033 bytes).
 PDF statistics:
- 266 PDF objects out of 1000 (max. 8388607)
- 44 named destinations out of 1000 (max. 500000)
- 75945 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 372 PDF objects out of 1000 (max. 8388607)
+ 80 named destinations out of 1000 (max. 500000)
+ 89336 words of extra memory for PDF output out of 106986 (max. 10000000)
 

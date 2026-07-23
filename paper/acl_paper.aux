@@ -6,45 +6,105 @@
 \citation{jurafsky2023speech}
 \citation{rajpurkar2016squad}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work and Feature Descriptions}{2}{section.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Visualization of positional bias in SQuAD v1.1, demonstrating the concentration of salient sentences in early paragraph indices.}}{1}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:positional_bias}{{1}{1}{Visualization of positional bias in SQuAD v1.1, demonstrating the concentration of salient sentences in early paragraph indices}{figure.caption.1}{}}
+\citation{wang-etal-2007-jeopardy}
+\citation{severyn-moschitti-2015-learning}
+\citation{tay-etal-2018-multi}
+\citation{garg-etal-2020-tanda}
+\citation{nogueira-cho-2019-passage}
+\citation{karpukhin-etal-2020-dense}
+\citation{erkan2004lexrank}
+\citation{liu2019text}
+\citation{ko-etal-2020-look}
+\citation{jia-liang-2017-adversarial}
+\citation{fisch-etal-2019-mrqa}
+\citation{min-etal-2020-ambigqa}
+\citation{clark-etal-2020-electra}
+\citation{mann1988rhetorical}
+\citation{ji-eisenstein-2014-representation}
+\citation{liu-etal-2020-multilingual}
+\citation{xiao-etal-2021-predicting}
+\citation{huber-carenini-2020-mega}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Sentence Importance and Answer Sentence Selection (AS2)}{2}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Positional Bias in Reading Comprehension}{2}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Discourse Parsing and Structural Linguistics}{2}{subsection.2.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3}Dataset}{2}{section.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}SQuAD v1.1 Characteristics}{2}{subsection.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}DSNB Sampling Algorithm}{2}{subsection.3.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Training sample distributions and class balance ratios across sampling techniques.}}{3}{table.caption.1}\protected@file@percent }
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{tab:balancing}{{1}{3}{Training sample distributions and class balance ratios across sampling techniques}{table.caption.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}DSNB Sampling Algorithm}{3}{subsection.3.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Training sample distributions and class balance ratios across sampling techniques.}}{3}{table.caption.2}\protected@file@percent }
+\newlabel{tab:balancing}{{1}{3}{Training sample distributions and class balance ratios across sampling techniques}{table.caption.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Corpus-Level Regression Analysis}{3}{section.4}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Key Post-LASSO Wald statistics showing significance of cognitive surprisal independent of positional controls.}}{3}{table.caption.2}\protected@file@percent }
-\newlabel{tab:post_lasso}{{2}{3}{Key Post-LASSO Wald statistics showing significance of cognitive surprisal independent of positional controls}{table.caption.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}The Linguistically-Grounded Saliency Model (LGSM)}{3}{section.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The 5-stage Closed-Loop QA Agent Pipeline for downstream sentence verification.}}{4}{figure.caption.3}\protected@file@percent }
-\newlabel{fig:qa_workflow}{{1}{4}{The 5-stage Closed-Loop QA Agent Pipeline for downstream sentence verification}{figure.caption.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Key Post-LASSO Wald statistics showing significance of cognitive surprisal independent of positional controls.}}{3}{table.caption.3}\protected@file@percent }
+\newlabel{tab:post_lasso}{{2}{3}{Key Post-LASSO Wald statistics showing significance of cognitive surprisal independent of positional controls}{table.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Feature correlation heatmap demonstrating that surprisal and RST metrics are highly orthogonal to standard structural predictors.}}{3}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:correlations}{{2}{3}{Feature correlation heatmap demonstrating that surprisal and RST metrics are highly orthogonal to standard structural predictors}{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Proposed Saliency Model (LGSM)}{4}{section.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The 5-stage Closed-Loop QA Agent Pipeline for downstream sentence verification.}}{4}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:qa_workflow}{{3}{4}{The 5-stage Closed-Loop QA Agent Pipeline for downstream sentence verification}{figure.caption.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Adaptive Gated Fusion}{4}{subsection.5.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Architectural comparison between (a) standard Hybrid BERT concatenation and (b) our LGSM FiLM gating mechanism.}}{4}{figure.caption.4}\protected@file@percent }
-\newlabel{fig:architectures}{{2}{4}{Architectural comparison between (a) standard Hybrid BERT concatenation and (b) our LGSM FiLM gating mechanism}{figure.caption.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}Results}{4}{section.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Quantitative Salience Prediction}{4}{subsection.6.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Quantitative Salience Prediction Results. LGSM+DSNB provides the highest Recall, F1, and ranking metrics.}}{5}{table.caption.5}\protected@file@percent }
-\newlabel{tab:main_results}{{3}{5}{Quantitative Salience Prediction Results. LGSM+DSNB provides the highest Recall, F1, and ranking metrics}{table.caption.5}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Downstream QG and Closed-Loop QA metrics (QA-AR = QA Acceptability Rate). LGSM-selected sentences achieve a $92.50\%$ downstream acceptability rate.}}{5}{table.caption.6}\protected@file@percent }
-\newlabel{tab:qg_metrics}{{4}{5}{Downstream QG and Closed-Loop QA metrics (QA-AR = QA Acceptability Rate). LGSM-selected sentences achieve a $92.50\%$ downstream acceptability rate}{table.caption.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Downstream QG \& QA Evaluation}{5}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Classification Performance}{4}{subsection.6.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Architectural comparison between (a) standard Hybrid BERT concatenation and (b) our LGSM adaptive gating mechanism.}}{4}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:architectures}{{4}{4}{Architectural comparison between (a) standard Hybrid BERT concatenation and (b) our LGSM adaptive gating mechanism}{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Ranking Performance}{4}{subsection.6.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Top-K Recall Curve for LGSM+DSNB versus baselines, highlighting superior retrieval performance across different cutoff thresholds K.}}{4}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:top_k_recall}{{5}{4}{Top-K Recall Curve for LGSM+DSNB versus baselines, highlighting superior retrieval performance across different cutoff thresholds K}{figure.caption.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Comprehensive experimental results across all 15 configurations on 1,000 SQuAD context passages. Note the trade-off between raw classification accuracy and structural recall/ranking (Top-1) when employing DSNB.}}{5}{table.caption.7}\protected@file@percent }
+\newlabel{tab:comprehensive_results}{{3}{5}{Comprehensive experimental results across all 15 configurations on 1,000 SQuAD context passages. Note the trade-off between raw classification accuracy and structural recall/ranking (Top-1) when employing DSNB}{table.caption.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Ablation Studies}{5}{subsection.6.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces DSNB Component Ablation. RST depth is the most critical sampling constraint.}}{5}{table.caption.9}\protected@file@percent }
+\newlabel{tab:dsnb_ablation}{{4}{5}{DSNB Component Ablation. RST depth is the most critical sampling constraint}{table.caption.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Feature-Group Ablation for the LGSM gating mechanism.}}{5}{table.caption.10}\protected@file@percent }
+\newlabel{tab:feature_ablation}{{5}{5}{Feature-Group Ablation for the LGSM gating mechanism}{table.caption.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Downstream QG \& QA Evaluation}{5}{subsection.6.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {7}Analysis}{5}{section.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.1}SHAP-Based Interpretability}{5}{subsection.7.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Qualitative Analysis: LGSM vs LLM}{5}{subsection.7.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Downstream QG and Closed-Loop QA metrics (QA-AR = QA Acceptability Rate). LGSM-selected sentences achieve a $92.50\%$ downstream acceptability rate.}}{6}{table.caption.11}\protected@file@percent }
+\newlabel{tab:qg_metrics}{{6}{6}{Downstream QG and Closed-Loop QA metrics (QA-AR = QA Acceptability Rate). LGSM-selected sentences achieve a $92.50\%$ downstream acceptability rate}{table.caption.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Qualitative Analysis: LGSM vs LLM}{6}{subsection.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Limitations}{6}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9}Discussion and Conclusion}{6}{section.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Progression of the LGSM adaptive gate ($\alpha $) across sentence positions. The gate learns to heavily penalize early positional artifacts, actively suppressing the bias seen in standard transformers.}}{7}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:gating}{{6}{7}{Progression of the LGSM adaptive gate ($\alpha $) across sentence positions. The gate learns to heavily penalize early positional artifacts, actively suppressing the bias seen in standard transformers}{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Distribution of RST nuclearity and rhetorical relations in LGSM predictions versus Baseline. LGSM identifies that `Elaboration' and `Attribution' relations are highly correlated with non-salient context.}}{7}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:rst_relations}{{7}{7}{Distribution of RST nuclearity and rhetorical relations in LGSM predictions versus Baseline. LGSM identifies that `Elaboration' and `Attribution' relations are highly correlated with non-salient context}{figure.caption.13}{}}
 \bibstyle{plain}
 \bibcite{du2017learning}{1}
 \bibcite{rajpurkar2016squad}{2}
 \bibcite{jurafsky2023speech}{3}
-\@writefile{toc}{\contentsline {section}{\numberline {8}Discussion}{6}{section.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {9}Conclusion}{6}{section.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {A}Interpretability Resources}{7}{appendix.A}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Uniform Information Density (UID) distributions highlighting the cognitive surprisal contours of salient versus non-salient sentences.}}{7}{figure.caption.8}\protected@file@percent }
-\newlabel{fig:uid}{{3}{7}{Uniform Information Density (UID) distributions highlighting the cognitive surprisal contours of salient versus non-salient sentences}{figure.caption.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Adaptive gating distribution analysis. The FiLM layer selectively modulates the $\boldsymbol  {\alpha }_i$ gate vector based on the linguistic structure of the incoming sentence.}}{8}{figure.caption.9}\protected@file@percent }
-\newlabel{fig:gating}{{4}{8}{Adaptive gating distribution analysis. The FiLM layer selectively modulates the $\boldsymbol {\alpha }_i$ gate vector based on the linguistic structure of the incoming sentence}{figure.caption.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Feature correlation heatmap demonstrating that surprisal and RST metrics are highly orthogonal to standard structural predictors.}}{8}{figure.caption.10}\protected@file@percent }
-\newlabel{fig:correlations}{{5}{8}{Feature correlation heatmap demonstrating that surprisal and RST metrics are highly orthogonal to standard structural predictors}{figure.caption.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces LGSM threshold sensitivity sweep illustrating the trade-off between Precision and Recall. F1-score is optimized near the chosen $\tau =0.35$ boundary.}}{9}{figure.caption.11}\protected@file@percent }
-\newlabel{fig:threshold}{{6}{9}{LGSM threshold sensitivity sweep illustrating the trade-off between Precision and Recall. F1-score is optimized near the chosen $\tau =0.35$ boundary}{figure.caption.11}{}}
-\gdef \@abspage@last{9}
+\bibcite{wang-etal-2007-jeopardy}{4}
+\bibcite{severyn-moschitti-2015-learning}{5}
+\bibcite{tay-etal-2018-multi}{6}
+\bibcite{garg-etal-2020-tanda}{7}
+\bibcite{nogueira-cho-2019-passage}{8}
+\bibcite{karpukhin-etal-2020-dense}{9}
+\bibcite{ko-etal-2020-look}{10}
+\bibcite{jia-liang-2017-adversarial}{11}
+\bibcite{fisch-etal-2019-mrqa}{12}
+\bibcite{min-etal-2020-ambigqa}{13}
+\bibcite{clark-etal-2020-electra}{14}
+\bibcite{mann1988rhetorical}{15}
+\bibcite{ji-eisenstein-2014-representation}{16}
+\bibcite{liu-etal-2020-multilingual}{17}
+\bibcite{xiao-etal-2021-predicting}{18}
+\bibcite{huber-carenini-2020-mega}{19}
+\bibcite{erkan2004lexrank}{20}
+\bibcite{liu2019text}{21}
+\@writefile{toc}{\contentsline {section}{\numberline {10}Conclusion}{8}{section.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Feature Taxonomy and Interpretability Resources}{10}{appendix.A}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Comprehensive taxonomy of the 71 explicit multi-modal features extracted to supplement the LGSM's dense representations.}}{10}{table.caption.15}\protected@file@percent }
+\newlabel{tab:feature_taxonomy}{{7}{10}{Comprehensive taxonomy of the 71 explicit multi-modal features extracted to supplement the LGSM's dense representations}{table.caption.15}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Threshold Sensitivity}{10}{appendix.B}\protected@file@percent }
+\newlabel{sec:appendix_threshold}{{B}{10}{Threshold Sensitivity}{appendix.B}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}Top-15 Feature Importance Ranking}{10}{appendix.C}\protected@file@percent }
+\newlabel{sec:appendix_feature_importance}{{C}{10}{Top-15 Feature Importance Ranking}{appendix.C}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Uniform Information Density (UID) distributions highlighting the cognitive surprisal contours of salient versus non-salient sentences.}}{11}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:uid}{{8}{11}{Uniform Information Density (UID) distributions highlighting the cognitive surprisal contours of salient versus non-salient sentences}{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces LGSM threshold sensitivity sweep illustrating the trade-off between Precision and Recall. F1-score is optimized near the chosen $\tau =0.35$ boundary.}}{11}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:threshold}{{9}{11}{LGSM threshold sensitivity sweep illustrating the trade-off between Precision and Recall. F1-score is optimized near the chosen $\tau =0.35$ boundary}{figure.caption.17}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Top-15 features ranked by absolute LASSO coefficient magnitude. Surprisal and RST features are the strongest independent predictors of salience.}}{12}{table.caption.18}\protected@file@percent }
+\newlabel{tab:feature_importance}{{8}{12}{Top-15 features ranked by absolute LASSO coefficient magnitude. Surprisal and RST features are the strongest independent predictors of salience}{table.caption.18}{}}
+\gdef \@abspage@last{12}
